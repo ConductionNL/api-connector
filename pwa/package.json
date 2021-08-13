@@ -11,6 +11,8 @@
   "dependencies": {
     "@api-platform/admin": "^2.6.0",
     "@gemeente-denhaag/denhaag-component-library": "^0.2.3-alpha.7",
+    "@material-ui/core": "^4.12.3",
+    "@material-ui/icons": "^4.11.2",
     "@types/lodash": "^4.14.167",
     "@utrecht/design-tokens": "^1.0.0-alpha.41",
     "@utrecht/web-component-library-react": "^1.0.0-alpha.47",
