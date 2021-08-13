@@ -1219,16 +1219,6 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@stencil/angular-output-target@0.0.7":
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/@stencil/angular-output-target/-/angular-output-target-0.0.7.tgz#48a115cc5e0764a8481d9feb6e3e73f0e2ee77ff"
-  integrity sha512-GM+Sx0KL1cuQ4ysf20iojKBw/Yvuyx3mFWBaqSb3lDxfg4Kg5OHADoaN6L4rMZu3P3G3e2HT5Ut35BuFKIyT+Q==
-
-"@stencil/core@2.6.0":
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/@stencil/core/-/core-2.6.0.tgz#29da96d8b6fc83e689b9f297ef3e8b59b90a676a"
-  integrity sha512-QsxWayZyusnqSZrlCl81R71rA3KqFjVVQSH4E0rGN15F1GdQaFonKlHLyCOLKLig1zzC+DQkLLiUuocexuvdeQ==
-
 "@testing-library/dom@^7.28.1":
   version "7.31.2"
   resolved "https://registry.yarnpkg.com/@testing-library/dom/-/dom-7.31.2.tgz#df361db38f5212b88555068ab8119f5d841a8c4a"
@@ -1442,24 +1432,6 @@
   integrity sha512-kQ5JNTrbDv3Rp5X2n/iUu37IJBDU2gsZ5R/g1/KHOOEc5IKfUFjXT6DENPGduh08I/pamwtEq4oul7gUqKTQDQ==
   dependencies:
     "@types/yargs-parser" "*"
-
-"@utrecht/design-tokens@^1.0.0-alpha.41":
-  version "1.0.0-alpha.41"
-  resolved "https://registry.yarnpkg.com/@utrecht/design-tokens/-/design-tokens-1.0.0-alpha.41.tgz#7dff53358c5277bfef90f84995d8cb3480108e25"
-  integrity sha512-1L5XLtRqncnKEHuyHBR6cmFD9xP9imNo0OCP7kmugOj5H62inOjXiRokuM6XK81P9tHKxj9rEeyDpZLoXNYSSA==
-
-"@utrecht/web-component-library-react@^1.0.0-alpha.47":
-  version "1.0.0-alpha.47"
-  resolved "https://registry.yarnpkg.com/@utrecht/web-component-library-react/-/web-component-library-react-1.0.0-alpha.47.tgz#ae5c46fb384965e398f7f96a1e2bd63facfebb47"
-  integrity sha512-zt9M+1cqdQY7jF9vM+pF06kGTVQAzkXr/QGzza5RVvlfA/pBqoX1+uELUC8t4uWn5UJCmz8TH6B6cjbVZBn6uA==
-
-"@utrecht/web-component-library-stencil@^1.0.0-alpha.47":
-  version "1.0.0-alpha.47"
-  resolved "https://registry.yarnpkg.com/@utrecht/web-component-library-stencil/-/web-component-library-stencil-1.0.0-alpha.47.tgz#a55263b9650af65a88e103746bc60f232da27daf"
-  integrity sha512-6wmIPzup32ki+htub5kqHlYR71o5/wBABRwnml104PAIFMa6E1T+p5AXHO5kaWEFXOIcxxkAfP2xyURj/ic7lw==
-  dependencies:
-    "@stencil/angular-output-target" "0.0.7"
-    "@stencil/core" "2.6.0"
 
 abab@^2.0.3, abab@^2.0.5:
   version "2.0.5"
@@ -2613,14 +2585,6 @@ end-of-stream@^1.1.0:
   integrity sha512-+uw1inIHVPQoaVuHzRyXd21icM+cnt4CzD5rW+NC1wjOUSTOs+Te7FOv7AhN7vS9x/oIyhLP5PR1H+phQAHu5Q==
   dependencies:
     once "^1.4.0"
-
-enhanced-resolve@^5.7.0:
-  version "5.8.2"
-  resolved "https://registry.yarnpkg.com/enhanced-resolve/-/enhanced-resolve-5.8.2.tgz#15ddc779345cbb73e97c611cd00c01c1e7bf4d8b"
-  integrity sha512-F27oB3WuHDzvR2DOGNTaYy0D5o0cnrv8TeI482VM4kYgQd/FT9lUQwuNsJ0oOHtBUq7eiW5ytqzp7nBFknL+GA==
-  dependencies:
-    graceful-fs "^4.2.4"
-    tapable "^2.2.0"
 
 error-ex@^1.3.1:
   version "1.3.2"
@@ -4603,14 +4567,6 @@ natural-compare@^1.4.0:
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
   integrity sha1-Sr6/7tdUHywnrPspvbvRXI1bpPc=
 
-next-transpile-modules@^8.0.0:
-  version "8.0.0"
-  resolved "https://registry.yarnpkg.com/next-transpile-modules/-/next-transpile-modules-8.0.0.tgz#56375cdc25ae5d23a834195f277fc2737b26cb97"
-  integrity sha512-Q2f2yB0zMJ8KJbIYAeZoIxG6cSfVk813zr6B5HzsLMBVcJ3FaF8lKr7WG66n0KlHCwjLSmf/6EkgI6QQVWHrDw==
-  dependencies:
-    enhanced-resolve "^5.7.0"
-    escalade "^3.1.1"
-
 next@^10.0.4:
   version "10.2.3"
   resolved "https://registry.yarnpkg.com/next/-/next-10.2.3.tgz#5aa058a63626338cea91c198fda8f2715c058394"
@@ -5086,7 +5042,7 @@ prelude-ls@~1.1.2:
   resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.1.2.tgz#21932a549f5e52ffd9a827f570e04be62a97da54"
   integrity sha1-IZMqVJ9eUv/ZqCf1cOBL5iqX2lQ=
 
-prettier@^2.3.2:
+prettier@2.3.2:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.3.2.tgz#ef280a05ec253712e486233db5c6f23441e7342d"
   integrity sha512-lnJzDfJ66zkMy58OL5/NY5zp70S7Nz6KqcKkXYzn2tMVrNxvbqaBpg7H3qHaLxCJ5lNMsGuM8+ohS7cZrthdLQ==
@@ -5307,7 +5263,7 @@ react-admin@^3.0.0:
     redux "^3.7.2 || ^4.0.3"
     redux-saga "^1.0.0"
 
-react-dom@^17.0.0:
+react-dom@17.0.2:
   version "17.0.2"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-17.0.2.tgz#ecffb6845e3ad8dbfcdc498f0d0a939736502c23"
   integrity sha512-s4h96KtLDUQlsENhMn1ar8t2bEa+q/YAtj8pPPdIjPDGBDIVNsrD9aXNWqspUe6AzKCIG0C1HZZLqLV7qpOBGA==
@@ -5410,7 +5366,7 @@ react-transition-group@^4.0.0, react-transition-group@^4.4.0, react-transition-g
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
 
-react@^17.0.0:
+react@17.0.2:
   version "17.0.2"
   resolved "https://registry.yarnpkg.com/react/-/react-17.0.2.tgz#d0b5cc516d29eb3eee383f75b62864cfb6800037"
   integrity sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA==
@@ -6140,11 +6096,6 @@ symbol-tree@^3.2.4:
   version "3.2.4"
   resolved "https://registry.yarnpkg.com/symbol-tree/-/symbol-tree-3.2.4.tgz#430637d248ba77e078883951fb9aa0eed7c63fa2"
   integrity sha512-9QNk5KwDF+Bvz+PyObkmSYjI5ksVUYtjW7AU22r2NKcfLJcXp96hkDWU3+XndOsUb+AQ9QhfzfCT2O+CNWT5Tw==
-
-tapable@^2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/tapable/-/tapable-2.2.0.tgz#5c373d281d9c672848213d0e037d1c4165ab426b"
-  integrity sha512-FBk4IesMV1rBxX2tfiK8RAmogtWn53puLOQlvO8XuwlgxcYbP4mVPS9Ph4aeamSyyVjOl24aYWAuc8U5kCVwMw==
 
 terminal-link@^2.0.0:
   version "2.1.1"
