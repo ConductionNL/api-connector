@@ -1,6 +1,38 @@
 import Head from "next/head";
 import Link from "next/link";
 
+import {
+  UtrechtArticle,
+  UtrechtBadgeCounter,
+  UtrechtBadgeData,
+  UtrechtBadgeStatus,
+  UtrechtBreadcrumb,
+  UtrechtButton,
+  UtrechtCheckbox,
+  UtrechtDocument,
+  UtrechtFormFieldCheckbox,
+  UtrechtFormFieldTextbox,
+  UtrechtHeading,
+  UtrechtHeading1,
+  UtrechtHeading2,
+  UtrechtHeading3,
+  UtrechtHeading4,
+  UtrechtHeading5,
+  UtrechtHeading6,
+  UtrechtHtmlContent,
+  UtrechtIconFacebook,
+  UtrechtIconLinkedin,
+  UtrechtIconTwitter,
+  UtrechtIconWhatsapp ,
+  UtrechtLogo,
+  UtrechtPageFooter ,
+  UtrechtPagination,
+  UtrechtParagraph ,
+  UtrechtSeparator,
+  UtrechtSidenav,
+  UtrechtTextbox,
+} from "@utrecht/web-component-library-react";
+
 const Welcome = () => (
   <>
     <Head>
@@ -28,6 +60,7 @@ const Welcome = () => (
         <div className="main__aside">
           <div className="aside__circle"/>
           <WebbyWelcome/>
+          <UtrechtLogo></UtrechtLogo>
         </div>
         <div className="main__content">
           <h1>
