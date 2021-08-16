@@ -7,6 +7,7 @@ use App\Repository\BookRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=BookRepository::class)
@@ -24,29 +25,34 @@ class Book
     /**
      * @ORM\Column(nullable=true)
      */
-    private ?int $isbn = null;
+    #[Assert\Isbn]
+    public ?string $isbn = null;
 
     /**
      * @ORM\Column
      */
+    #[Assert\NotBlank]
     private string $title = "";
 
     /**
-     * @ORM\Column
+     * @ORM\Column(type="text")
      */
-    private string $description = "";
+    #[Assert\NotBlank]
+    public string $description = '';
 
     /**
      * The author of this book.
-     * 
+     *
      * @ORM\Column
      */
-    private string $author = "";
+    #[Assert\NotBlank]
+    public string $author = '';
 
     /**
-     * @ORM\Column(nullable=true)
+     * @ORM\Column(type="datetime_immutable")
      */
-    private ?\DateTimeInterface $publicationDate = null;
+    #[Assert\NotNull]
+    public ?\DateTimeInterface $publicationDate = null;
 
     /**
      *

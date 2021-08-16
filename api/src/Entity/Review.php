@@ -5,6 +5,7 @@ namespace App\Entity;
 use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\ReviewRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=ReviewRepository::class)
@@ -24,37 +25,42 @@ class Review
     /**
      * The rating of this review (between 0 and 5).
      *
-     * @ORM\Column
+     * @ORM\Column(type="smallint")
      */
-    private int $rating = 0;
+    #[Assert\Range(min: 0, max: 5)]
+    public int $rating = 0;
 
     /**
      * The body of the review.
      *
-     * @ORM\Column
+     * @ORM\Column(type="text")
      */
-    private string $body = "";
+    #[Assert\NotBlank]
+    public string $body = '';
 
     /**
      * The author of the review.
      *
      * @ORM\Column
      */
-    private string $author = "";
+    #[Assert\NotBlank]
+    public string $author = '';
 
     /**
      * The date of publication of this review.
      *
-     * @ORM\Column(nullable=true)
+     * @ORM\Column(type="datetime_immutable")
      */
-    private ?\DateTimeInterface $publicationDate = null;
+    #[Assert\NotNull]
+    public ?\DateTimeInterface $publicationDate = null;
 
     /**
      * The book this review is about.
-     * 
+     *
      * @ORM\ManyToOne(targetEntity=Book::class, inversedBy="reviews")
      */
-    private $book;
+    #[Assert\NotNull]
+    public ?Book $book = null;
 
     public function getId(): ?int
     {
