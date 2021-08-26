@@ -7,15 +7,15 @@ import Header from "../../components/common/header";
 import Typography from '@material-ui/core/Typography';
 import Link from 'next/link'
 
+import Layout from "../../components/common/layout";
+
 function Index() {
 
   const zakenHref = '/products/' + Math.floor(Math.random() * 10);
 
-  return <div>
+  return <>
+    <Layout title="Zaken index" description="waar kan ik deze description zien">
 
-    <Header/>
-
-    <Container>
       <Typography variant="h1">
         Products
       </Typography>
@@ -27,10 +27,9 @@ function Index() {
         Naar product
         </Link>
       </Button>
-    </Container>
 
-    <Footer/>
-  </div>
+    </Layout>
+  </>
 }
 
 export default Index

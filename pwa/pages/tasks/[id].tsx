@@ -7,21 +7,14 @@ import Header from "../../components/common/header";
 import Container from "@material-ui/core/Container";
 import Footer from "../../components/common/footer";
 import Typography from '@material-ui/core/Typography';
+import Layout from "../../components/common/layout";
 
 const Task = () => {
   const router = useRouter()
   const {id} = router.query
 
   return <>
-
-    <Header/>
-
-    <Container>
-      
-      <Typography variant="h1">
-        Task
-      </Typography>
-
+    <Layout title="Zaken index" description="waar kan ik deze description zien">
 
       <Button color="primary">
         <Link href="/products">
@@ -29,9 +22,8 @@ const Task = () => {
         </Link>
       </Button>
       <p>Product id: {id}</p>
-    </Container>
 
-    <Footer/>
+    </Layout>
   </>
 }
 

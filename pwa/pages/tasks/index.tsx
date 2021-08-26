@@ -8,24 +8,22 @@ import TaskTable from "../../components/tasks/table";
 import Typography from '@material-ui/core/Typography';
 import Link from 'next/link'
 
+import Layout from "../../components/common/layout";
+import PageHeader from "../../components/common/pageheader";
+
 function Index() {
 
   const zakenHref = '/products/' + Math.floor(Math.random() * 10);
 
-  return <div>
+  return <>
+    <Layout title="Zaken index" description="waar kan ik deze description zien">
 
-    <Header/>
+      <PageHeader title="Zaken index"/>
 
-    <Container>
-      <Typography variant="h1">
-        Tasks
-      </Typography>
+      <TaskTable />
 
-     <TaskTable />
-    </Container>
-
-    <Footer/>
-  </div>
+    </Layout >
+  </>
 }
 
 export default Index

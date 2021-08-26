@@ -7,16 +7,14 @@ import Header from "../../components/common/header";
 import Container from "@material-ui/core/Container";
 import Footer from "../../components/common/footer";
 import Typography from '@material-ui/core/Typography';
+import Layout from "../../components/common/layout";
 
 const Product = () => {
   const router = useRouter()
   const {id} = router.query
 
   return <>
-
-    <Header/>
-
-    <Container>
+    <Layout title="Zaken index" description="waar kan ik deze description zien">
 
       <Typography variant="h1">
         Product
@@ -29,9 +27,9 @@ const Product = () => {
         </Link>
       </Button>
       <p>Product id: {id}</p>
-    </Container>
 
-    <Footer/>
+
+    </Layout>
   </>
 }
 
