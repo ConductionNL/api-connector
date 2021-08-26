@@ -1,5 +1,5 @@
 import React from 'react';
-import { alpha, makeStyles } from '@material-ui/core/styles';
+import {alpha, makeStyles} from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -14,6 +14,8 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
+import cookieCutter from 'cookie-cutter';
+import Link from "next/link";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -79,7 +81,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function MainMenu() {
+export default function MainMenu({headerTitle}) {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -88,6 +90,10 @@ export default function MainMenu() {
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
   const handleProfileMenuOpen = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
   };
 
@@ -104,38 +110,139 @@ export default function MainMenu() {
     setMobileMoreAnchorEl(event.currentTarget);
   };
 
+  let loggedIn = Boolean(false);
+
+  const handleLoginClick = () => {
+    handleMenuClose();
+
+    if (cookieCutter.get('loggedIn') == null || cookieCutter.get('loggedIn') == false) {
+      cookieCutter.set('loggedIn', true);
+    }
+    loggedIn = Boolean(cookieCutter.get('loggedIn'));
+    console.log(loggedIn);
+  };
+
+
   const menuId = 'primary-search-account-menu';
-  const renderMenu = (
-    <Menu
-      anchorEl={anchorEl}
-      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-      id={menuId}
-      keepMounted
-      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-      open={isMenuOpen}
-      onClose={handleMenuClose}
-    >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
-    </Menu>
+  const menuId2 = 'menu-left';
+
+  const renderUserMenu = (
+    <>
+      {/*{*/}
+      {/*  cookieCutter.get('loggedIn') != true &&*/}
+      <Menu
+        anchorEl={anchorEl}
+        anchorOrigin={{vertical: 'top', horizontal: 'right'}}
+        id={menuId}
+        keepMounted
+        transformOrigin={{vertical: 'top', horizontal: 'right'}}
+        open={isMenuOpen}
+        onClose={handleMenuClose}
+      >
+        <MenuItem onClick={handleLoginClick}>
+          DigiD
+        </MenuItem>
+        <MenuItem onClick={handleLoginClick}>
+          Eherkening
+        </MenuItem>
+        <MenuItem onClick={handleLoginClick}>
+          Wachtoord
+        </MenuItem>
+        <MenuItem onClick={handleLoginClick}>
+          Social Media
+        </MenuItem>
+      </Menu>
+      {/*}*/}
+    </>
   );
 
+  const renderLeftMenu = (
+      <>
+        <Menu
+          anchorEl={anchorEl}
+          anchorOrigin={{vertical: 'top', horizontal: 'right'}}
+          id={menuId2}
+          keepMounted
+          transformOrigin={{vertical: 'top', horizontal: 'right'}}
+          open={isMenuOpen}
+          onClose={handleMenuClose}
+        >
+          <MenuItem onClick={handleMenuClose}>
+            <Link href="/">
+              Home
+            </Link>
+          </MenuItem>
+          <MenuItem onClick={handleMenuClose}>
+            <Link href="/my_processing">
+              My processing
+            </Link>
+          </MenuItem>
+          <MenuItem onClick={handleMenuClose}>
+            <Link href="/products">
+              Products
+            </Link>
+          </MenuItem>
+          <MenuItem onClick={handleMenuClose}>
+            <Link href="/news">
+              News
+            </Link>
+          </MenuItem>
+          <MenuItem onClick={handleMenuClose}>
+            <Link href="/my_plans">
+              My plans
+            </Link>
+          </MenuItem>
+          <MenuItem onClick={handleMenuClose}>
+            <Link href="/my_tasks">
+              My tasks
+            </Link>
+          </MenuItem>
+          <MenuItem onClick={handleMenuClose}>
+            <Link href="/my_messages">
+              My messages
+            </Link>
+          </MenuItem>
+          <MenuItem onClick={handleMenuClose}>
+            <Link href="/my_data">
+              My data
+            </Link>
+          </MenuItem>
+          <MenuItem onClick={handleMenuClose}>
+            <Link href="/my_vault">
+              My vault
+            </Link>
+          </MenuItem>
+          <MenuItem onClick={handleMenuClose}>
+            <Link href="/affairs">
+              Affairs
+            </Link>
+          </MenuItem>
+          <MenuItem onClick={handleMenuClose}>
+            <Link href="/arrangements">
+              Arrangements
+            </Link>
+          </MenuItem>
+        </Menu>
+      </>
+    )
+  ;
+
   const mobileMenuId = 'primary-search-account-menu-mobile';
-  
+
   const renderMobileMenu = (
     <Menu
       anchorEl={mobileMoreAnchorEl}
-      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+      anchorOrigin={{vertical: 'top', horizontal: 'right'}}
       id={mobileMenuId}
       keepMounted
-      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+      transformOrigin={{vertical: 'top', horizontal: 'right'}}
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
         <IconButton aria-label="show 4 new mails" color="inherit">
           <Badge badgeContent={4} color="secondary">
-            <MailIcon />
+            <MailIcon/>
           </Badge>
         </IconButton>
         <p>Messages</p>
@@ -143,7 +250,7 @@ export default function MainMenu() {
       <MenuItem>
         <IconButton aria-label="show 11 new notifications" color="inherit">
           <Badge badgeContent={11} color="secondary">
-            <NotificationsIcon />
+            <NotificationsIcon/>
           </Badge>
         </IconButton>
         <p>Notifications</p>
@@ -155,7 +262,7 @@ export default function MainMenu() {
           aria-haspopup="true"
           color="inherit"
         >
-          <AccountCircle />
+          <AccountCircle/>
         </IconButton>
         <p>Profile</p>
       </MenuItem>
@@ -170,16 +277,17 @@ export default function MainMenu() {
             edge="start"
             className={classes.menuButton}
             color="inherit"
+            onClick={handleMenuOpen}
             aria-label="open drawer"
           >
-            <MenuIcon />
+            <MenuIcon/>
           </IconButton>
           <Typography className={classes.title} variant="h6" noWrap>
-            Material-UI
+            {headerTitle}
           </Typography>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
-              <SearchIcon />
+              <SearchIcon/>
             </div>
             <InputBase
               placeholder="Search…"
@@ -187,19 +295,19 @@ export default function MainMenu() {
                 root: classes.inputRoot,
                 input: classes.inputInput,
               }}
-              inputProps={{ 'aria-label': 'search' }}
+              inputProps={{'aria-label': 'search'}}
             />
           </div>
-          <div className={classes.grow} />
+          <div className={classes.grow}/>
           <div className={classes.sectionDesktop}>
             <IconButton aria-label="show 4 new mails" color="inherit">
               <Badge badgeContent={4} color="secondary">
-                <MailIcon />
+                <MailIcon/>
               </Badge>
             </IconButton>
             <IconButton aria-label="show 17 new notifications" color="inherit">
               <Badge badgeContent={17} color="secondary">
-                <NotificationsIcon />
+                <NotificationsIcon/>
               </Badge>
             </IconButton>
             <IconButton
@@ -210,7 +318,10 @@ export default function MainMenu() {
               onClick={handleProfileMenuOpen}
               color="inherit"
             >
-              <AccountCircle />
+              {/*<AccountCircle/>*/}
+              <Typography variant="h5">
+                Inloggen
+              </Typography>
             </IconButton>
           </div>
           <div className={classes.sectionMobile}>
@@ -221,13 +332,17 @@ export default function MainMenu() {
               onClick={handleMobileMenuOpen}
               color="inherit"
             >
-              <MoreIcon />
+              <MoreIcon/>
             </IconButton>
           </div>
         </Toolbar>
       </AppBar>
       {renderMobileMenu}
-      {renderMenu}
+      {
+        // loggedIn !== true &&
+        renderUserMenu
+      }
+      {renderLeftMenu}
     </div>
   );
 }
