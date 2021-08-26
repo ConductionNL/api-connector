@@ -21,7 +21,10 @@ const Welcome = () => (
     <Header />
 
     <Container>
-      <div>Iets anders ajdnssakjbdshdbhahjshjadb</div>
+      <div>Iets anders test</div>
+      <Button href="/zaken" color="primary">
+        Naar zaken page
+      </Button>
     </Container>
 
     <Footer />
