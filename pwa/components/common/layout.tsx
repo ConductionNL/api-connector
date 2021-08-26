@@ -1,9 +1,9 @@
 import Head from "next/head";
-import Header from "./header";
 import Container from "@material-ui/core/Container";
-import Button from "@material-ui/core/Button";
-import Footer from "./footer";
 import React from "react";
+
+import Header from "./header";
+import Footer from "./footer";
 
 const Layout = ({children, title="Welcome to Demodam!", description="default-description"}) => {
 
