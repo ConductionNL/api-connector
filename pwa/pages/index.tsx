@@ -2,12 +2,9 @@ import Head from "next/head";
 import Link from "next/link";
 
 import Button from '@material-ui/core/Button';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Typography from '@material-ui/core/Typography';
-import Container from '@material-ui/core/Container';
 
 import React from 'react';
-import {makeStyles} from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
 
 import ActionMenu from 'components/common/actionmenu';
 
@@ -16,17 +13,20 @@ import Layout from 'components/common/layout';
 
 const Welcome = () => (
   <>
-    <Layout title="Welkom op Open-Inwoner!" description="waar kan ik deze description zien" headerTitle="Home">
-
-      <ActionMenu />
-      
-      <div>Een random zin</div>
-      <Button color="primary">
-        <Link href="/zaken">
-          Naar zaken page
-        </Link>
-      </Button>
-
+    <Layout title="Welkom op Open-Inwoner!" description="waar kan ik deze description zien">
+      <Grid container>
+        <Grid item xs={4}>
+          <ActionMenu />
+        </Grid>
+        <Grid item xs={8} >
+          <div>Een random zin</div>
+          <Button color="primary">
+            <Link href="/zaken">
+              Naar zaken page
+            </Link>
+          </Button>
+        </Grid>
+      </Grid>
     </Layout>
   </>
 );

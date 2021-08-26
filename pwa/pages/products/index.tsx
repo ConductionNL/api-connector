@@ -8,6 +8,9 @@ import Typography from '@material-ui/core/Typography';
 import Link from 'next/link'
 
 import Layout from "../../components/common/layout";
+import Grid from "@material-ui/core/Grid";
+import ActionMenu from "../../components/common/actionmenu";
+import CasesTable from "../../components/cases/table";
 
 function Index() {
 
@@ -16,18 +19,15 @@ function Index() {
   return <>
     <Layout title="Zaken index" description="waar kan ik deze description zien">
 
-      <Typography variant="h1">
-        Products
-      </Typography>
+      <Grid container>
+        <Grid item xs={4}>
+          <ActionMenu />
+        </Grid>
+        <Grid item xs={8} >
 
-      Hier kan je de algemene producten vinden van deze gemeente
 
-      <Button color="primary">
-        <Link href={zakenHref}>
-        Naar product
-        </Link>
-      </Button>
-
+        </Grid>
+      </Grid>
     </Layout>
   </>
 }
