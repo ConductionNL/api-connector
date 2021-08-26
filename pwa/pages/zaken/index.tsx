@@ -12,7 +12,7 @@ function Index() {
   const zakenHref = '/zaken/' + Math.floor(Math.random() * 10);
 
   return <>
-    <Layout title="Zaken index" description="waar kan ik deze description zien">
+    <Layout title="Zaken index" description="waar kan ik deze description zien"  headerTitle="Zaken">
       <p>Zaken
         <Button color="primary">
           <Link href={zakenHref}>

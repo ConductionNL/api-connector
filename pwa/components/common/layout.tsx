@@ -13,7 +13,7 @@ const Layout = ({children, title="Welcome to Demodam!", description="default-des
         <title>{title}</title>
       </Head>
 
-      <Header />
+      <Header headerTitle={headerTitle}  />
 
       <Container>
         {children}
