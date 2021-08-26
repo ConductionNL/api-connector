@@ -15,7 +15,7 @@ import Layout from 'components/common/layout';
 
 const Welcome = () => (
   <>
-    <Layout title="Welkom op demodam!" description="waar kan ik deze description zien">
+    <Layout title="Welkom op Open-Inwoner!" description="waar kan ik deze description zien" headerTitle="Home">
 
       <div>Een random zin</div>
       <Button color="primary">
