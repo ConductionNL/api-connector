@@ -7,27 +7,24 @@ import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import {makeStyles} from '@material-ui/core/styles';
 
 import Header from 'components/common/header';
 import Footer from 'components/common/footer';
+import Layout from 'components/common/layout';
 
 const Welcome = () => (
   <>
-    <Head>
-      <title>Welcome to Demodam!</title>
-    </Head>
+    <Layout title="Welkom op demodam!" description="waar kan ik deze description zien">
 
-    <Header />
-
-    <Container>
-      <div>Iets anders test</div>
-      <Button href="/zaken" color="primary">
-        Naar zaken page
+      <div>Een random zin</div>
+      <Button color="primary">
+        <Link href="/zaken">
+          Naar zaken page
+        </Link>
       </Button>
-    </Container>
 
-    <Footer />
+    </Layout>
   </>
 );
 export default Welcome;
