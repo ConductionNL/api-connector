@@ -125,15 +125,19 @@ export default function MainMenu() {
       <AppBar position="static">
         <Container>
         <Toolbar>
-
-          <div className={classes.sectionDesktop}>
-          <Typography variant="h6" color="inherit">
-            <Link href="/news" color="inherit" >
-              News
-            </Link>
-            <Link href="/products" color="inherit" >
-              Services
-            </Link>
+          <IconButton
+            edge="start"
+            className={classes.menuButton}
+            color="inherit"
+            onClick={handleMenuOpen}
+            aria-controls={menuId2}
+            aria-label="open drawer"
+            aria-haspopup="true"
+          >
+            <MenuIcon/>
+          </IconButton>
+          <Typography className={classes.title} variant="h6" noWrap>
+            {headerTitle}
           </Typography>
           </div>
 
