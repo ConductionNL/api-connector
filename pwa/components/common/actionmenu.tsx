@@ -85,6 +85,13 @@ export default function ActionMenu() {
           <ListItemText primary="Logging" />
         </ListItem>
 
+        <ListItem button onClick={() => router.push('/')}>
+          <ListItemIcon>
+            <DraftsIcon />
+          </ListItemIcon>
+          <ListItemText primary="Logout" />
+        </ListItem>
+
       </List>
     </div>
   );

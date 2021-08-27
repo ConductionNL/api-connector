@@ -16,7 +16,17 @@ function Index() {
           <ActionMenu />
         </Grid>
         <Grid item xs={8} >
-
+          <Grid item xs container direction="row" spacing={2}>
+            <Grid item xs={12} >
+              Producten hier
+            </Grid>
+            <Grid item xs={6} >
+              Berichten hier
+            </Grid>
+            <Grid item xs={6} >
+              Taken hier
+            </Grid>
+          </Grid>
         </Grid>
       </Grid>
     </Layout>

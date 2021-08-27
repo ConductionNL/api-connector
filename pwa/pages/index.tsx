@@ -15,16 +15,11 @@ const Welcome = () => (
   <>
     <Layout title="Welkom op Open-Inwoner!" description="waar kan ik deze description zien">
       <Grid container>
-        <Grid item xs={4}>
-          <ActionMenu />
+        <Grid item xs={12}>
+          Nieuws hier
         </Grid>
-        <Grid item xs={8} >
-          <div>Een random zin</div>
-          <Button color="primary">
-            <Link href="/zaken">
-              Naar zaken page
-            </Link>
-          </Button>
+        <Grid item xs={12} >
+          Regelingen hier
         </Grid>
       </Grid>
     </Layout>

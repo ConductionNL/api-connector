@@ -6,11 +6,13 @@ import React from "react";
 import Header from "./header";
 import Footer from "./footer";
 import {makeStyles} from "@material-ui/core/styles";
+import Toolbar from "@material-ui/core/Toolbar";
 
 
 const useStyles = makeStyles((theme) => ({
   containerRuben: {
     paddingTop: theme.spacing(24, 24, 24, 24),
+    backgroundColor: '#F5F5F5',
   }
 }));
 
