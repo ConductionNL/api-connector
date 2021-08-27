@@ -7,35 +7,37 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
-function createData(name, description, status ) {
-  return { name, description, status };
+function createData(name, price, description, other) {
+  return { name, price, description, other };
 }
 
 const rows = [
-  createData('Boodschappen doen', 'Koelkast leeg', 'To-do'),
-  createData('Boodschappen doen', 'Koelkast leeg', 'To-do'),
-  createData('Boodschappen doen', 'Koelkast leeg', 'To-do'),
+  createData('Appel', 159, 'Mooie groene appel', 'Houdbaar tot 21 april',),
+  createData('Appel', 159, 'Mooie groene appel', 'Houdbaar tot 21 april',),
+  createData('Appel', 159, 'Mooie groene appel', 'Houdbaar tot 21 april',),
 ];
 
 
-export default function TaskTable() {
+export default function ProductTable() {
 
   return (
     <TableContainer component={Paper}>
       <Table aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>Name</TableCell>
-            <TableCell align="right">Description</TableCell>
-            <TableCell align="right">Status</TableCell>
+            <TableCell>Naam</TableCell>
+            <TableCell align="right">Prijs</TableCell>
+            <TableCell align="right">Beschrijving</TableCell>
+            <TableCell align="right">Overig</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {rows.map((row) => (
             <TableRow key={row.name}>
               <TableCell align="left">{row.name}</TableCell>
+              <TableCell align="right">{row.price}</TableCell>
               <TableCell align="right">{row.description}</TableCell>
-              <TableCell align="right">{row.status}</TableCell>
+              <TableCell align="right">{row.other}</TableCell>
             </TableRow>
           ))}
         </TableBody>

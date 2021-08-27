@@ -40,4 +40,5 @@ const Layout = ({children, title="Welcome to Demodam!", description="default-des
   );
 
 }
+
 export default Layout;

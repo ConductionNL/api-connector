@@ -11,19 +11,24 @@ import Link from 'next/link'
 import Layout from "../../components/common/layout";
 import Grid from "@material-ui/core/Grid";
 import ActionMenu from "../../components/common/actionmenu";
+import Hidden from "@material-ui/core/Hidden";
+import PageHeader from "../../components/common/pageheader";
 
 function Index() {
 
   const zakenHref = '/products/' + Math.floor(Math.random() * 10);
+  const title = 'My tasks'
 
   return <>
     <Layout title="Zaken index" description="waar kan ik deze description zien">
-      <Grid container>
-        <Grid item xs={4}>
-          <ActionMenu />
-        </Grid>
-        <Grid item xs={8} >
-
+      <Grid container spacing={3}>
+        <Hidden smDown>
+          <Grid item md={2}>
+            <ActionMenu />
+          </Grid>
+        </Hidden>
+        <Grid item xs={12} md={10}>
+          <PageHeader title={title} />
         </Grid>
       </Grid>
     </Layout >

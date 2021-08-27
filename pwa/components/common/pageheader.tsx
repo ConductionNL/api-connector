@@ -5,7 +5,7 @@ import Link from '@material-ui/core/Link';
 import Divider from '@material-ui/core/Divider';
 import List from "@material-ui/core/List";
 
-const PageHeader = ({children, title="Welcome to Demodam!", description="default-description"}) => {
+const PageHeader = ({ title="Welcome to Demodam!", description="default-description"}) => {
 
     return (
     <>
