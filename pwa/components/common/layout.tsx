@@ -1,26 +1,38 @@
 import Head from "next/head";
-import Header from "./header";
 import Container from "@material-ui/core/Container";
-import Button from "@material-ui/core/Button";
-import Footer from "./footer";
+import Box from '@material-ui/core/Box';
 import React from "react";
 
-const Layout = ({
-                  children,
-                  title="Welcome to Open-Inwoner!",
-                  description="default-description",
-                  headerTitle="Demodam"
-}) => {
+import Header from "./header";
+import Footer from "./footer";
+import {makeStyles} from "@material-ui/core/styles";
+import Toolbar from "@material-ui/core/Toolbar";
+
+
+const useStyles = makeStyles((theme) => ({
+  containerRuben: {
+    paddingTop: theme.spacing(24, 24, 24, 24),
+    backgroundColor: '#F5F5F5',
+  }
+}));
+
+
+const Layout = ({children, title="Welcome to Demodam!", description="default-description"}) => {
+
+  const classes = useStyles();
+
     return (
     <>
       <Head>
         <title>{title}</title>
       </Head>
 
-      <Header headerTitle={headerTitle}  />
+      <Header/>
 
       <Container>
+        <Box paddingTop={2} paddingBottom={2}>
         {children}
+        </Box>
       </Container>
 
       <Footer />
