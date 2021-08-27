@@ -6,6 +6,7 @@ import Grid from "@material-ui/core/Grid";
 import ActionMenu from "../../components/common/actionmenu";
 import Hidden from "@material-ui/core/Hidden";
 import PageHeader from "../../components/common/pageheader";
+import MessagesList from "../../components/tasks/messages";
 
 function Index() {
 
@@ -21,6 +22,7 @@ function Index() {
         </Hidden>
         <Grid item xs={12} md={10}>
           <PageHeader title={title} />
+          <MessagesList/>
         </Grid>
       </Grid>
     </Layout>

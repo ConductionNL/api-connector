@@ -5,13 +5,19 @@ import Link from '@material-ui/core/Link';
 import Divider from '@material-ui/core/Divider';
 import List from "@material-ui/core/List";
 
-const PageHeader = ({ title="Welcome to Demodam!", description="default-description"}) => {
+const PageHeader = ({ title="Welcome to Demodam!", h1=false, description="default-description"}) => {
 
     return (
     <>
-      <Typography variant="h4">
-        {title}
-      </Typography>
+      {
+        h1 == true ?
+        <Typography variant="h1">
+          {title}
+        </Typography> :
+          <Typography variant="h4">
+            {title}
+          </Typography>
+      }
 
       <Breadcrumbs aria-label="breadcrumb">
         <Link color="inherit" href="/" >

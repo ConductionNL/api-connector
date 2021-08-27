@@ -7,14 +7,22 @@ import ActionMenu from "../../components/common/actionmenu";
 import Hidden from "@material-ui/core/Hidden";
 import PageHeader from "../../components/common/pageheader";
 import Box from "@material-ui/core/Box";
-import ProductTable from "../../components/products/table";
-import TaskTable from "../../components/tasks/table";
-import Messages from "../../components/common/messages";
+import TaskList from "../../components/tasks/list";
+import Messages from "../../components/tasks/messages";
 import Typography from "@material-ui/core/Typography";
+import ArrangementsTable from "../../components/arrangements/table";
+import {makeStyles} from "@material-ui/core";
 
 function Index() {
 
+  const useStyles = makeStyles({
+    marginTop: {
+      marginTop: 20,
+    },
+  });
+
   const title = 'Overview';
+  const classes = useStyles();
 
   return <>
     <Layout title={title} description="waar kan ik deze description zien" >
@@ -27,10 +35,10 @@ function Index() {
         </Hidden>
         <Grid item xs={12} md={10}>
           <PageHeader title={title} />
-          <Grid item xs container direction="row" spacing={2}>
+          <Grid className={classes.marginTop} item xs container direction="row" spacing={2}>
             <Grid item xs={12} >
-              <Typography variant="h6">Producten</Typography>
-              <ProductTable />
+              <Typography variant="h6">Regelingen</Typography>
+              <ArrangementsTable />
             </Grid>
             <Grid item xs={6} >
               <Typography variant="h6">Berichten</Typography>
@@ -38,7 +46,7 @@ function Index() {
             </Grid>
             <Grid item xs={6} >
               <Typography variant="h6">Taken</Typography>
-              <TaskTable />
+              <TaskList />
             </Grid>
           </Grid>
         </Grid>

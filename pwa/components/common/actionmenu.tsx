@@ -8,6 +8,12 @@ import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/Inbox';
 import DraftsIcon from '@material-ui/icons/Drafts';
 import { useRouter } from 'next/router';
+import MessageIcon from '@material-ui/icons/Message';
+import DateRangeIcon from '@material-ui/icons/DateRange';
+import PlaylistAddCheckIcon from '@material-ui/icons/PlaylistAddCheck';
+import LockIcon from '@material-ui/icons/Lock';
+import WorkIcon from '@material-ui/icons/Work';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -38,9 +44,16 @@ export default function ActionMenu() {
 
         <ListItem button onClick={() => router.push('/data')}>
           <ListItemIcon>
-            <InboxIcon />
+            <LockIcon />
           </ListItemIcon>
           <ListItemText primary="Data" />
+        </ListItem>
+
+        <ListItem button onClick={() => router.push('/arrangements')}>
+          <ListItemIcon>
+            <DateRangeIcon />
+          </ListItemIcon>
+          <ListItemText primary="Arrangements" />
         </ListItem>
 
         <ListItem button onClick={() => router.push('/plans')}>
@@ -52,28 +65,28 @@ export default function ActionMenu() {
 
         <ListItem button onClick={() => router.push('/messages')}>
           <ListItemIcon>
-            <InboxIcon />
+            <MessageIcon />
           </ListItemIcon>
           <ListItemText primary="Messages" />
         </ListItem>
 
         <ListItem button onClick={() => router.push('/tasks')}>
           <ListItemIcon>
-            <DraftsIcon />
+            <PlaylistAddCheckIcon />
           </ListItemIcon>
           <ListItemText primary="Tasks" />
         </ListItem>
 
         <ListItem button onClick={() => router.push('/cases')}>
           <ListItemIcon>
-            <DraftsIcon />
+            <WorkIcon />
           </ListItemIcon>
           <ListItemText primary="Cases" />
         </ListItem>
 
         <ListItem button onClick={() => router.push('/vault')}>
           <ListItemIcon>
-            <DraftsIcon />
+            <LockIcon />
           </ListItemIcon>
           <ListItemText primary="Vault" />
         </ListItem>
@@ -87,7 +100,7 @@ export default function ActionMenu() {
 
         <ListItem button onClick={() => router.push('/')}>
           <ListItemIcon>
-            <DraftsIcon />
+            <ExitToAppIcon />
           </ListItemIcon>
           <ListItemText primary="Logout" />
         </ListItem>

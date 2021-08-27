@@ -7,7 +7,7 @@ import ActionMenu from "../../components/common/actionmenu";
 import Hidden from "@material-ui/core/Hidden";
 import PageHeader from "../../components/common/pageheader";
 import Box from "@material-ui/core/Box";
-import CasesTable from "../../components/cases/table";
+import CasesTable from "../../components/arrangements/table";
 
 function Index() {
 
