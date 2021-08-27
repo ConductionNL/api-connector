@@ -11,6 +11,7 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import PersonIcon from '@material-ui/icons/Person';
 
 import {makeStyles} from "@material-ui/core/styles";
+import { useRouter } from 'next/router';
 
 const useStyles = makeStyles((theme) => ({
   sectionDesktop: {
@@ -26,23 +27,36 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
+
 export default function Footer() {
   const classes = useStyles();
-  const [value, setValue] = React.useState(0);
+  const router = useRouter()
+
+  const [state, setState] = React.useState({
+    bottumNavigation: 0,
+  });
+
+  const handleChange = (event, newValue) => {
+    if(newValue == 'displayUserDrawer'){
+      setState({ ...state, ['displayUserDrawer']: true });
+    }
+    else {
+      router.push('/' + newValue)
+    }
+    setState({ ...state, ['bottumNavigation']: newValue });
+  };
+
 
   return (
     <footer>
       <BottomNavigation
-        value={value}
-        onChange={(event, newValue) => {
-          setValue(newValue);
-        }}
+        value={state['bottumNavigation']} onChange={handleChange}
         showLabels
         className={classes.sectionMobile}
       >
-        <BottomNavigationAction label="Messages" icon={<MailIcon />} />
-        <BottomNavigationAction label="Tasks" icon={<NotificationsIcon />} />
-        <BottomNavigationAction label="User" icon={<PersonIcon />} />
+        <BottomNavigationAction label="Messages" value="messages" icon={<MailIcon />} />
+        <BottomNavigationAction label="Tasks" value="tasks" icon={<NotificationsIcon />} />
+        <BottomNavigationAction label="User" value="displayUserDrawer" icon={<PersonIcon />} />
       </BottomNavigation>
       <Box
         px={{ xs: 3, sm: 10 }}

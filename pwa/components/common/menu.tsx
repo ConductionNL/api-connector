@@ -103,6 +103,7 @@ export default function MainMenu() {
   const [state, setState] = React.useState({
     displayMenuDrawer: false,
     displayUserDrawer: false,
+    loggedIn: false,
   });
 
   const toggleDrawer = (anchor, open) => (event) => {
@@ -113,6 +114,11 @@ export default function MainMenu() {
     setState({ ...state, [anchor]: open });
   };
 
+  const loginUser = (status) => {
+
+
+    setState({ ...state, ['loggedIn']: status });
+  };
 
   return (
     <div className={classes.grow}>
@@ -182,6 +188,7 @@ export default function MainMenu() {
           </div>
 
           <div className={classes.sectionMobile}>
+
             <IconButton aria-label="show 17 new notifications" color="inherit" onClick={toggleDrawer('displayUserDrawer', true)}>
               <PersonIcon/>
             </IconButton>
@@ -196,9 +203,10 @@ export default function MainMenu() {
               </div>
             </Drawer>
 
-            <Typography variant="h5">
+            <Typography variant="h5" >
               Inloggen
             </Typography>
+
           </div>
         </Toolbar>
         </Container>
