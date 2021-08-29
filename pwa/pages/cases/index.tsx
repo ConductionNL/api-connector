@@ -29,9 +29,8 @@ function Index() {
             <ActionMenu />
           </Grid>
         </Hidden>
-        <Grid item xs={12} md={10}>
+        <Grid item sm={12} md={10}>
           <PageHeader title={title} />
-
           <Box paddingTop={2} paddingBottom={2}>
             <p>Description about cases</p>
           </Box>
