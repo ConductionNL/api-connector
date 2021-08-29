@@ -33,7 +33,7 @@ function Index() {
           <PageHeader title={title} />
 
           <Box paddingTop={2} paddingBottom={2}>
-            Zaken zijn stom
+            <p>Description about cases</p>
           </Box>
 
           <CasesTable />

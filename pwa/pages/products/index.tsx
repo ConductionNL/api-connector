@@ -10,7 +10,7 @@ import Link from 'next/link'
 import Layout from "../../components/common/layout";
 import Grid from "@material-ui/core/Grid";
 import ActionMenu from "../../components/common/actionmenu";
-import CasesTable from "../../components/cases/table";
+import CasesTable from "../../components/arrangements/table";
 
 function Index() {
 

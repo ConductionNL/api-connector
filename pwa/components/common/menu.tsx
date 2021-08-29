@@ -18,10 +18,9 @@ import PersonIcon from '@material-ui/icons/Person';
 
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
-import cookieCutter from 'cookie-cutter';
 import Link from "next/link";
 import Drawer from '@material-ui/core/Drawer';
-import { useRouter } from 'next/router';
+import {useRouter} from 'next/router';
 
 
 import ActionMenu from "../../components/common/actionmenu";
@@ -111,104 +110,109 @@ export default function MainMenu() {
       return;
     }
 
-    setState({ ...state, [anchor]: open });
+    setState({...state, [anchor]: open});
   };
 
   const loginUser = (status) => {
 
 
-    setState({ ...state, ['loggedIn']: status });
+    setState({...state, ['loggedIn']: status});
   };
 
   return (
     <div className={classes.grow}>
       <AppBar position="static">
         <Container>
-        <Toolbar>
+          <Toolbar>
 
-          <div className={classes.sectionDesktop}>
-          <Typography variant="h6" color="inherit">
-            <Link href="/news" color="inherit" >
-              News
-            </Link>
-            <Link href="/products" color="inherit" >
-              Services
-            </Link>
-          </Typography>
-          </div>
-
-          <div className={classes.sectionMobile}>
-            <IconButton aria-label="show 17 new notifications" color="inherit" onClick={toggleDrawer('displayMenuDrawer', true)}>
-                <MenuIcon/>
-            </IconButton>
-          <Drawer anchor={'left'} open={state['displayMenuDrawer']} onClose={toggleDrawer('displayMenuDrawer', false)}>
-            <div
-              className={classes.list}
-              role="presentation"
-              onClick={toggleDrawer('displayMenuDrawer', false)}
-              onKeyDown={toggleDrawer('displayMenuDrawer', false)}
-            >
-              <DrawerMenu />
+            <div className={classes.sectionDesktop}>
+              <Typography variant="h6" color="inherit">
+                <Link href="/news" color="inherit">
+                  <span style={{color: 'white'}}>
+                  News
+                  </span>
+                </Link>
+                <Link href="/products" color="inherit">
+                  <span style={{color: 'white'}}>
+                  Services
+                  </span>
+                </Link>
+              </Typography>
             </div>
-          </Drawer>
-          </div>
 
+            <div className={classes.sectionMobile}>
+              <IconButton aria-label="show 17 new notifications" color="inherit"
+                          onClick={toggleDrawer('displayMenuDrawer', true)}>
+                <MenuIcon/>
+              </IconButton>
+              <Drawer anchor={'left'} open={state['displayMenuDrawer']}
+                      onClose={toggleDrawer('displayMenuDrawer', false)}>
+                <div
+                  className={classes.list}
+                  role="presentation"
+                  onClick={toggleDrawer('displayMenuDrawer', false)}
+                  onKeyDown={toggleDrawer('displayMenuDrawer', false)}
+                >
+                  <DrawerMenu/>
+                </div>
+              </Drawer>
+            </div>
 
-          <div className={classes.grow}/>
+            <div className={classes.grow}/>
 
+            <div className={classes.sectionDesktop}>
+              <IconButton aria-label="show 4 new mails" color="inherit" onClick={() => router.push('/messages')}>
+                <Badge badgeContent={4} color="secondary">
+                  <MailIcon/>
+                </Badge>
+              </IconButton>
+              <IconButton aria-label="show 17 new notifications" color="inherit" onClick={() => router.push('/tasks')}>
+                <Badge badgeContent={17} color="secondary">
+                  <NotificationsIcon/>
+                </Badge>
+              </IconButton>
 
-          <div className={classes.sectionDesktop}>
-            <IconButton aria-label="show 4 new mails" color="inherit" onClick={() => router.push('/messages')}>
-              <Badge badgeContent={4} color="secondary">
-                <MailIcon/>
-              </Badge>
-            </IconButton>
-            <IconButton aria-label="show 17 new notifications" color="inherit" onClick={() => router.push('/tasks')}>
-              <Badge badgeContent={17} color="secondary">
-                <NotificationsIcon/>
-              </Badge>
-            </IconButton>
+              <IconButton aria-label="show 17 new notifications" color="inherit" onClick={() => router.push('/user')}>
+                <PersonIcon/>
+              </IconButton>
 
-            <IconButton aria-label="show 17 new notifications" color="inherit" onClick={() => router.push('/user')}>
-              <PersonIcon/>
-            </IconButton>
+              <IconButton
+                edge="end"
+                aria-label="account of current user"
+                aria-haspopup="true"
+                onClick={() => router.push('/user')}
+                color="inherit"
+              >
+                <Typography variant="h5">
+                  Inloggen
+                </Typography>
+              </IconButton>
+            </div>
 
+            <div className={classes.sectionMobile}>
 
-            <IconButton
-              edge="end"
-              aria-label="account of current user"
-              aria-haspopup="true"
-              onClick={() => router.push('/user')}
-              color="inherit"
-            >
+              <IconButton aria-label="show 17 new notifications" color="inherit"
+                          onClick={toggleDrawer('displayUserDrawer', true)}>
+                <PersonIcon/>
+              </IconButton>
+              <Drawer anchor={'right'} open={state['displayUserDrawer']}
+                      onClose={toggleDrawer('displayUserDrawer', false)}>
+                <div
+                  className={classes.list}
+                  role="presentation"
+                  onClick={toggleDrawer('displayUserDrawer', false)}
+                  onKeyDown={toggleDrawer('displayUserDrawer', false)}
+                >
+                  <ActionMenu/>
+                </div>
+              </Drawer>
+
               <Typography variant="h5">
                 Inloggen
               </Typography>
-            </IconButton>
-          </div>
 
-          <div className={classes.sectionMobile}>
-
-            <IconButton aria-label="show 17 new notifications" color="inherit" onClick={toggleDrawer('displayUserDrawer', true)}>
-              <PersonIcon/>
-            </IconButton>
-            <Drawer anchor={'right'} open={state['displayUserDrawer']} onClose={toggleDrawer('displayUserDrawer', false)}>
-              <div
-                className={classes.list}
-                role="presentation"
-                onClick={toggleDrawer('displayUserDrawer', false)}
-                onKeyDown={toggleDrawer('displayUserDrawer', false)}
-              >
-                <ActionMenu />
-              </div>
-            </Drawer>
-
-            <Typography variant="h5" >
-              Inloggen
-            </Typography>
-
-          </div>
-        </Toolbar>
+            </div>
+          </Toolbar>
         </Container>
       </AppBar>
     </div>

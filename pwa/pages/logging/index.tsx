@@ -4,19 +4,23 @@ import Link from 'next/link'
 import Layout from "../../components/common/layout";
 import Grid from "@material-ui/core/Grid";
 import ActionMenu from "../../components/common/actionmenu";
+import Hidden from "@material-ui/core/Hidden";
+import PageHeader from "../../components/common/pageheader";
 
 function Index() {
 
-  const title = 'My processing';
+  const title = 'My logging';
 
   return <>
-    <Layout title={title} description="waar kan ik deze description zien"  headerTitle={title}>
-      <Grid container>
-        <Grid item xs={4}>
-          <ActionMenu />
-        </Grid>
-        <Grid item xs={8} >
-
+    <Layout title={title} description="waar kan ik deze description zien"  headerTitle={title} style={{padding: "8px"}}>
+      <Grid container spacing={3}>
+        <Hidden smDown>
+          <Grid item md={2}>
+            <ActionMenu />
+          </Grid>
+        </Hidden>
+        <Grid item xs={12} md={10}>
+          <PageHeader title={title} />
         </Grid>
       </Grid>
     </Layout>
