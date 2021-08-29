@@ -10,6 +10,8 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 
+import Box from "@material-ui/core/Box";
+
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import LockIcon from '@material-ui/icons/Lock';
@@ -25,6 +27,8 @@ import {useRouter} from 'next/router';
 
 import ActionMenu from "../../components/common/actionmenu";
 import DrawerMenu from "../../components/common/drawermenu";
+import PageHeader from "./pageheader";
+import Grid from "@material-ui/core/Grid";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -126,18 +130,24 @@ export default function MainMenu() {
           <Toolbar>
 
             <div className={classes.sectionDesktop}>
-              <Typography variant="h6" color="inherit">
-                <Link href="/news" color="inherit">
-                  <span style={{color: 'white'}}>
-                  News
-                  </span>
-                </Link>
-                <Link href="/products" color="inherit">
-                  <span style={{color: 'white'}}>
-                  Services
-                  </span>
-                </Link>
-              </Typography>
+              <Box paddingRight={2}>
+                <Typography variant="h6" color="inherit">
+                  <Link href="/news" >
+                    <span style={{color: 'white'}}>
+                    News
+                    </span>
+                  </Link>
+                </Typography>
+              </Box>
+              <Box paddingRight={2}>
+                <Typography variant="h6" color="inherit">
+                  <Link href="/products" >
+                    <span style={{color: 'white'}}>
+                    Products
+                    </span>
+                  </Link>
+                </Typography>
+              </Box>
             </div>
 
             <div className={classes.sectionMobile}>

@@ -8,7 +8,7 @@ function Index() {
   const title = 'Affairs';
 
   return <>
-    <Layout title={title} description="waar kan ik deze description zien"  headerTitle={title}>
+    <Layout title={title} description="waar kan ik deze description zien" >
       <p>{title}</p>
     </Layout>
   </>

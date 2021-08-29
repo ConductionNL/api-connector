@@ -10,14 +10,13 @@ import Link from 'next/link'
 import Layout from "../../components/common/layout";
 import Grid from "@material-ui/core/Grid";
 import ActionMenu from "../../components/common/actionmenu";
-import CasesTable from "../../components/arrangements/table";
 
 function Index() {
 
-  const zakenHref = '/products/' + Math.floor(Math.random() * 10);
+  const title = 'Products'
 
   return <>
-    <Layout title="Zaken index" description="waar kan ik deze description zien">
+    <Layout title={title} description="waar kan ik deze description zien">
 
       <Grid container>
         <Grid item xs={4}>

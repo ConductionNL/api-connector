@@ -7,7 +7,7 @@ import ActionMenu from "../../components/common/actionmenu";
 import Hidden from "@material-ui/core/Hidden";
 import PageHeader from "../../components/common/pageheader";
 import Box from "@material-ui/core/Box";
-import CasesTable from "../../components/arrangements/table";
+import PlansTable from "../../components/plans/table";
 
 function Index() {
 
@@ -21,8 +21,12 @@ function Index() {
             <ActionMenu />
           </Grid>
         </Hidden>
-        <Grid item xs={12} md={10}>
+        <Grid item sm={12} md={10}>
           <PageHeader title={title} />
+          <Box paddingTop={2} paddingBottom={2}>
+            <p>Your personal plans</p>
+          </Box>
+          <PlansTable />
         </Grid>
       </Grid>
     </Layout>
