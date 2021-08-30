@@ -13,27 +13,9 @@ import Hidden from "@material-ui/core/Hidden";
 import ActionMenu from "../../components/common/actionmenu";
 import PageHeader from "../../components/common/pageheader";
 import Box from "@material-ui/core/Box";
+import ArrangementsTestData from "../../components/arrangements/testData";
 
-let posts = [
-  {
-    id: 1,
-    name: 'Parkeervergunning Amsterdam',
-    description: 'Lorem ipsum',
-    status: 'Hier heeft u recht op'
-  },
-  {
-    id: 2,
-    name: 'Recht om zonnepanelen te plaatsen',
-    description: 'Lorem ipsum',
-    status: 'Recht nog niet bevestigd'
-  },
-  {
-    id: 3,
-    name: 'Parkeervergunning Utrecht',
-    description: 'Lorem ipsum',
-    status: 'Hier heeft u geen recht op'
-  }
-]
+let posts = ArrangementsTestData()
 
 const Product = () => {
   const router = useRouter()
@@ -66,9 +48,8 @@ const Product = () => {
         </Grid>
       </Layout>
     </>
-  } else {
-    return <></>
   }
+  return <></>
 }
 
 export default Product
