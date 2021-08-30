@@ -79,7 +79,7 @@ function Index() {
         <Grid item sm={12} md={10}>
           <PageHeader title={title} />
           <Box paddingTop={2} paddingBottom={2}>
-            <p>Your vault is a place wehere you can store and optionaly share person information, these might be peases of proof or claims (e.g. proof of recidence) or docuemtn that are needed for a certain arangment</p>
+            <p>Uw kluis is een plaats waar u persoonsinformatie kunt opslaan en optioneel kunt delen, dit kunnen bewijzen zijn of claims (bijv. bewijs van verblijf) of documenten die nodig zijn voor een bepaalde regeling.</p>
           </Box>
           <Grid container>
             <Grid item xs={3}>
@@ -91,8 +91,8 @@ function Index() {
                 aria-label="Vertical tabs example"
                 className={classes.tabs}
               >
-                <Tab label="Proofs" {...a11yProps(0)} />
-                <Tab label="Documents" {...a11yProps(1)} />
+                <Tab label="Bewijzen" {...a11yProps(0)} />
+                <Tab label="Documenten" {...a11yProps(1)} />
               </Tabs>
             </Grid>
             <Grid item xs={9}>

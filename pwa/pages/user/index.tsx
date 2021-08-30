@@ -8,7 +8,7 @@ import Hidden from "@material-ui/core/Hidden";
 import PageHeader from "../../components/common/pageheader";
 import Box from "@material-ui/core/Box";
 import TaskList from "../../components/tasks/list";
-import Messages from "../../components/tasks/messages";
+import Messages from "../../components/messages/list";
 import Typography from "@material-ui/core/Typography";
 import ArrangementsCards from "../../components/arrangements/cards";
 import {makeStyles} from "@material-ui/core";
@@ -23,6 +23,15 @@ function Index() {
 
   const title = 'Overview';
   const classes = useStyles();
+  const messages = [
+    {
+      id: "19203841",
+      name: "Welkom bij Open Inwoner",
+      sender: "Gemeente Demodam",
+      description: " — U bent succesvol geregistreerd bij Open Inwoner",
+      dateCreated: "30-08-2021"
+    }];
+
 
   return <>
     <Layout title={title} description="waar kan ik deze description zien" >
@@ -45,7 +54,7 @@ function Index() {
             </Grid>
             <Grid item xs={6} >
               <Typography variant="h6">Berichten</Typography>
-              <Messages />
+              <Messages messages={messages} />
             </Grid>
             <Grid item xs={6} >
               <Typography variant="h6">Taken</Typography>
