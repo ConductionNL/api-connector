@@ -134,7 +134,7 @@ export default function MainMenu() {
                 <Typography variant="h6" color="inherit">
                   <Link href="/news" >
                     <span style={{color: 'white'}}>
-                    News
+                    Nieuws
                     </span>
                   </Link>
                 </Typography>
@@ -143,7 +143,7 @@ export default function MainMenu() {
                 <Typography variant="h6" color="inherit">
                   <Link href="/products" >
                     <span style={{color: 'white'}}>
-                    Products
+                    Producten
                     </span>
                   </Link>
                 </Typography>

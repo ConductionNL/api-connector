@@ -38,7 +38,7 @@ export default function Footer() {
 
   const handleChange = (event, newValue) => {
     if(newValue == 'displayUserDrawer'){
-
+      // setState({ ...state, ['displayUserDrawer']: true });
     }
     else {
       router.push('/' + newValue)

@@ -59,7 +59,7 @@ function Index() {
     },
   }));
 
-  const title = 'My vault';
+  const title = 'Mijn datakluis';
 
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
@@ -70,7 +70,7 @@ function Index() {
 
   return <>
     <Layout title={title} description="waar kan ik deze description zien">
-      <Grid container spacing={3}>
+      <Grid container >
         <Hidden smDown>
           <Grid item md={2}>
             <ActionMenu />
