@@ -17,7 +17,7 @@ import CasesTable from "../../components/cases/table";
 
 function Index() {
 
-  const title = 'Cases';
+  const title = 'Zaken';
   const zakenHref = '/products/' + Math.floor(Math.random() * 10);
 
   return <>
@@ -32,7 +32,7 @@ function Index() {
         <Grid item sm={12} md={10}>
           <PageHeader title={title} />
           <Box paddingTop={2} paddingBottom={2}>
-            <p>Description about cases</p>
+            <p>Een zaak is een proces met een duidelijke aanleiding, bijvoorbeeld een omgevingsvergunning. Deze aanleiding of melding door burger of bedrijf leidt tot een resultaat; zoals toegekend of afgewezen.</p>
           </Box>
 
           <CasesTable />

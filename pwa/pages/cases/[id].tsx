@@ -13,8 +13,6 @@ import Hidden from "@material-ui/core/Hidden";
 import ActionMenu from "../../components/common/actionmenu";
 import PageHeader from "../../components/common/pageheader";
 import Box from "@material-ui/core/Box";
-import StandardCard from "../../components/common/card";
-import ArrangementsTable from "../../components/arrangements/table";
 
 const Product = () => {
   const title = "Trouwen | 95128942"

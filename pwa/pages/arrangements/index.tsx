@@ -7,19 +7,15 @@ import Head from "next/head";
 import Header from "../../components/common/header";
 import PageHeader from "../../components/common/pageheader";
 import Typography from '@material-ui/core/Typography';
-import Link from 'next/link'
 
 import Layout from "../../components/common/layout";
 import Grid from "@material-ui/core/Grid";
 import Hidden from '@material-ui/core/Hidden';
 import ActionMenu from "../../components/common/actionmenu";
-import ArrangementsTable from "../../components/arrangements/table";
-import StandardCard from "../../components/common/card";
+import ArrangementsCards from "../../components/arrangements/cards";
 import {makeStyles} from "@material-ui/core/styles";
-import TableBody from "@material-ui/core/TableBody";
-import TableRow from "@material-ui/core/TableRow";
-
-import jsondata from '../../public/testdata.json';
+import { Alert, AlertTitle } from "@material-ui/lab";
+import {Link} from "@material-ui/core";
 
 const useStyles = makeStyles({
   marginTop: {
@@ -27,10 +23,10 @@ const useStyles = makeStyles({
   },
 });
 
-function Index({posts}) {
+function Index() {
   const classes = useStyles();
+  const title = 'Regelingen';
 
-  const title = 'Arrangements';
   return <>
     <Layout title={title} description="waar kan ik deze description zien">
 
@@ -45,59 +41,21 @@ function Index({posts}) {
           <PageHeader title={title}/>
 
           <Box paddingTop={2} paddingBottom={2}>
-            <p>Description about arrangements</p>
+            <p>Een regeling is een gemeentelijk product waar je recht op kan hebben of recht voor kunt aanvragen bij de overheid.</p>
           </Box>
 
-          {
-            posts != undefined && posts != null &&
-            <Grid container spacing={2}>
-              {posts.map((post) => (
-                <Grid item xs={4}>
-                  <StandardCard
-                    smallUpperTitle={"Word of the day"}
-                    title={post.name}
-                    secondaryTitle="12-04-2020"
-                    description={post.description}
-                  />
-                </Grid>
-              ))}
-            </Grid>
-          }
+          {/*If not logged in:*/}
+          <Alert severity="warning" style={{marginBottom: "10px"}}>
+            <AlertTitle>Inloggen</AlertTitle>
+            Om uw regelingen te personaliseren moet u eerst inloggen! — Klik <strong><Link href={"/user"}>hier</Link></strong> om in te loggen.
+          </Alert>
 
-
-          <Box className={classes.marginTop}>
-            <ArrangementsTable/>
-          </Box>
+          <ArrangementsCards/>
 
         </Grid>
       </Grid>
     </Layout>
   </>
-}
-
-export async function getStaticProps() {
-  // Call an external API endpoint to get posts.
-  // You can use any data fetching library
-
-  let posts = [
-    {
-    name: 'An arrangement',
-    description: 'Lorem ipsum'
-    },
-    {
-    name: 'An arrangement 2',
-    description: 'Lorem ipsum'
-    },
-    {
-    name: 'An arrangement 3',
-    description: 'Lorem ipsum'
-    }
-  ]
-
-  // By returning { props: { posts } }, this page
-  // will receive `posts` as a prop at build time
-  return {props: {posts}};
-
 }
 
 export default Index
