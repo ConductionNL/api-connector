@@ -106,11 +106,11 @@ function Index() {
 
       <Grid container spacing={3}>
         <Hidden smDown>
-          <Grid item md={2}>
+          <Grid item md={3}>
             <ActionMenu/>
           </Grid>
         </Hidden>
-        <Grid item sm={12} md={10}>
+        <Grid item sm={12} md={9}>
           <PageHeader title={title}/>
           <Box paddingTop={3} paddingBottom={2}>
             <PersonalInfo person={person}/>

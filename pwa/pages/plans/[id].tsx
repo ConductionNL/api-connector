@@ -40,12 +40,12 @@ const Plan = () => {
 
         <Grid container>
           <Hidden smDown>
-            <Grid item md={2}>
+            <Grid item md={3}>
               <ActionMenu/>
             </Grid>
           </Hidden>
 
-          <Grid item xs={12} md={10}>
+          <Grid item xs={12} md={9}>
             <PageHeader title={title}/>
 
             <Box paddingTop={2} paddingBottom={2}>

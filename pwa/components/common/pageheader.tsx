@@ -9,6 +9,12 @@ const PageHeader = ({ title="Welcome to Demodam!", h1=false, description="defaul
 
     return (
     <>
+      <Breadcrumbs aria-label="breadcrumb">
+        <Link color="inherit" href="/user" >
+          Home
+        </Link>
+        <Typography color="textPrimary">{title}</Typography>
+      </Breadcrumbs>
       {
         h1 == true ?
         <Typography variant="h1">
@@ -19,16 +25,6 @@ const PageHeader = ({ title="Welcome to Demodam!", h1=false, description="defaul
           </Typography>
       }
 
-      <Breadcrumbs aria-label="breadcrumb">
-        <Link color="inherit" href="/" >
-          Material-UI
-        </Link>
-        <Link color="inherit" href="/getting-started/installation/">
-          Core
-        </Link>
-        <Typography color="textPrimary">Breadcrumb</Typography>
-      </Breadcrumbs>
-      <Divider />
     </>
   );
 
