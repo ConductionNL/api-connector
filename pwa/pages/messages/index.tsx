@@ -15,14 +15,11 @@ function Index() {
   const description = 'Hier ziet u een overzicht van berichten die naar u verzonden zijn.';
   const messages = [
     {
-    id: "19203841",
-    name: "Brunch this weekend?",
-    description: " — I'll be in your neighborhood doing errands this…"
-    },
-    {
-      id: "17824194",
-      name: "Brunch this weekend? 2",
-      description: " — I'll be in your neighborhood doing errands this… 2"
+      id: "19203841",
+      name: "Welkom bij Open Inwoner",
+      sender: "Gemeente Demodam",
+      description: " — U bent succesvol geregistreerd bij Open Inwoner",
+      dateCreated: "30-08-2021"
     }];
 
   return <>
@@ -38,7 +35,7 @@ function Index() {
           <Box paddingTop={2} paddingBottom={2}>
             <p>{description}</p>
           </Box>
-          <MessagesList messages={messages}/>
+          <MessagesList messages={messages} showDesc={true} />
         </Grid>
       </Grid>
     </Layout>

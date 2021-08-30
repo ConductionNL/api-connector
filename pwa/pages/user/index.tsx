@@ -23,18 +23,15 @@ function Index() {
 
   const title = 'Overview';
   const classes = useStyles();
-  
   const messages = [
     {
       id: "19203841",
-      name: "Brunch this weekend?",
-      description: " — I'll be in your neighborhood doing errands this…"
-    },
-    {
-      id: "17824194",
-      name: "Brunch this weekend? 2",
-      description: " — I'll be in your neighborhood doing errands this… 2"
+      name: "Welkom bij Open Inwoner",
+      sender: "Gemeente Demodam",
+      description: " — U bent succesvol geregistreerd bij Open Inwoner",
+      dateCreated: "30-08-2021"
     }];
+
 
   return <>
     <Layout title={title} description="waar kan ik deze description zien" >
