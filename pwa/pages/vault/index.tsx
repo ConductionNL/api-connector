@@ -100,10 +100,8 @@ function Index() {
             </Grid>
             <Grid item xs={9}>
               <TabPanel value={value} index={0}>
-                <ProofTable/>
               </TabPanel>
               <TabPanel value={value} index={1}>
-                <DocumentTable/>
               </TabPanel>
             </Grid>
           </Grid>

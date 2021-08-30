@@ -8,20 +8,28 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Button from "@material-ui/core/Button";
 import {Link} from "@material-ui/core";
-import DocumentsTestData from "../data/documents";
 
-const rows = DocumentsTestData();
 
-export default function DocumentTable() {
+function createData(name, reference) {
+  return {name, reference};
+}
+
+const rows = [
+  createData('Trouwen', '95128942'),
+  createData('Begraven', '12938149'),
+];
+
+
+export default function ArrangementsTable() {
 
   return (
     <TableContainer component={Paper}>
       <Table aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>Document</TableCell>
-            <TableCell align="right">Reference</TableCell>
-            {/*<TableCell align="right"></TableCell>*/}
+            <TableCell>Naam</TableCell>
+            <TableCell align="right">Referentie</TableCell>
+            <TableCell align="right"></TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -31,7 +39,7 @@ export default function DocumentTable() {
               <TableCell align="right">{row.reference}</TableCell>
               <TableCell align="right">
                 <Button variant="outlined" color="primary">
-                  <Link href={"/documents/"+row.reference}>
+                  <Link href="/cases/1">
                     Bekijken
                   </Link>
                 </Button>

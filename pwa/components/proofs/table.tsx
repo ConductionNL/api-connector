@@ -8,20 +8,27 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Button from "@material-ui/core/Button";
 import {Link} from "@material-ui/core";
-import ProofsTestData from "../data/proofs";
 
-const rows = ProofsTestData();
+function createData(name, reference) {
+  return {name, reference};
+}
 
-export default function ProofTable() {
+const rows = [
+  createData('Trouwen', '95128942'),
+  createData('Begraven', '12938149'),
+];
+
+
+export default function ArrangementsTable() {
 
   return (
     <TableContainer component={Paper}>
       <Table aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>Bewijs</TableCell>
+            <TableCell>Naam</TableCell>
             <TableCell align="right">Referentie</TableCell>
-            {/*<TableCell align="right"></TableCell>*/}
+            <TableCell align="right"></TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -31,7 +38,7 @@ export default function ProofTable() {
               <TableCell align="right">{row.reference}</TableCell>
               <TableCell align="right">
                 <Button variant="outlined" color="primary">
-                  <Link href={"/proofs/"+row.reference}>
+                  <Link href="/cases/1">
                     Bekijken
                   </Link>
                 </Button>

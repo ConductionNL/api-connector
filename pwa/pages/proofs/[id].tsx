@@ -13,18 +13,13 @@ import Hidden from "@material-ui/core/Hidden";
 import ActionMenu from "../../components/common/actionmenu";
 import PageHeader from "../../components/common/pageheader";
 import Box from "@material-ui/core/Box";
-import ProofsTestData from "../../components/data/proofs";
 
-const rows = ProofsTestData()
 
 const Proof = () => {
   const router = useRouter()
-  const query = router.query
-  const item = rows.filter(function (item) {
-    return item.reference == parseInt(query.id as string, 10);
-  });
-  if (typeof item[0] != "undefined") {
-    const title = item[0]['name'] + " | " + query.id
+
+
+  const title = 'Mijn claim';
 
     return <>
       <Layout title={title} description="waar kan ik deze description zien">
@@ -48,7 +43,6 @@ const Proof = () => {
       </Layout>
     </>
   }
-  return <></>
-}
+
 
 export default Proof
