@@ -19,6 +19,18 @@ import TasksTable from "../../components/tasks/table";
 function Index() {
 
   const title = 'Mijn taken'
+  const description = 'Jouw persoonlijke taken'
+  const tasks = [
+    {
+      id: 1,
+      name: "Taak 1",
+      description: "Omschrijving van taak 1"
+    },
+    {
+      id: 2,
+      name: "Taak 2",
+      description: "Omschrijving van taak 2"
+    }];
 
   return <>
     <Layout title={title} description="waar kan ik deze description zien">
@@ -31,10 +43,10 @@ function Index() {
         <Grid item sm={12} md={10}>
           <PageHeader title={title} />
           <Box paddingTop={2} paddingBottom={2}>
-            <p>Jouw persoonlijke taken</p>
+            <p>{description}</p>
           </Box>
 
-          <TaskTable />
+          <TaskTable tasks={tasks}/>
         </Grid>
       </Grid>
     </Layout >
