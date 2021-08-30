@@ -8,16 +8,9 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Button from "@material-ui/core/Button";
 import {Link} from "@material-ui/core";
+import DocumentsTestData from "../data/documents";
 
-function createData(name, reference) {
-  return {name, reference};
-}
-
-const rows = [
-  createData('Document 1', '95128944'),
-  createData('Document 2', '12938147'),
-];
-
+const rows = DocumentsTestData();
 
 export default function DocumentTable() {
 

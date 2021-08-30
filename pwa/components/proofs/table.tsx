@@ -8,16 +8,9 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Button from "@material-ui/core/Button";
 import {Link} from "@material-ui/core";
+import ProofsTestData from "../data/proofs";
 
-function createData(name, reference) {
-  return {name, reference};
-}
-
-const rows = [
-  createData('Bewijs 1', '95128943'),
-  createData('Bewijs 2', '12938148'),
-];
-
+const rows = ProofsTestData();
 
 export default function ProofTable() {
 

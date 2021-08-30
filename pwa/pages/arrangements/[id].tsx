@@ -15,9 +15,9 @@ import PageHeader from "../../components/common/pageheader";
 import Box from "@material-ui/core/Box";
 import ArrangementsTestData from "../../components/data/arrangements";
 
-let posts = ArrangementsTestData()
+const posts = ArrangementsTestData()
 
-const Product = () => {
+const Arrangement = () => {
   const router = useRouter()
   const query = router.query
   const item = posts.filter(function (item) {
@@ -52,4 +52,4 @@ const Product = () => {
   return <></>
 }
 
-export default Product
+export default Arrangement
