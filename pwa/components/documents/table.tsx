@@ -14,20 +14,20 @@ function createData(name, reference) {
 }
 
 const rows = [
-  createData('Bewijs 1', '95128943'),
-  createData('Bewijs 2', '12938148'),
+  createData('Document 1', '95128944'),
+  createData('Document 2', '12938147'),
 ];
 
 
-export default function ProofTable() {
+export default function DocumentTable() {
 
   return (
     <TableContainer component={Paper}>
       <Table aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>Bewijs</TableCell>
-            <TableCell align="right">Referentie</TableCell>
+            <TableCell>Document</TableCell>
+            <TableCell align="right">Reference</TableCell>
             {/*<TableCell align="right"></TableCell>*/}
           </TableRow>
         </TableHead>
@@ -36,13 +36,13 @@ export default function ProofTable() {
             <TableRow key={row.name}>
               <TableCell align="left">{row.name}</TableCell>
               <TableCell align="right">{row.reference}</TableCell>
-              {/*<TableCell align="right">*/}
-              {/*  <Button variant="outlined" color="primary">*/}
-              {/*    <Link href="/cases/1">*/}
-              {/*      Bekijken*/}
-              {/*    </Link>*/}
-              {/*  </Button>*/}
-              {/*</TableCell>*/}
+              <TableCell align="right">
+                <Button variant="outlined" color="primary">
+                  <Link href={"/documents/"+row.reference}>
+                    Bekijken
+                  </Link>
+                </Button>
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>

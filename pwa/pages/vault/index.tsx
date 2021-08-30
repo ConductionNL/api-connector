@@ -8,8 +8,8 @@ import Hidden from "@material-ui/core/Hidden";
 import PageHeader from "../../components/common/pageheader";
 import Box from "@material-ui/core/Box";
 import {Tab, Tabs, Typography} from "@material-ui/core";
-import ProofTable from "../../components/data/proofs";
-import DocumentTable from "../../components/data/documents";
+import ProofTable from "../../components/proofs/table";
+import DocumentTable from "../../components/documents/table";
 import {makeStyles, Theme} from "@material-ui/core/styles";
 
 interface TabPanelProps {
