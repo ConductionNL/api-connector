@@ -8,6 +8,8 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Grid from "@material-ui/core/Grid";
+import Link from "@material-ui/core/Link";
+import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
 
 const useStyles = makeStyles({
   root: {
@@ -44,8 +46,10 @@ export default function NewsCard({news = null}) {
                 </CardContent>
               </CardActionArea>
               <CardActions>
-                <Button size="small" color="primary">
-                  Learn More
+                <Button variant="outlined" color="primary">
+                  <Link href={"/news/" + post.id}>
+                    Lees meer
+                  </Link>
                 </Button>
               </CardActions>
             </Card>

@@ -13,21 +13,21 @@ function Index() {
 
   const title = 'Nieuws';
 
-  let news = [
+  const news = [
     {
-      id: '1',
+      id: 1,
       title: 'Woord van de dag',
       name: 'Nieuws',
       description: 'Lorem ipsum'
     },
     {
-      id: '2',
+      id: 2,
       title: 'Woord van de dag',
       name: 'Nieuws 2',
       description: 'Lorem ipsum'
     },
     {
-      id: '3',
+      id: 3,
       title: 'Woord van de dag',
       name: 'Nieuws 3',
       description: 'Lorem ipsum'
