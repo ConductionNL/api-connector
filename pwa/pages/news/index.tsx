@@ -7,7 +7,6 @@ import Hidden from "@material-ui/core/Hidden";
 import ActionMenu from "../../components/common/actionmenu";
 import PageHeader from "../../components/common/pageheader";
 import Box from "@material-ui/core/Box";
-import NewsTable from "../../components/news/table";
 import NewsCard from "../../components/news/card";
 
 function Index() {
