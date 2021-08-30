@@ -8,8 +8,8 @@ import Hidden from "@material-ui/core/Hidden";
 import PageHeader from "../../components/common/pageheader";
 import Box from "@material-ui/core/Box";
 import {Tab, Tabs, Typography} from "@material-ui/core";
-import ProofTable from "../../components/proofs/table";
-import DocumentTable from "../../components/documents/table";
+import ProofTable from "../../components/vault/proofs";
+import DocumentTable from "../../components/vault/documents";
 import {makeStyles, Theme} from "@material-ui/core/styles";
 
 interface TabPanelProps {
@@ -44,6 +44,7 @@ function TabPanel(props: TabPanelProps) {
     </div>
   );
 }
+
 function Index() {
 
 
@@ -70,17 +71,18 @@ function Index() {
 
   return <>
     <Layout title={title} description="waar kan ik deze description zien">
-      <Grid container >
+      <Grid container>
         <Hidden smDown>
           <Grid item md={2}>
-            <ActionMenu />
+            <ActionMenu/>
           </Grid>
         </Hidden>
         <Grid item sm={12} md={10}>
-          <PageHeader title={title} />
+          <PageHeader title={title}/>
           <Box paddingTop={2} paddingBottom={2}>
-            <p>
-              Uw kluis is een plaats waar u persoonsinformatie kunt opslaan en optioneel kunt delen, dit kunnen bewijzen zijn of claims (bijv. bewijs van verblijf) of documenten die nodig zijn voor een bepaalde regeling.</p>
+            <p>Uw kluis is een plaats waar u persoonsinformatie kunt opslaan en optioneel kunt delen, dit kunnen
+              bewijzen zijn of claims (bijv. bewijs van verblijf) of documenten die nodig zijn voor een bepaalde
+              regeling.</p>
           </Box>
           <Grid container>
             <Grid item xs={12}>
@@ -105,6 +107,14 @@ function Index() {
               </TabPanel>
             </Grid>
           </Grid>
+          {/*<Grid container spacing={2}>*/}
+          {/*  <Grid item sm={6}>*/}
+          {/*    <ChildrenInfo/>*/}
+          {/*  </Grid>*/}
+          {/*  <Grid item sm={6}>*/}
+          {/*    <ParentsInfo/>*/}
+          {/*  </Grid>*/}
+          {/*</Grid>*/}
         </Grid>
       </Grid>
     </Layout>
