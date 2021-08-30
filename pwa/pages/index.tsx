@@ -2,29 +2,27 @@ import Head from "next/head";
 import Link from "next/link";
 
 import Button from '@material-ui/core/Button';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Typography from '@material-ui/core/Typography';
-import Container from '@material-ui/core/Container';
 
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
 
-import Header from 'components/common/header';
-import Footer from 'components/common/footer';
+import ActionMenu from 'components/common/actionmenu';
+
+
+import Layout from 'components/common/layout';
 
 const Welcome = () => (
   <>
-    <Head>
-      <title>Welcome to Demodam!</title>
-    </Head>
-
-    <Header />
-
-    <Container>
-      <div>Iets anders ajdnssakjbdshdbhahjshjadb</div>
-    </Container>
-
-    <Footer />
+    <Layout title="Welkom op Open-Inwoner!" description="waar kan ik deze description zien">
+      <Grid container>
+        <Grid item xs={12}>
+          Nieuws hier
+        </Grid>
+        <Grid item xs={12} >
+          Regelingen hier
+        </Grid>
+      </Grid>
+    </Layout>
   </>
 );
 export default Welcome;
