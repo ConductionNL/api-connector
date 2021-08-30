@@ -5,6 +5,7 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import {Link} from "@material-ui/core";
 
 const useStyles = makeStyles({
   root: {
@@ -56,7 +57,11 @@ export default function StandardCard({smallUpperTitle = null, title = null, seco
         }
       </CardContent>
       <CardActions>
-        <Button size="small">Learn More</Button>
+        <Button size="small">
+          <Link href={link}>
+            Lees meer
+          </Link>
+        </Button>
       </CardActions>
     </Card>
   );
