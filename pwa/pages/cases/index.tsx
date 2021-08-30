@@ -20,6 +20,14 @@ function Index() {
   const title = 'Cases';
   const zakenHref = '/products/' + Math.floor(Math.random() * 10);
 
+  const cases = [
+    {
+      id: "1248915",
+      name: "Trouwen",
+      reference: "1248915"
+    }
+  ]
+
   return <>
     <Layout title={title} description="waar kan ik deze description zien">
 
@@ -35,7 +43,7 @@ function Index() {
             <p>Description about cases</p>
           </Box>
 
-          <CasesTable />
+          <CasesTable cases={cases} />
         </Grid>
       </Grid>
     </Layout>

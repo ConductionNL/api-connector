@@ -9,17 +9,7 @@ import Paper from '@material-ui/core/Paper';
 import Button from "@material-ui/core/Button";
 import {Link} from "@material-ui/core";
 
-function createData(name, reference) {
-  return {name, reference};
-}
-
-const rows = [
-  createData('Trouwen', '95128942'),
-  createData('Begraven', '12938149'),
-];
-
-
-export default function ArrangementsTable() {
+export default function CaseTable(cases) {
 
   return (
     <TableContainer component={Paper}>
@@ -32,13 +22,15 @@ export default function ArrangementsTable() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
-            <TableRow key={row.name}>
-              <TableCell align="left">{row.name}</TableCell>
-              <TableCell align="right">{row.reference}</TableCell>
+          {
+            cases !== null &&
+            cases.map((zaak) => (
+            <TableRow key={zaak.name}>
+              <TableCell align="left">{zaak.name}</TableCell>
+              <TableCell align="right">{zaak.reference}</TableCell>
               <TableCell align="right">
                 <Button variant="outlined" color="primary">
-                  <Link href="/cases/1">
+                  <Link href={"/cases/" + zaak.id}>
                     Bekijken
                   </Link>
                 </Button>
