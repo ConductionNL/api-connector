@@ -20,14 +20,6 @@ function Index() {
   const title = 'Zaken';
   const zakenHref = '/products/' + Math.floor(Math.random() * 10);
 
-  const cases = [
-    {
-      id: "1248915",
-      name: "Trouwen",
-      reference: "1248915"
-    }
-  ]
-
   return <>
     <Layout title={title} description="waar kan ik deze description zien">
 
@@ -43,7 +35,7 @@ function Index() {
             <p>Een zaak is een proces met een duidelijke aanleiding, bijvoorbeeld een omgevingsvergunning. Deze aanleiding of melding door burger of bedrijf leidt tot een resultaat; zoals toegekend of afgewezen.</p>
           </Box>
 
-          <CasesTable cases={cases} />
+          <CasesTable />
         </Grid>
       </Grid>
     </Layout>
