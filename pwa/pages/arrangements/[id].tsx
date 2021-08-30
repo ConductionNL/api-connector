@@ -15,7 +15,7 @@ import PageHeader from "../../components/common/pageheader";
 import Box from "@material-ui/core/Box";
 
 const Product = () => {
-  const title = "Trouwen | 95128942"
+  const title = "Een regeling | 1"
   const router = useRouter()
   const {id} = router.query
 
