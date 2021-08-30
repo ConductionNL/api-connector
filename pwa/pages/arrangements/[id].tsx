@@ -13,7 +13,7 @@ import Hidden from "@material-ui/core/Hidden";
 import ActionMenu from "../../components/common/actionmenu";
 import PageHeader from "../../components/common/pageheader";
 import Box from "@material-ui/core/Box";
-import ArrangementsTestData from "../../components/arrangements/testData";
+import ArrangementsTestData from "../../components/data/arrangements";
 
 let posts = ArrangementsTestData()
 

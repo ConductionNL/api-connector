@@ -1,7 +1,7 @@
 import React from 'react';
 import Grid from "@material-ui/core/Grid";
 import StandardCard from "../../components/common/card";
-import ArrangementsTestData from "../../components/arrangements/testData";
+import ArrangementsTestData from "../data/arrangements";
 
 let posts = ArrangementsTestData()
 

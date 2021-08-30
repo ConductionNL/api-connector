@@ -14,8 +14,8 @@ function createData(name, reference) {
 }
 
 const rows = [
-  createData('Test', '95128942'),
-  createData('test', '12938149'),
+  createData('Bewijs 1', '95128943'),
+  createData('Bewijs 2', '12938148'),
 ];
 
 
@@ -26,8 +26,8 @@ export default function ProofTable() {
       <Table aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>Proof</TableCell>
-            <TableCell align="right">Reference</TableCell>
+            <TableCell>Bewijs</TableCell>
+            <TableCell align="right">Referentie</TableCell>
             {/*<TableCell align="right"></TableCell>*/}
           </TableRow>
         </TableHead>

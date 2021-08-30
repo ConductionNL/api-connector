@@ -14,8 +14,8 @@ function createData(name, reference) {
 }
 
 const rows = [
-  createData('Lorem', '95128942'),
-  createData('Ipsum', '12938149'),
+  createData('Document 1', '95128944'),
+  createData('Document 2', '12938147'),
 ];
 
 
