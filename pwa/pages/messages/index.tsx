@@ -7,6 +7,7 @@ import ActionMenu from "../../components/common/actionmenu";
 import Hidden from "@material-ui/core/Hidden";
 import PageHeader from "../../components/common/pageheader";
 import MessagesList from "../../components/tasks/messages";
+import Box from "@material-ui/core/Box";
 
 function Index() {
 
@@ -14,14 +15,17 @@ function Index() {
 
   return <>
     <Layout title={title} description="waar kan ik deze description zien"  >
-      <Grid container spacing={3}>
+      <Grid container >
         <Hidden smDown>
           <Grid item md={2}>
             <ActionMenu />
           </Grid>
         </Hidden>
-        <Grid item xs={12} md={10}>
+        <Grid item sm={12} md={10}>
           <PageHeader title={title} />
+          <Box paddingTop={2} paddingBottom={2}>
+            <p>Message description</p>
+          </Box>
           <MessagesList/>
         </Grid>
       </Grid>

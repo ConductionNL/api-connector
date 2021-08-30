@@ -27,14 +27,17 @@ function Index() {
   return <>
     <Layout title={title} description="waar kan ik deze description zien" >
 
-      <Grid container spacing={3}>
+      <Grid container >
         <Hidden smDown>
           <Grid item md={2}>
             <ActionMenu />
           </Grid>
         </Hidden>
-        <Grid item xs={12} md={10}>
+        <Grid item sm={12} md={10}>
           <PageHeader title={title} />
+          <Box paddingTop={2} paddingBottom={2}>
+            <p>Your personal page</p>
+            </Box>
           <Grid className={classes.marginTop} item xs container direction="row" spacing={2}>
             <Grid item xs={12} >
               <Typography variant="h6">Regelingen</Typography>

@@ -14,6 +14,7 @@ import PlaylistAddCheckIcon from '@material-ui/icons/PlaylistAddCheck';
 import LockIcon from '@material-ui/icons/Lock';
 import WorkIcon from '@material-ui/icons/Work';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import AssignmentIndIcon from '@material-ui/icons/AssignmentInd';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -39,70 +40,70 @@ export default function ActionMenu() {
           <ListItemIcon>
             <InboxIcon />
           </ListItemIcon>
-          <ListItemText primary="Overview" />
+          <ListItemText primary="Overzicht" />
         </ListItem>
 
         <ListItem button onClick={() => router.push('/data')}>
           <ListItemIcon>
-            <LockIcon />
+            <AssignmentIndIcon />
           </ListItemIcon>
-          <ListItemText primary="Data" />
+          <ListItemText primary="Gegevens" />
         </ListItem>
 
         <ListItem button onClick={() => router.push('/arrangements')}>
           <ListItemIcon>
             <DateRangeIcon />
           </ListItemIcon>
-          <ListItemText primary="Arrangements" />
+          <ListItemText primary="Regelingen" />
         </ListItem>
 
         <ListItem button onClick={() => router.push('/plans')}>
           <ListItemIcon>
             <InboxIcon />
           </ListItemIcon>
-          <ListItemText primary="Plans" />
+          <ListItemText primary="Plannen" />
         </ListItem>
 
         <ListItem button onClick={() => router.push('/messages')}>
           <ListItemIcon>
             <MessageIcon />
           </ListItemIcon>
-          <ListItemText primary="Messages" />
+          <ListItemText primary="Berichten" />
         </ListItem>
 
         <ListItem button onClick={() => router.push('/tasks')}>
           <ListItemIcon>
             <PlaylistAddCheckIcon />
           </ListItemIcon>
-          <ListItemText primary="Tasks" />
+          <ListItemText primary="Taken" />
         </ListItem>
 
         <ListItem button onClick={() => router.push('/cases')}>
           <ListItemIcon>
             <WorkIcon />
           </ListItemIcon>
-          <ListItemText primary="Cases" />
+          <ListItemText primary="Zaken" />
         </ListItem>
 
         <ListItem button onClick={() => router.push('/vault')}>
           <ListItemIcon>
             <LockIcon />
           </ListItemIcon>
-          <ListItemText primary="Vault" />
+          <ListItemText primary="Datakluis" />
         </ListItem>
 
         <ListItem button onClick={() => router.push('/logging')}>
           <ListItemIcon>
             <DraftsIcon />
           </ListItemIcon>
-          <ListItemText primary="Logging" />
+          <ListItemText primary="Verwerkingen" />
         </ListItem>
 
         <ListItem button onClick={() => router.push('/')}>
           <ListItemIcon>
             <ExitToAppIcon />
           </ListItemIcon>
-          <ListItemText primary="Logout" />
+          <ListItemText primary="Uitloggen" />
         </ListItem>
 
       </List>

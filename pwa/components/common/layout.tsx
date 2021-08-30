@@ -6,7 +6,6 @@ import React from "react";
 import Header from "./header";
 import Footer from "./footer";
 import {makeStyles} from "@material-ui/core/styles";
-import Toolbar from "@material-ui/core/Toolbar";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -21,7 +20,7 @@ const Layout = ({children, title="Welcome to Demodam!", h1 =null, description="d
 
   const classes = useStyles();
 
-    return (
+  return (
     <>
       <Head>
         <title>{title}</title>

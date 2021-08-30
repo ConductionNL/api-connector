@@ -24,14 +24,14 @@ const Product = () => {
   return <>
     <Layout title={title} description="waar kan ik deze description zien">
 
-      <Grid container spacing={3}>
+      <Grid container>
         <Hidden smDown>
           <Grid item md={2}>
             <ActionMenu/>
           </Grid>
         </Hidden>
 
-        <Grid item xs={12} md={10} spacing={6}>
+        <Grid item xs={12} md={10}>
           <PageHeader title={title}/>
 
           <Box paddingTop={2} paddingBottom={2}>

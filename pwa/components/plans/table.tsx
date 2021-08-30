@@ -20,7 +20,7 @@ const rows = [
 ];
 
 
-export default function CasesTable() {
+export default function PlansTable() {
 
   return (
     <TableContainer component={Paper}>
