@@ -19,6 +19,7 @@ import ProductCards from "../../components/products/card";
 function Index() {
 
   const title = 'Producten'
+  const description = 'Omschrijving over producten'
   const products = [
     {
       id: 1,
@@ -43,7 +44,7 @@ function Index() {
         <Grid item sm={12} md={10}>
           <PageHeader title={title} />
           <Box paddingTop={2} paddingBottom={2}>
-            <p>Omschrijving over producten</p>
+            <p>{description}</p>
           </Box>
 
           <ProductCards products={products}/>

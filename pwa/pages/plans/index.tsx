@@ -12,6 +12,18 @@ import PlansTable from "../../components/plans/table";
 function Index() {
 
   const title = 'Mijn plannen';
+  const description = 'Jouw persoonlijke plannen';
+  const plans = [
+    {
+      id: 1,
+      name: "Plan 1",
+      description: "Omschrijving van plan 1"
+    },
+    {
+      id: 2,
+      name: "Plan 2",
+      description: "Omschrijving van plan 2"
+    }];
 
   return <>
     <Layout title={title} description="waar kan ik deze description zien"  >
@@ -24,10 +36,10 @@ function Index() {
         <Grid item sm={12} md={10}>
           <PageHeader title={title} />
           <Box paddingTop={2} paddingBottom={2}>
-            <p>Jouw persoonlijke plannen</p>
+            <p>{description}</p>
           </Box>
 
-          <PlansTable />
+          <PlansTable plans={plans}/>
         </Grid>
       </Grid>
     </Layout>
