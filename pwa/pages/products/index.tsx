@@ -14,10 +14,22 @@ import Hidden from "@material-ui/core/Hidden";
 import PageHeader from "../../components/common/pageheader";
 import Box from "@material-ui/core/Box";
 import ProductTable from "../../components/products/table";
+import ProductCards from "../../components/products/card";
 
 function Index() {
 
   const title = 'Producten'
+  const products = [
+    {
+      id: 1,
+      name: "Product 1",
+      description: "product omschrijving"
+    },
+    {
+      id: 2,
+      name: "Product 2",
+      description: "product omschrijving 2"
+    }];
 
   return <>
     <Layout title={title} description="waar kan ik deze description zien">
@@ -34,7 +46,7 @@ function Index() {
             <p>Omschrijving over producten</p>
           </Box>
 
-          <ProductTable />
+          <ProductCards products={products}/>
         </Grid>
       </Grid>
     </Layout>

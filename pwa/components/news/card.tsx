@@ -1,63 +1,24 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
+import Grid from "@material-ui/core/Grid";
+import StandardCard from "../../components/common/card";
 
-const useStyles = makeStyles({
-  root: {
-    minWidth: 275,
-  },
-  bullet: {
-    display: 'inline-block',
-    margin: '0 2px',
-    transform: 'scale(0.8)',
-  },
-  title: {
-    fontSize: 14,
-  },
-  pos: {
-    marginBottom: 12,
-  },
-});
-
-export default function NewsCard({smallUpperTitle = null, title = null, secondaryTitle = null, description = null, link = null}       ) {
-  const classes = useStyles();
-  const bull = <span className={classes.bullet}>•</span>;
+export default function NewsCards({news = null}) {
 
   return (
-    <Card className={classes.root} variant="outlined">
-      <CardContent>
-        {
-          smallUpperTitle != null &&
-          <Typography className={classes.title} color="textSecondary" gutterBottom>
-            {smallUpperTitle}
-          </Typography>
-        }
-        {
-          title != null &&
-          <Typography variant="h5" component="h2">
-            {title}
-          </Typography>
-        }
-        {
-          secondaryTitle != null &&
-          <Typography className={classes.pos} color="textSecondary">
-            {secondaryTitle}
-          </Typography>
-        }
-        {
-          description != null &&
-          <Typography variant="body2" component="p">
-            {description}
-          </Typography>
-        }
-      </CardContent>
-      <CardActions>
-        <Button size="small">Learn More</Button>
-      </CardActions>
-    </Card>
+    <Grid container spacing={2}>
+      {
+        news !== null &&
+        news.map((post) => (
+        <Grid item xs={4}>
+          <StandardCard
+            smallUpperTitle={post.title}
+            title={post.name}
+            secondaryTitle="12-04-2020"
+            description={post.description}
+            link={"/news/"+post.id}
+          />
+        </Grid>
+      ))}
+    </Grid>
   );
 }
