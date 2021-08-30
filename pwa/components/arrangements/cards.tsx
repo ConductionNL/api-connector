@@ -10,7 +10,7 @@ export default function ArrangementsCards() {
   return (
     <Grid container spacing={2}>
       {posts.map((post) => (
-        <Grid item xs={4}>
+        <Grid item xs={12} sm={6} md={5} lg={4}>
           <StandardCard
             title={post.name}
             secondaryTitle={"Status: " + post.status}
