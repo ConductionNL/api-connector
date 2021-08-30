@@ -59,7 +59,7 @@ export default function StandardCard({smallUpperTitle = null, title = null, seco
       <CardActions>
         <Button size="small">
           <Link href={link}>
-            Meer informatie
+            Lees meer
           </Link>
         </Button>
       </CardActions>
