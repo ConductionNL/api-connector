@@ -8,10 +8,9 @@ import Hidden from "@material-ui/core/Hidden";
 import PageHeader from "../../components/common/pageheader";
 import Box from "@material-ui/core/Box";
 import {Tab, Tabs, Typography} from "@material-ui/core";
-import ProofTable from "../../components/data/proofs";
-import DocumentTable from "../../components/data/documents";
+import ProofTable from "../../components/vault/proofs";
+import DocumentTable from "../../components/vault/documents";
 import {makeStyles, Theme} from "@material-ui/core/styles";
-import PersonalInfo from "../../components/vault/personal_info";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -70,20 +69,6 @@ function Index() {
     setValue(newValue);
   };
 
-  const person = {
-    naam: {
-      aanschrijfwijze: "H.W. baron van den Aedel"
-    },
-    geboorte: {
-      plaats: "Nederland"
-    },
-    verblijfplaats: {
-      adresregel1: "Appelstraat 1",
-      adresregel2: "1234 AB Amsterdam",
-      adresregel3: "Nederland"
-    }
-  }
-
   return <>
     <Layout title={title} description="waar kan ik deze description zien">
       <Grid container>
@@ -99,7 +84,6 @@ function Index() {
               bewijzen zijn of claims (bijv. bewijs van verblijf) of documenten die nodig zijn voor een bepaalde
               regeling.</p>
           </Box>
-          <PersonalInfo person={person} />
           <Grid container>
             <Grid item xs={3}>
               <Tabs
@@ -123,6 +107,14 @@ function Index() {
               </TabPanel>
             </Grid>
           </Grid>
+          {/*<Grid container spacing={2}>*/}
+          {/*  <Grid item sm={6}>*/}
+          {/*    <ChildrenInfo/>*/}
+          {/*  </Grid>*/}
+          {/*  <Grid item sm={6}>*/}
+          {/*    <ParentsInfo/>*/}
+          {/*  </Grid>*/}
+          {/*</Grid>*/}
         </Grid>
       </Grid>
     </Layout>
