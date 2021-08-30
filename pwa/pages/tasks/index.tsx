@@ -31,7 +31,7 @@ function Index() {
         <Grid item sm={12} md={10}>
           <PageHeader title={title} />
           <Box paddingTop={2} paddingBottom={2}>
-            <p>Your personal tasks</p>
+            <p>Jouw persoonlijke taken</p>
           </Box>
 
           <TaskTable />

@@ -11,7 +11,7 @@ import PlansTable from "../../components/plans/table";
 
 function Index() {
 
-  const title = 'My plans';
+  const title = 'Mijn plannen';
 
   return <>
     <Layout title={title} description="waar kan ik deze description zien"  >
@@ -24,8 +24,9 @@ function Index() {
         <Grid item sm={12} md={10}>
           <PageHeader title={title} />
           <Box paddingTop={2} paddingBottom={2}>
-            <p>Your personal plans</p>
+            <p>Jouw persoonlijke plannen</p>
           </Box>
+
           <PlansTable />
         </Grid>
       </Grid>
