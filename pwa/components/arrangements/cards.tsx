@@ -4,16 +4,22 @@ import StandardCard from "../../components/common/card";
 
 let posts = [
   {
-    name: 'Een regeling',
-    description: 'Lorem ipsum'
+    id: 1,
+    name: 'Parkeervergunning Amsterdam',
+    description: 'Lorem ipsum',
+    status: 'Hier heeft u recht op'
   },
   {
-    name: 'Een regeling 2',
-    description: 'Lorem ipsum'
+    id: 2,
+    name: 'Recht om zonnepanelen te plaatsen',
+    description: 'Lorem ipsum',
+    status: 'Recht nog niet bevestigd'
   },
   {
-    name: 'Een regeling 3',
-    description: 'Lorem ipsum'
+    id: 3,
+    name: 'Parkeervergunning Utrecht',
+    description: 'Lorem ipsum',
+    status: 'Hier heeft u geen recht op'
   }
 ]
 
@@ -24,11 +30,10 @@ export default function ArrangementsCards() {
       {posts.map((post) => (
         <Grid item xs={4}>
           <StandardCard
-            smallUpperTitle={"Woord van de dag"}
             title={post.name}
-            secondaryTitle="12-04-2020"
+            secondaryTitle={"Status: " + post.status}
             description={post.description}
-            link="/arrangements/1"
+            link={"/arrangements/" + post.id}
           />
         </Grid>
       ))}

@@ -14,32 +14,61 @@ import ActionMenu from "../../components/common/actionmenu";
 import PageHeader from "../../components/common/pageheader";
 import Box from "@material-ui/core/Box";
 
+let posts = [
+  {
+    id: 1,
+    name: 'Parkeervergunning Amsterdam',
+    description: 'Lorem ipsum',
+    status: 'Hier heeft u recht op'
+  },
+  {
+    id: 2,
+    name: 'Recht om zonnepanelen te plaatsen',
+    description: 'Lorem ipsum',
+    status: 'Recht nog niet bevestigd'
+  },
+  {
+    id: 3,
+    name: 'Parkeervergunning Utrecht',
+    description: 'Lorem ipsum',
+    status: 'Hier heeft u geen recht op'
+  }
+]
+
 const Product = () => {
-  const title = "Een regeling | 1"
   const router = useRouter()
-  const {id} = router.query
+  const query = router.query
+  const item = posts.filter(function (item) {
+    return item.id == parseInt(query.id as string, 10);
+  });
+  if (typeof item[0] != "undefined") {
+    const title = item[0]['name']
 
-  return <>
-    <Layout title={title} description="waar kan ik deze description zien">
+    return <>
+      <Layout title={title} description="waar kan ik deze description zien">
 
-      <Grid container>
-        <Hidden smDown>
-          <Grid item md={2}>
-            <ActionMenu/>
+        <Grid container>
+          <Hidden smDown>
+            <Grid item md={2}>
+              <ActionMenu/>
+            </Grid>
+          </Hidden>
+
+          <Grid item xs={12} md={10}>
+            <PageHeader title={title}/>
+
+            <Box paddingTop={2} paddingBottom={2}>
+              <p>{"Status: " + item[0]['status']}</p>
+              <p>{item[0]['description']}</p>
+            </Box>
+
           </Grid>
-        </Hidden>
-
-        <Grid item xs={12} md={10}>
-          <PageHeader title={title}/>
-
-          <Box paddingTop={2} paddingBottom={2}>
-            <p>Description about ...</p>
-          </Box>
-
         </Grid>
-      </Grid>
-    </Layout>
-  </>
+      </Layout>
+    </>
+  } else {
+    return <></>
+  }
 }
 
 export default Product

@@ -40,7 +40,7 @@ function Index() {
           <PageHeader title={title}/>
 
           <Box paddingTop={2} paddingBottom={2}>
-            <p>Beschrijving over regelingen</p>
+            <p>Een regeling is een gemeentelijk product waar je recht op kan hebben of recht voor kunt aanvragen bij de overheid.</p>
           </Box>
 
           <ArrangementsCards/>
