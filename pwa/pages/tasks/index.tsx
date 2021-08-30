@@ -1,5 +1,6 @@
 import Button from "@material-ui/core/Button";
 import Container from "@material-ui/core/Container";
+import Box from '@material-ui/core/Box';
 import React from "react";
 import Footer from "../../components/common/footer";
 import Head from "next/head";
@@ -14,11 +15,22 @@ import ActionMenu from "../../components/common/actionmenu";
 import Hidden from "@material-ui/core/Hidden";
 import PageHeader from "../../components/common/pageheader";
 import TasksTable from "../../components/tasks/table";
-import Box from "@material-ui/core/Box";
 
 function Index() {
 
-  const title = 'My tasks'
+  const title = 'Mijn taken'
+  const description = 'Jouw persoonlijke taken'
+  const tasks = [
+    {
+      id: 1,
+      name: "Taak 1",
+      description: "Omschrijving van taak 1"
+    },
+    {
+      id: 2,
+      name: "Taak 2",
+      description: "Omschrijving van taak 2"
+    }];
 
   return <>
     <Layout title={title} description="waar kan ik deze description zien">
@@ -31,9 +43,10 @@ function Index() {
         <Grid item sm={12} md={10}>
           <PageHeader title={title} />
           <Box paddingTop={2} paddingBottom={2}>
-            <p>Your personal tasks</p>
+            <p>{description}</p>
           </Box>
-          <TaskTable />
+
+          <TaskTable tasks={tasks}/>
         </Grid>
       </Grid>
     </Layout >
