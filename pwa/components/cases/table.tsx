@@ -26,8 +26,8 @@ export default function ArrangementsTable() {
       <Table aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>Name</TableCell>
-            <TableCell align="right">Reference</TableCell>
+            <TableCell>Naam</TableCell>
+            <TableCell align="right">Referentie</TableCell>
             <TableCell align="right"></TableCell>
           </TableRow>
         </TableHead>
