@@ -7,7 +7,6 @@ import Head from "next/head";
 import Header from "../../components/common/header";
 import PageHeader from "../../components/common/pageheader";
 import Typography from '@material-ui/core/Typography';
-import Link from 'next/link'
 
 import Layout from "../../components/common/layout";
 import Grid from "@material-ui/core/Grid";
@@ -15,6 +14,8 @@ import Hidden from '@material-ui/core/Hidden';
 import ActionMenu from "../../components/common/actionmenu";
 import ArrangementsCards from "../../components/arrangements/cards";
 import {makeStyles} from "@material-ui/core/styles";
+import { Alert, AlertTitle } from "@material-ui/lab";
+import {Link} from "@material-ui/core";
 
 const useStyles = makeStyles({
   marginTop: {
@@ -42,6 +43,12 @@ function Index() {
           <Box paddingTop={2} paddingBottom={2}>
             <p>Een regeling is een gemeentelijk product waar je recht op kan hebben of recht voor kunt aanvragen bij de overheid.</p>
           </Box>
+
+          {/*If not logged in:*/}
+          <Alert severity="warning" style={{marginBottom: "10px"}}>
+            <AlertTitle>Inloggen</AlertTitle>
+            Om uw regelingen te personaliseren moet u eerst inloggen! — Klik <strong><Link href={"/user"}>hier</Link></strong> om in te loggen.
+          </Alert>
 
           <ArrangementsCards/>
 
