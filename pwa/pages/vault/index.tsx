@@ -11,6 +11,7 @@ import {Tab, Tabs, Typography} from "@material-ui/core";
 import ProofTable from "../../components/data/proofs";
 import DocumentTable from "../../components/data/documents";
 import {makeStyles, Theme} from "@material-ui/core/styles";
+import PersonalInfo from "../../components/vault/personal_info";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -44,6 +45,7 @@ function TabPanel(props: TabPanelProps) {
     </div>
   );
 }
+
 function Index() {
 
 
@@ -68,19 +70,36 @@ function Index() {
     setValue(newValue);
   };
 
+  const person = {
+    naam: {
+      aanschrijfwijze: "H.W. baron van den Aedel"
+    },
+    geboorte: {
+      plaats: "Nederland"
+    },
+    verblijfplaats: {
+      adresregel1: "Appelstraat 1",
+      adresregel2: "1234 AB Amsterdam",
+      adresregel3: "Nederland"
+    }
+  }
+
   return <>
     <Layout title={title} description="waar kan ik deze description zien">
-      <Grid container >
+      <Grid container>
         <Hidden smDown>
           <Grid item md={2}>
-            <ActionMenu />
+            <ActionMenu/>
           </Grid>
         </Hidden>
         <Grid item sm={12} md={10}>
-          <PageHeader title={title} />
+          <PageHeader title={title}/>
           <Box paddingTop={2} paddingBottom={2}>
-            <p>Uw kluis is een plaats waar u persoonsinformatie kunt opslaan en optioneel kunt delen, dit kunnen bewijzen zijn of claims (bijv. bewijs van verblijf) of documenten die nodig zijn voor een bepaalde regeling.</p>
+            <p>Uw kluis is een plaats waar u persoonsinformatie kunt opslaan en optioneel kunt delen, dit kunnen
+              bewijzen zijn of claims (bijv. bewijs van verblijf) of documenten die nodig zijn voor een bepaalde
+              regeling.</p>
           </Box>
+          <PersonalInfo person={person} />
           <Grid container>
             <Grid item xs={3}>
               <Tabs
