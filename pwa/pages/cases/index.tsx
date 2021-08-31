@@ -44,9 +44,11 @@ function Index() {
             <ActionMenu />
           </Grid>
         </Hidden>
+
         <Grid item sm={12} md={9}>
           <PageHeader title={title} />
-          <Grid container spacing={2}>
+          <Box paddingTop={3} paddingBottom={2}>
+            <Grid container spacing={2}>
             <Grid item xs={12}>
               <Card className={classes.root}>
                 <CardContent>
@@ -59,7 +61,8 @@ function Index() {
               <Grid item xs={12}>
                 <QuestionsAccordion/>
               </Grid>
-            </Grid>
+          </Grid>
+          </Box>
         </Grid>
       </Grid>
     </Layout>
