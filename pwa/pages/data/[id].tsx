@@ -15,7 +15,9 @@ import PageHeader from "../../components/common/pageheader";
 import Box from "@material-ui/core/Box";
 import {useGet, Poll, Get} from "restful-react";
 import PersonalInfo from "../../components/data/personal_info";
-import {Tab, Tabs} from "@material-ui/core";
+import AddressInfo from "../../components/data/address_info";
+import FamilyInfo from "../../components/data/family_info";
+import {Paper, Tab, Tabs} from "@material-ui/core";
 import {makeStyles, Theme} from "@material-ui/core/styles";
 
 interface TabPanelProps {
@@ -88,30 +90,41 @@ const Data = () => {
         <Grid item xs={12} md={9}>
           <PageHeader title={title}/>
 
-          <Box paddingTop={2} paddingBottom={2}>
-            <Grid container>
-              <Grid item xs={12}>
-                <Tabs
-                  orientation="horizontal"
-                  variant="scrollable"
-                  value={value}
-                  onChange={handleChange}
-                  aria-label="Vertical tabs example"
-                  className={classes.tabs}
-                >
-                  <Tab label="Basisgegevens" {...a11yProps(0)} />
-                  <Tab label="Familie" {...a11yProps(1)} />
-                </Tabs>
+          <Box paddingTop={3} paddingBottom={2}>
+            <Paper>
+              <Grid container>
+                <Grid item xs={12}>
+                  <Tabs
+                    orientation="horizontal"
+                    variant="scrollable"
+                    value={value}
+                    onChange={handleChange}
+                    aria-label="Vertical tabs example"
+                    className={classes.tabs}
+                  >
+                    <Tab label="Basisgegevens" {...a11yProps(0)} />
+                    <Tab label="Familie" {...a11yProps(1)} />
+                  </Tabs>
+                </Grid>
+                <Grid item xs={9}>
+                  <TabPanel value={value} index={0}>
+                    <Box paddingBottom={1}>
+                      <Box paddingTop={1} paddingBottom={4}>
+                        <h4>Identiteitsgegevens</h4>
+                        <PersonalInfo id={id}/>
+                      </Box>
+                      <Box>
+                        <h4>Adresgegevens</h4>
+                        <AddressInfo id={id}/>
+                      </Box>
+                    </Box>
+                  </TabPanel>
+                  <TabPanel value={value} index={1}>
+                    <FamilyInfo id={id}/>
+                  </TabPanel>
+                </Grid>
               </Grid>
-              <Grid item xs={9}>
-                <TabPanel value={value} index={0}>
-                  <PersonalInfo id={id}/>
-                </TabPanel>
-                <TabPanel value={value} index={1}>
-                  <p>test2</p>
-                </TabPanel>
-              </Grid>
-            </Grid>
+            </Paper>
           </Box>
 
         </Grid>
