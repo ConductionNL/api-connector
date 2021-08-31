@@ -46,7 +46,7 @@ function Index() {
               <Grid item xs={12} sm={8} md={6}>
                 <PaperCard
                   title="Wonen"
-                  description={<AddressInfo id={999995935}/>}
+                  description={<AddressInfo id={999995935} showAll={false}/>}
                   link="/data/999995935"
                   linkText="Bekijk"
                 />
