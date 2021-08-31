@@ -24,41 +24,40 @@ const useStyles = makeStyles((theme) => ({
 
 function Index() {
   const classes = useStyles();
-
   const title = 'Mijn berichten';
 
   return <>
-    <Layout title={title} description="waar kan ik deze description zien">
-      <Grid container>
-        <Hidden smDown>
-          <Grid item md={3}>
-            <ActionMenu/>
+  <Layout title={title} description="waar kan ik deze description zien">
+    <Grid container>
+      <Hidden smDown>
+        <Grid item md={3}>
+          <ActionMenu/>
+        </Grid>
+      </Hidden>
+      <Grid item sm={12} md={9}>
+        <PageHeader title={title}/>
+        <Grid container spacing={2}>
+          <Grid item xs={12}>
+            <Card className={classes.root}>
+              <CardContent>
+                <MessagesTable/>
+              </CardContent>
+            </Card>
           </Grid>
-        </Hidden>
-        <Grid item sm={12} md={9}>
-          <PageHeader title={title}/>
-          <Grid container spacing={2}>
-            <Grid item xs={12}>
-              <Card className={classes.root}>
-                <CardContent>
-                    <MessagesTable/>
-                </CardContent>
-              </Card>
-            </Grid>
-            <Grid container spacing={2}>
-              <Grid item xs={12}>
-                <Card className={classes.root}>
-                  <CardContent>
-                      <CollapsibleTable/>
-                  </CardContent>
-                </Card>
-              </Grid>
-            </Grid>
+        </Grid>
+        <Grid container spacing={2}>
+          <Grid item xs={12}>
+            <Card className={classes.root}>
+              <CardContent>
+                <CollapsibleTable/>
+              </CardContent>
+            </Card>
           </Grid>
         </Grid>
       </Grid>
-    </Layout>
-  </>
+    </Grid>
+  </Layout>
+</>
 }
 
 export default Index

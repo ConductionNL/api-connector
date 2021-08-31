@@ -15,12 +15,19 @@ import Paper from '@material-ui/core/Paper';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import CardContent from "@material-ui/core/CardContent";
+import {TableFooter} from "@material-ui/core";
+import Button from "@material-ui/core/Button";
+import CardActions from "@material-ui/core/CardActions";
+import Link from "@material-ui/core/Link";
 
 const useRowStyles = makeStyles({
   root: {
     '& > *': {
       borderBottom: 'unset',
     },
+  },
+  button: {
+    paddingTop: '20px',
   },
 });
 
@@ -85,6 +92,9 @@ const rows = [
 ];
 
 export default function CollapsibleTable() {
+  const classes = useRowStyles();
+  const preventDefault = (event) => event.preventDefault();
+
   return (
     <TableContainer>
       <Table aria-label="collapsible table">
@@ -98,6 +108,18 @@ export default function CollapsibleTable() {
             <Row key={row.name} row={row} />
           ))}
         </TableBody>
+        <TableFooter className={classes.button}>
+          <Typography className={classes.button}>
+            <Link href="#" onClick={preventDefault}>
+              Bekijk alle veelgestelde vragen {'>'}
+            </Link>
+          </Typography>
+          {/*<Button variant="underline" color="primary">*/}
+          {/*  <Link href={"/news/"} >*/}
+          {/*    Bekijk alle veelgestelde vragen {'>'}*/}
+          {/*  </Link>*/}
+          {/*</Button>*/}
+        </TableFooter>
       </Table>
     </TableContainer>
   );

@@ -15,11 +15,20 @@ import ActionMenu from "../../components/common/actionmenu";
 import Hidden from "@material-ui/core/Hidden";
 import PageHeader from "../../components/common/pageheader";
 import TasksTable from "../../components/tasks/table";
+import {makeStyles} from "@material-ui/core/styles";
+import {Card, CardContent} from "@material-ui/core";
+import CollapsibleTable from "../../components/messages/collapsibleTable";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    minWidth: '100%',
+    backgroundColor: theme.palette.background.paper,
+  },
+}));
 
 function Index() {
-
+  const classes = useStyles();
   const title = 'Mijn taken'
-  const description = 'Jouw persoonlijke taken'
   const tasks = [
     {
       id: 1,
@@ -42,11 +51,24 @@ function Index() {
         </Hidden>
         <Grid item sm={12} md={9}>
           <PageHeader title={title} />
-          <Box paddingTop={2} paddingBottom={2}>
-            <p>{description}</p>
-          </Box>
-
-          <TaskTable tasks={tasks}/>
+          <Grid container spacing={2}>
+            <Grid item xs={12}>
+              <Card className={classes.root}>
+                <CardContent>
+                  <TasksTable/>
+                </CardContent>
+              </Card>
+            </Grid>
+          </Grid>
+          <Grid container spacing={2}>
+            <Grid item xs={12}>
+              <Card className={classes.root}>
+                <CardContent>
+                  <CollapsibleTable/>
+                </CardContent>
+              </Card>
+            </Grid>
+          </Grid>
         </Grid>
       </Grid>
     </Layout >
