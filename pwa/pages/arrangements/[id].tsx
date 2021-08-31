@@ -13,23 +13,14 @@ import Hidden from "@material-ui/core/Hidden";
 import ActionMenu from "../../components/common/actionmenu";
 import PageHeader from "../../components/common/pageheader";
 import Box from "@material-ui/core/Box";
+import ArrangementsTestData from "../../components/data/arrangements";
 
-const products = [
-  {
-    id: 1,
-    name: "Product 1",
-    description: "product omschrijving"
-  },
-  {
-    id: 2,
-    name: "Product 2",
-    description: "product omschrijving 2"
-  }];
+const posts = ArrangementsTestData()
 
-const Product = () => {
+const Arrangement = () => {
   const router = useRouter()
   const query = router.query
-  const item = products.filter(function (item) {
+  const item = posts.filter(function (item) {
     return item.id == parseInt(query.id as string, 10);
   });
   if (typeof item[0] != "undefined") {
@@ -40,16 +31,16 @@ const Product = () => {
 
         <Grid container>
           <Hidden smDown>
-            <Grid item md={3}>
+            <Grid item md={2}>
               <ActionMenu/>
             </Grid>
           </Hidden>
 
-          <Grid item xs={12} md={9}>
+          <Grid item xs={12} md={10}>
             <PageHeader title={title}/>
 
             <Box paddingTop={2} paddingBottom={2}>
-              <p>{"Name: " + item[0]['name']}</p>
+              <p>{"Status: " + item[0]['status']}</p>
               <p>{item[0]['description']}</p>
             </Box>
 
@@ -57,9 +48,8 @@ const Product = () => {
         </Grid>
       </Layout>
     </>
-  } else {
-    return <></>
   }
+  return <></>
 }
 
-export default Product
+export default Arrangement

@@ -10,7 +10,7 @@ import Box from "@material-ui/core/Box";
 import TaskList from "../../components/tasks/list";
 import Messages from "../../components/tasks/messages";
 import Typography from "@material-ui/core/Typography";
-import ArrangementsTable from "../../components/arrangements/table";
+import ArrangementsCards from "../../components/arrangements/cards";
 import {makeStyles} from "@material-ui/core";
 
 function Index() {
@@ -29,11 +29,11 @@ function Index() {
 
       <Grid container >
         <Hidden smDown>
-          <Grid item md={2}>
+          <Grid item md={3}>
             <ActionMenu />
           </Grid>
         </Hidden>
-        <Grid item sm={12} md={10}>
+        <Grid item sm={12} md={9}>
           <PageHeader title={title} />
           <Box paddingTop={2} paddingBottom={2}>
             <p>Your personal page</p>
@@ -41,7 +41,7 @@ function Index() {
           <Grid className={classes.marginTop} item xs container direction="row" spacing={2}>
             <Grid item xs={12} >
               <Typography variant="h6">Regelingen</Typography>
-              <ArrangementsTable />
+              <ArrangementsCards />
             </Grid>
             <Grid item xs={6} >
               <Typography variant="h6">Berichten</Typography>

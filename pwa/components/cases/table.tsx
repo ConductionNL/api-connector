@@ -8,6 +8,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Button from "@material-ui/core/Button";
 import {Link} from "@material-ui/core";
+import { useGet } from "restful-react";
 
 function createData(name, reference) {
   return {name, reference};
@@ -26,8 +27,8 @@ export default function ArrangementsTable() {
       <Table aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>Name</TableCell>
-            <TableCell align="right">Reference</TableCell>
+            <TableCell>Naam</TableCell>
+            <TableCell align="right">Referentie</TableCell>
             <TableCell align="right"></TableCell>
           </TableRow>
         </TableHead>

@@ -8,8 +8,8 @@ import Hidden from "@material-ui/core/Hidden";
 import PageHeader from "../../components/common/pageheader";
 import Box from "@material-ui/core/Box";
 import {Tab, Tabs, Typography} from "@material-ui/core";
-import ProofTable from "../../components/data/proofs";
-import DocumentTable from "../../components/data/documents";
+import ProofTable from "../../components/vault/proofs";
+import DocumentTable from "../../components/vault/documents";
 import {makeStyles, Theme} from "@material-ui/core/styles";
 
 interface TabPanelProps {
@@ -44,6 +44,7 @@ function TabPanel(props: TabPanelProps) {
     </div>
   );
 }
+
 function Index() {
 
 
@@ -70,40 +71,48 @@ function Index() {
 
   return <>
     <Layout title={title} description="waar kan ik deze description zien">
-      <Grid container >
+      <Grid container>
         <Hidden smDown>
-          <Grid item md={2}>
-            <ActionMenu />
+          <Grid item md={3}>
+            <ActionMenu/>
           </Grid>
         </Hidden>
-        <Grid item sm={12} md={10}>
-          <PageHeader title={title} />
+        <Grid item sm={12} md={9}>
+          <PageHeader title={title}/>
           <Box paddingTop={2} paddingBottom={2}>
-            <p>Your vault is a place wehere you can store and optionaly share person information, these might be peases of proof or claims (e.g. proof of recidence) or docuemtn that are needed for a certain arangment</p>
+            <p>Uw kluis is een plaats waar u persoonsinformatie kunt opslaan en optioneel kunt delen, dit kunnen
+              bewijzen zijn of claims (bijv. bewijs van verblijf) of documenten die nodig zijn voor een bepaalde
+              regeling.</p>
           </Box>
           <Grid container>
-            <Grid item xs={3}>
+            <Grid item xs={12}>
               <Tabs
-                orientation="vertical"
+                orientation="horizontal"
                 variant="scrollable"
                 value={value}
                 onChange={handleChange}
                 aria-label="Vertical tabs example"
                 className={classes.tabs}
               >
-                <Tab label="Proofs" {...a11yProps(0)} />
-                <Tab label="Documents" {...a11yProps(1)} />
+                <Tab label="Bewijzen" {...a11yProps(0)} />
+                <Tab label="Documenten" {...a11yProps(1)} />
               </Tabs>
             </Grid>
             <Grid item xs={9}>
               <TabPanel value={value} index={0}>
-                <ProofTable/>
               </TabPanel>
               <TabPanel value={value} index={1}>
-                <DocumentTable/>
               </TabPanel>
             </Grid>
           </Grid>
+          {/*<Grid container spacing={2}>*/}
+          {/*  <Grid item sm={6}>*/}
+          {/*    <ChildrenInfo/>*/}
+          {/*  </Grid>*/}
+          {/*  <Grid item sm={6}>*/}
+          {/*    <ParentsInfo/>*/}
+          {/*  </Grid>*/}
+          {/*</Grid>*/}
         </Grid>
       </Grid>
     </Layout>

@@ -17,22 +17,21 @@ import CasesTable from "../../components/cases/table";
 
 function Index() {
 
-  const title = 'Cases';
+  const title = 'Lopende zaken';
   const zakenHref = '/products/' + Math.floor(Math.random() * 10);
 
   return <>
     <Layout title={title} description="waar kan ik deze description zien">
-
       <Grid container >
         <Hidden smDown>
-          <Grid item md={2}>
+          <Grid item md={3}>
             <ActionMenu />
           </Grid>
         </Hidden>
-        <Grid item sm={12} md={10}>
+        <Grid item sm={12} md={9}>
           <PageHeader title={title} />
           <Box paddingTop={2} paddingBottom={2}>
-            <p>Description about cases</p>
+            <p>Een zaak is een proces met een duidelijke aanleiding, bijvoorbeeld een omgevingsvergunning. Deze aanleiding of melding door burger of bedrijf leidt tot een resultaat; zoals toegekend of afgewezen.</p>
           </Box>
 
           <CasesTable />

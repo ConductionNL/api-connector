@@ -9,7 +9,18 @@ import Paper from '@material-ui/core/Paper';
 import Button from "@material-ui/core/Button";
 import {Link} from "@material-ui/core";
 
-export default function PlansTable({plans = null}) {
+
+function createData(name, reference) {
+  return {name, reference};
+}
+
+const rows = [
+  createData('Trouwen', '95128942'),
+  createData('Begraven', '12938149'),
+];
+
+
+export default function ArrangementsTable() {
 
   return (
     <TableContainer component={Paper}>
@@ -17,22 +28,18 @@ export default function PlansTable({plans = null}) {
         <TableHead>
           <TableRow>
             <TableCell>Naam</TableCell>
-            <TableCell align="right">Omschrijving</TableCell>
+            <TableCell align="right">Referentie</TableCell>
             <TableCell align="right"></TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {
-            plans !== null &&
-            plans.map((row) => (
+          {rows.map((row) => (
             <TableRow key={row.name}>
-              <TableCell component="th" scope="row">
-                {row.name}
-              </TableCell>
-              <TableCell align="right">{row.description}</TableCell>
+              <TableCell align="left">{row.name}</TableCell>
+              <TableCell align="right">{row.reference}</TableCell>
               <TableCell align="right">
                 <Button variant="outlined" color="primary">
-                  <Link href={"/plans/" + row.id}>
+                  <Link href="/cases/1">
                     Bekijken
                   </Link>
                 </Button>

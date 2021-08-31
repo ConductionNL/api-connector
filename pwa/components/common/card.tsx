@@ -5,6 +5,7 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import {Link} from "@material-ui/core";
 
 const useStyles = makeStyles({
   root: {
@@ -28,7 +29,7 @@ export default function StandardCard({smallUpperTitle = null, title = null, seco
   const bull = <span className={classes.bullet}>•</span>;
 
   return (
-    <Card className={classes.root} variant="outlined">
+    <Card className={classes.root} variant="outlined" style={{minHeight: '200px', display: "flex", flexDirection: "column"}}>
       <CardContent>
         {
           smallUpperTitle != null &&
@@ -55,8 +56,12 @@ export default function StandardCard({smallUpperTitle = null, title = null, seco
           </Typography>
         }
       </CardContent>
-      <CardActions>
-        <Button size="small">Learn More</Button>
+      <CardActions style={{marginTop: "auto"}}>
+        <Button size="small" >
+          <Link href={link}>
+            Lees meer
+          </Link>
+        </Button>
       </CardActions>
     </Card>
   );

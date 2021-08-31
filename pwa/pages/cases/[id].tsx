@@ -13,8 +13,6 @@ import Hidden from "@material-ui/core/Hidden";
 import ActionMenu from "../../components/common/actionmenu";
 import PageHeader from "../../components/common/pageheader";
 import Box from "@material-ui/core/Box";
-import StandardCard from "../../components/common/card";
-import ArrangementsTable from "../../components/arrangements/table";
 
 const Product = () => {
   const title = "Trouwen | 95128942"
@@ -26,12 +24,12 @@ const Product = () => {
 
       <Grid container>
         <Hidden smDown>
-          <Grid item md={2}>
+          <Grid item md={3}>
             <ActionMenu/>
           </Grid>
         </Hidden>
 
-        <Grid item xs={12} md={10}>
+        <Grid item xs={12} md={9}>
           <PageHeader title={title}/>
 
           <Box paddingTop={2} paddingBottom={2}>

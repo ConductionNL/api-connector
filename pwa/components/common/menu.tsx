@@ -26,7 +26,6 @@ import {useRouter} from 'next/router';
 
 
 import ActionMenu from "../../components/common/actionmenu";
-import DrawerMenu from "../../components/common/drawermenu";
 import PageHeader from "./pageheader";
 import Grid from "@material-ui/core/Grid";
 
@@ -129,81 +128,10 @@ export default function MainMenu() {
         <Container>
           <Toolbar>
 
-            <div className={classes.sectionDesktop}>
-              <Box paddingRight={2}>
-                <Typography variant="h6" color="inherit">
-                  <Link href="/news" >
-                    <span style={{color: 'white'}}>
-                    Nieuws
-                    </span>
-                  </Link>
-                </Typography>
-              </Box>
-              <Box paddingRight={2}>
-                <Typography variant="h6" color="inherit">
-                  <Link href="/products" >
-                    <span style={{color: 'white'}}>
-                    Producten
-                    </span>
-                  </Link>
-                </Typography>
-              </Box>
-            </div>
-
             <div className={classes.sectionMobile}>
-              <IconButton aria-label="show 17 new notifications" color="inherit"
-                          onClick={toggleDrawer('displayMenuDrawer', true)}>
-                <MenuIcon/>
-              </IconButton>
-              <Drawer anchor={'left'} open={state['displayMenuDrawer']}
-                      onClose={toggleDrawer('displayMenuDrawer', false)}>
-                <div
-                  className={classes.list}
-                  role="presentation"
-                  onClick={toggleDrawer('displayMenuDrawer', false)}
-                  onKeyDown={toggleDrawer('displayMenuDrawer', false)}
-                >
-                  <DrawerMenu/>
-                </div>
-              </Drawer>
-            </div>
-
-            <div className={classes.grow}/>
-
-            <div className={classes.sectionDesktop}>
-              <IconButton aria-label="show 4 new mails" color="inherit" onClick={() => router.push('/messages')}>
-                <Badge badgeContent={4} color="secondary">
-                  <MailIcon/>
-                </Badge>
-              </IconButton>
-              <IconButton aria-label="show 17 new notifications" color="inherit" onClick={() => router.push('/tasks')}>
-                <Badge badgeContent={17} color="secondary">
-                  <NotificationsIcon/>
-                </Badge>
-              </IconButton>
-
-              <IconButton aria-label="show 17 new notifications" color="inherit" onClick={() => router.push('/user')}>
-                <PersonIcon/>
-              </IconButton>
-
-              <IconButton
-                edge="end"
-                aria-label="account of current user"
-                aria-haspopup="true"
-                onClick={() => router.push('/user')}
-                color="inherit"
-              >
-                <Typography variant="h5">
-                  Inloggen
-                </Typography>
-              </IconButton>
-            </div>
-
-            <div className={classes.sectionMobile}>
-
               <IconButton aria-label="show 17 new notifications" color="inherit"
                           onClick={toggleDrawer('displayUserDrawer', true)}>
-                <PersonIcon/>
+                <MenuIcon/>
               </IconButton>
               <Drawer anchor={'right'} open={state['displayUserDrawer']}
                       onClose={toggleDrawer('displayUserDrawer', false)}>
@@ -216,12 +144,29 @@ export default function MainMenu() {
                   <ActionMenu/>
                 </div>
               </Drawer>
-
-              <Typography variant="h5">
-                Inloggen
-              </Typography>
-
             </div>
+
+            <div className={classes.grow}/>
+
+            <Box paddingRight={2}>
+              <Typography variant="h6" color="inherit">
+                <Link href="/user" >
+                  <span style={{color: 'white'}}>
+                  R. van der Linde
+                  </span>
+                </Link>
+              </Typography>
+            </Box>
+            <Box paddingRight={2}>
+              <Typography variant="h6" color="inherit">
+                <Link href="/" >
+                  <span style={{color: 'white'}}>
+                  Uitloggen
+                  </span>
+                </Link>
+              </Typography>
+            </Box>
+
           </Toolbar>
         </Container>
       </AppBar>

@@ -4,9 +4,8 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
+import Divider from '@material-ui/core/Divider';
 
-import InboxIcon from '@material-ui/icons/Inbox';
-import DraftsIcon from '@material-ui/icons/Drafts';
 import { useRouter } from 'next/router';
 import MessageIcon from '@material-ui/icons/Message';
 import DateRangeIcon from '@material-ui/icons/DateRange';
@@ -15,6 +14,12 @@ import LockIcon from '@material-ui/icons/Lock';
 import WorkIcon from '@material-ui/icons/Work';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import AssignmentIndIcon from '@material-ui/icons/AssignmentInd';
+import InboxIcon from '@material-ui/icons/Inbox';
+import DraftsIcon from '@material-ui/icons/Drafts';
+import SubscriptionsIcon from '@material-ui/icons/Subscriptions';
+import HomeIcon from '@material-ui/icons/Home';
+import RadioButtonCheckedIcon from '@material-ui/icons/RadioButtonChecked';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -38,37 +43,22 @@ export default function ActionMenu() {
 
         <ListItem button onClick={() => router.push('/user')}>
           <ListItemIcon>
-            <InboxIcon />
+            <RadioButtonCheckedIcon />
           </ListItemIcon>
-          <ListItemText primary="Overzicht" />
+          <ListItemText primary="Home" />
         </ListItem>
-
-        <ListItem button onClick={() => router.push('/data')}>
+        <ListItem button onClick={() => router.push('/products')}>
           <ListItemIcon>
-            <AssignmentIndIcon />
+            <ShoppingCartIcon />
           </ListItemIcon>
-          <ListItemText primary="Gegevens" />
+          <ListItemText primary="Producten en Diensten" />
         </ListItem>
-
-        <ListItem button onClick={() => router.push('/arrangements')}>
-          <ListItemIcon>
-            <DateRangeIcon />
-          </ListItemIcon>
-          <ListItemText primary="Regelingen" />
-        </ListItem>
-
-        <ListItem button onClick={() => router.push('/plans')}>
-          <ListItemIcon>
-            <InboxIcon />
-          </ListItemIcon>
-          <ListItemText primary="Plannen" />
-        </ListItem>
-
+        <Divider />
         <ListItem button onClick={() => router.push('/messages')}>
           <ListItemIcon>
             <MessageIcon />
           </ListItemIcon>
-          <ListItemText primary="Berichten" />
+          <ListItemText primary="Berichtenbox" />
         </ListItem>
 
         <ListItem button onClick={() => router.push('/tasks')}>
@@ -80,9 +70,31 @@ export default function ActionMenu() {
 
         <ListItem button onClick={() => router.push('/cases')}>
           <ListItemIcon>
+            <SubscriptionsIcon />
+          </ListItemIcon>
+          <ListItemText primary="Lopende Zaken" />
+        </ListItem>
+
+        <Divider />
+        <ListItem button onClick={() => router.push('/data')}>
+          <ListItemIcon>
+            <AssignmentIndIcon />
+          </ListItemIcon>
+          <ListItemText primary="Identiteit" />
+        </ListItem>
+
+        <ListItem button onClick={() => router.push('/arrangements')}>
+          <ListItemIcon>
             <WorkIcon />
           </ListItemIcon>
-          <ListItemText primary="Zaken" />
+          <ListItemText primary="Werk en Inkomen" />
+        </ListItem>
+
+        <ListItem button onClick={() => router.push('/plans')}>
+          <ListItemIcon>
+            <HomeIcon />
+          </ListItemIcon>
+          <ListItemText primary="Wonen en Belasting" />
         </ListItem>
 
         <ListItem button onClick={() => router.push('/vault')}>
@@ -90,20 +102,6 @@ export default function ActionMenu() {
             <LockIcon />
           </ListItemIcon>
           <ListItemText primary="Datakluis" />
-        </ListItem>
-
-        <ListItem button onClick={() => router.push('/logging')}>
-          <ListItemIcon>
-            <DraftsIcon />
-          </ListItemIcon>
-          <ListItemText primary="Verwerkingen" />
-        </ListItem>
-
-        <ListItem button onClick={() => router.push('/')}>
-          <ListItemIcon>
-            <ExitToAppIcon />
-          </ListItemIcon>
-          <ListItemText primary="Uitloggen" />
         </ListItem>
 
       </List>

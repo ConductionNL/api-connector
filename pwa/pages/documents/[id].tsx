@@ -14,26 +14,12 @@ import ActionMenu from "../../components/common/actionmenu";
 import PageHeader from "../../components/common/pageheader";
 import Box from "@material-ui/core/Box";
 
-const products = [
-  {
-    id: 1,
-    name: "Product 1",
-    description: "product omschrijving"
-  },
-  {
-    id: 2,
-    name: "Product 2",
-    description: "product omschrijving 2"
-  }];
 
-const Product = () => {
+const Document = () => {
   const router = useRouter()
   const query = router.query
-  const item = products.filter(function (item) {
-    return item.id == parseInt(query.id as string, 10);
-  });
-  if (typeof item[0] != "undefined") {
-    const title = item[0]['name']
+
+  const title = 'Mijn document';
 
     return <>
       <Layout title={title} description="waar kan ik deze description zien">
@@ -49,17 +35,13 @@ const Product = () => {
             <PageHeader title={title}/>
 
             <Box paddingTop={2} paddingBottom={2}>
-              <p>{"Name: " + item[0]['name']}</p>
-              <p>{item[0]['description']}</p>
+              <p>Beschrijving...</p>
             </Box>
 
           </Grid>
         </Grid>
       </Layout>
     </>
-  } else {
-    return <></>
   }
-}
 
-export default Product
+export default Document
