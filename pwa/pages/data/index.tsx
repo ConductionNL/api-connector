@@ -45,17 +45,18 @@ function Index() {
               <Grid item xs={12} sm={8} md={6}>
                 <PaperCard
                   title="Verwerkingen"
-                  description="todo"
-                  link="/cases/1"
+                  secondaryTitle="Bron: Verwerkingen Register"
+                  description="De gemeente houdt nauwkeurig bij welke organisaties uw gegevens hebben gebruikt (verwerkt) en met wel doel dit was. Deze verwerkingen kunt u inzien via het verwerkingen register."
+                  link="/processes"
                   linkText="Bekijk verwerkingen"
                 />
               </Grid>
               <Grid item xs={12} sm={8} md={6}>
                 <PaperCard
-                  title="Claims"
-                  description="Een claim is een uitspraak die jij doet."
-                  link="/cases/1"
-                  linkText="Bekijk claims"
+                  title="Waardepapieren"
+                  description="In sommige gevallen heeft u bewijspapieren nodig, bijvoorbeeld een uittreksel van uw woonhistorie of een inkomens verklaring. U kunt deze tegenwoordig ook digitaal aanvragen, inzien en delen met organisaties."
+                  link="/claims"
+                  linkText="Bekijk waardepapieren"
                 />
               </Grid>
             </Grid>

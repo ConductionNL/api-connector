@@ -83,14 +83,14 @@ export default function ActionMenu() {
           <ListItemText primary="Identiteit" />
         </ListItem>
 
-        <ListItem button onClick={() => router.push('/arrangements')}>
+        <ListItem button onClick={() => router.push('/workAndIncome')}>
           <ListItemIcon>
             <WorkIcon />
           </ListItemIcon>
           <ListItemText primary="Werk en Inkomen" />
         </ListItem>
 
-        <ListItem button onClick={() => router.push('/plans')}>
+        <ListItem button onClick={() => router.push('/livingAndTax')}>
           <ListItemIcon>
             <HomeIcon />
           </ListItemIcon>
