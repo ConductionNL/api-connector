@@ -14,22 +14,22 @@ import ActionMenu from "../../components/common/actionmenu";
 import PageHeader from "../../components/common/pageheader";
 import Box from "@material-ui/core/Box";
 
-const products = [
+const plans = [
   {
     id: 1,
-    name: "Product 1",
-    description: "product omschrijving"
+    name: "Plan 1",
+    description: "Omschrijving van plan 1"
   },
   {
     id: 2,
-    name: "Product 2",
-    description: "product omschrijving 2"
+    name: "Plan 2",
+    description: "Omschrijving van plan 2"
   }];
 
-const Product = () => {
+const Plan = () => {
   const router = useRouter()
   const query = router.query
-  const item = products.filter(function (item) {
+  const item = plans.filter(function (item) {
     return item.id == parseInt(query.id as string, 10);
   });
   if (typeof item[0] != "undefined") {
@@ -62,4 +62,4 @@ const Product = () => {
   }
 }
 
-export default Product
+export default Plan

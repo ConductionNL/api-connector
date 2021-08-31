@@ -6,38 +6,37 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import Link from "@material-ui/core/Link";
+import Button from "@material-ui/core/Button";
 
-function createData(name, description, status ) {
-  return { name, description, status };
-}
-
-const rows = [
-  createData('Boodschappen doen', 'Koelkast leeg', 'To-do'),
-  createData('Boodschappen doen', 'Koelkast leeg', 'To-do'),
-  createData('Boodschappen doen', 'Koelkast leeg', 'To-do'),
-];
-
-
-export default function TaskTable() {
+export default function TaskTable({tasks = null}) {
 
   return (
     <TableContainer component={Paper}>
       <Table aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>Name</TableCell>
-            <TableCell align="right">Description</TableCell>
-            <TableCell align="right">Status</TableCell>
+            <TableCell>Naam</TableCell>
+            <TableCell align="right">Omschrijving</TableCell>
+            <TableCell align="right"></TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
-            <TableRow key={row.name}>
-              <TableCell align="left">{row.name}</TableCell>
-              <TableCell align="right">{row.description}</TableCell>
-              <TableCell align="right">{row.status}</TableCell>
-            </TableRow>
-          ))}
+          {
+            tasks !== null &&
+            tasks.map((row) => (
+                <TableRow key={row.name}>
+                  <TableCell align="left">{row.name}</TableCell>
+                  <TableCell align="right">{row.description}</TableCell>
+                    <TableCell align="right">
+                      <Button variant="outlined" color="primary">
+                        <Link href={"/tasks/" + row.id}>
+                          Bekijken
+                        </Link>
+                      </Button>
+                    </TableCell>
+                </TableRow>
+            ))}
         </TableBody>
       </Table>
     </TableContainer>

@@ -14,21 +14,21 @@ function createData(name, reference) {
 }
 
 const rows = [
-  createData('Trouwen', '95128942'),
-  createData('Begraven', '12938149'),
+  createData('Lorem', '95128942'),
+  createData('Ipsum', '12938149'),
 ];
 
 
-export default function ArrangementsTable() {
+export default function ClaimTable() {
 
   return (
     <TableContainer component={Paper}>
       <Table aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>Naam</TableCell>
-            <TableCell align="right">Referentie</TableCell>
-            <TableCell align="right"></TableCell>
+            <TableCell>Claim</TableCell>
+            <TableCell align="right">Reference</TableCell>
+            {/*<TableCell align="right"></TableCell>*/}
           </TableRow>
         </TableHead>
         <TableBody>
@@ -36,13 +36,13 @@ export default function ArrangementsTable() {
             <TableRow key={row.name}>
               <TableCell align="left">{row.name}</TableCell>
               <TableCell align="right">{row.reference}</TableCell>
-              <TableCell align="right">
-                <Button variant="outlined" color="primary">
-                  <Link href="/cases/1">
-                    Bekijken
-                  </Link>
-                </Button>
-              </TableCell>
+              {/*<TableCell align="right">*/}
+              {/*  <Button variant="outlined" color="primary">*/}
+              {/*    <Link href="/cases/1">*/}
+              {/*      Bekijken*/}
+              {/*    </Link>*/}
+              {/*  </Button>*/}
+              {/*</TableCell>*/}
             </TableRow>
           ))}
         </TableBody>

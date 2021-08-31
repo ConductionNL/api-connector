@@ -14,22 +14,31 @@ import ActionMenu from "../../components/common/actionmenu";
 import PageHeader from "../../components/common/pageheader";
 import Box from "@material-ui/core/Box";
 
-const products = [
+const news = [
   {
     id: 1,
-    name: "Product 1",
-    description: "product omschrijving"
+    title: 'Woord van de dag',
+    name: 'Nieuws',
+    description: 'Lorem ipsum'
   },
   {
     id: 2,
-    name: "Product 2",
-    description: "product omschrijving 2"
-  }];
+    title: 'Woord van de dag',
+    name: 'Nieuws 2',
+    description: 'Lorem ipsum'
+  },
+  {
+    id: 3,
+    title: 'Woord van de dag',
+    name: 'Nieuws 3',
+    description: 'Lorem ipsum'
+  }
+]
 
-const Product = () => {
+const News = () => {
   const router = useRouter()
   const query = router.query
-  const item = products.filter(function (item) {
+  const item = news.filter(function (item) {
     return item.id == parseInt(query.id as string, 10);
   });
   if (typeof item[0] != "undefined") {
@@ -62,4 +71,4 @@ const Product = () => {
   }
 }
 
-export default Product
+export default News
