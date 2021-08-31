@@ -84,11 +84,9 @@ Row.propTypes = {
 };
 
 const rows = [
-  createData('Frozen yoghurt', 'Omschrijving'),
-  createData('Ice cream sandwich', 'Omschrijving'),
-  createData('Eclair', 'Omschrijving'),
-  createData('Cupcake', 'Omschrijving'),
-  createData('Gingerbread', 'Omschrijving'),
+  createData('Wat betekent mijn geregistreerde inkomen?', 'Omschrijving'),
+  createData('Mijn geregistreerde inkomen klopt niet. Wat kan ik doen?', 'Omschrijving'),
+  createData('Ik heb een inkomstenverklaring nodig. Wat moet ik doen?', 'Omschrijving'),
 ];
 
 export default function CollapsibleTable() {

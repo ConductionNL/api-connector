@@ -27,25 +27,8 @@ import Button from "@material-ui/core/Button";
 import {Link} from "@material-ui/core";
 import { useGet } from "restful-react";
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
-}
 
-const rows = [
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Donut', 452, 25.0, 51, 4.9),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-  createData('Honeycomb', 408, 3.2, 87, 6.5),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Jelly Bean', 375, 0.0, 94, 0.0),
-  createData('KitKat', 518, 26.0, 65, 7.0),
-  createData('Lollipop', 392, 0.2, 98, 0.0),
-  createData('Marshmallow', 318, 0, 81, 2.0),
-  createData('Nougat', 360, 19.0, 9, 37.0),
-  createData('Oreo', 437, 18.0, 63, 4.0),
-];
+let rows = [];
 
 function descendingComparator(a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) {
@@ -74,9 +57,9 @@ function stableSort(array, comparator) {
 }
 
 const headCells = [
-  { id: 'afzender', numeric: false, disablePadding: true, label: 'Afzender' },
-  { id: 'onderwerp', numeric: true, disablePadding: false, label: 'Onderwerp' },
-  { id: 'ontvangen', numeric: true, disablePadding: false, label: 'Ontvangen' },
+  { id: 'identificatie', numeric: false, disablePadding: true, label: 'Identificatie' },
+  { id: 'verantwoordelijkeOrganisatie', numeric: true, disablePadding: false, label: 'Organisatie' },
+  { id: 'registratiedatum', numeric: true, disablePadding: false, label: 'Registratie datum' },
 ];
 
 function CasesHeadTable(props) {
@@ -270,9 +253,18 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function CasesTable() {
+
+  const { data: cases } = useGet({
+    path: "gateways/zaken/zaken",
+  });
+
+  if (cases !== null) {
+    rows = cases.results;
+  }
+
   const classes = useStyles();
   const [order, setOrder] = React.useState('asc');
-  const [orderBy, setOrderBy] = React.useState('calories');
+  const [orderBy, setOrderBy] = React.useState('verantwoordelijkeOrganisatie');
   const [selected, setSelected] = React.useState([]);
   const [page, setPage] = React.useState(0);
   const [dense, setDense] = React.useState(false);
@@ -286,19 +278,19 @@ export default function CasesTable() {
 
   const handleSelectAllClick = (event) => {
     if (event.target.checked) {
-      const newSelecteds = rows.map((n) => n.name);
+      const newSelecteds = rows.map((n) => n.identificatie);
       setSelected(newSelecteds);
       return;
     }
     setSelected([]);
   };
 
-  const handleClick = (event, name) => {
-    const selectedIndex = selected.indexOf(name);
+  const handleClick = (event, identificatie) => {
+    const selectedIndex = selected.indexOf(identificatie);
     let newSelected = [];
 
     if (selectedIndex === -1) {
-      newSelected = newSelected.concat(selected, name);
+      newSelected = newSelected.concat(selected, identificatie);
     } else if (selectedIndex === 0) {
       newSelected = newSelected.concat(selected.slice(1));
     } else if (selectedIndex === selected.length - 1) {
@@ -332,7 +324,7 @@ export default function CasesTable() {
     setValue(newValue);
   };
 
-  const isSelected = (name) => selected.indexOf(name) !== -1;
+  const isSelected = (identificatie) => selected.indexOf(identificatie) !== -1;
 
   const emptyRows = rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
 
@@ -361,17 +353,17 @@ export default function CasesTable() {
               {stableSort(rows, getComparator(order, orderBy))
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((row, index) => {
-                  const isItemSelected = isSelected(row.name);
+                  const isItemSelected = isSelected(row.identificatie);
                   const labelId = `enhanced-table-checkbox-${index}`;
 
                   return (
                     <TableRow
                       hover
-                      onClick={(event) => handleClick(event, row.name)}
+                      onClick={(event) => handleClick(event, row.identificatie)}
                       role="checkbox"
                       aria-checked={isItemSelected}
                       tabIndex={-1}
-                      key={row.name}
+                      key={row.identificatie}
                       selected={isItemSelected}
                     >
                       <TableCell padding="checkbox">
@@ -381,10 +373,10 @@ export default function CasesTable() {
                         />
                       </TableCell>
                       <TableCell component="th" id={labelId} scope="row" padding="none">
-                        {row.name}
+                        {row.identificatie}
                       </TableCell>
-                      <TableCell align="right">{row.calories}</TableCell>
-                      <TableCell align="right">{row.fat}</TableCell>
+                      <TableCell align="right">{row.verantwoordelijkeOrganisatie}</TableCell>
+                      <TableCell align="right">{row.registratiedatum}</TableCell>
                     </TableRow>
                   );
                 })}

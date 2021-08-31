@@ -50,8 +50,8 @@ export default function FamilyInfo({id = null, person = null}) {
     <Box paddingBottom={1}>
       <Box paddingTop={1} paddingBottom={4}>
         <h4>Ouders</h4>
-        {/*TODO: create accordian for each parent*/}
-        <Accordion expanded={expanded === 'ouder1'} onChange={handleChange('ouder1')} style={{marginBottom: "10px"}}>
+        {/*TODO: create accordian for each parent
+        <Accordion expanded={expanded == 'ouder1'} onChange={handleChange('ouder1')} style={{marginBottom: "10px"}}>
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1bh-content"
@@ -60,7 +60,6 @@ export default function FamilyInfo({id = null, person = null}) {
             <Typography className={classes.heading}><strong>Naam ouder1</strong></Typography>
           </AccordionSummary>
           <AccordionDetails>
-            {/*TODO: fix layout of personInfo*/}
             <PersonInfo id={id}/>
           </AccordionDetails>
         </Accordion>
@@ -75,7 +74,7 @@ export default function FamilyInfo({id = null, person = null}) {
           <AccordionDetails>
             <PersonInfo id={id}/>
           </AccordionDetails>
-        </Accordion>
+        </Accordion>*/}
       </Box>
     </Box>
   );

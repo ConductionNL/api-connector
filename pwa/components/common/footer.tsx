@@ -85,34 +85,36 @@ export default function Footer() {
                 </Link>
               </Box>
             </Grid>
+
             <Grid item xs={12} sm={4}>
-              <Box borderBottom={1}>Account</Box>
-              <Box>
-                <Link href="/" color="inherit">
-                  Login
-                </Link>
+              <Box borderBottom={1}>Participerende gemeenten</Box>
+              <Box>Deventer
               </Box>
-              <Box>
-                <Link href="/" color="inherit">
-                  Register
-                </Link>
+              <Box>Enschede
+              </Box>
+              <Box>Groningen
+              </Box>
+              <Box>Leeuwarden</Box>
+              <Box>Zaanstad
+              </Box>
+              <Box>Zwolle
               </Box>
             </Grid>
+
             <Grid item xs={12} sm={4}>
-              <Box borderBottom={1}>Messages</Box>
+              <Box borderBottom={1}>Contact</Box>
               <Box>
-                <Link href="/" color="inherit">
-                  Backup
+                  Stadhuisplein 100 <br />
+                  1506 MZ Zaandam
+              </Box>
+              <Box>
+                <Link href="tel:14 075" color="inherit">
+                14 075
                 </Link>
               </Box>
               <Box>
-                <Link href="/" color="inherit">
-                  History
-                </Link>
-              </Box>
-              <Box>
-                <Link href="/" color="inherit">
-                  Roll
+                <Link href="mailto:info@Zaanstad.nl" color="inherit">
+                  info@Zaanstad.nl
                 </Link>
               </Box>
             </Grid>
