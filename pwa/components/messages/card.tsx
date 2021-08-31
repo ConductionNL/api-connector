@@ -30,7 +30,7 @@ export default function MessagesCard() {
             <Card className={classes.root}>
                 <CardContent>
                   <Paper elevation={3}>
-                    <MessageTable/>
+                    {/*<MessageTable/>*/}
                   </Paper>
                 </CardContent>
             </Card>

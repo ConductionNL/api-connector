@@ -233,7 +233,6 @@ const MessageTableTabs = (props) => {
 
   return (
     <div className={tabClasses.root}>
-      <Paper className={tabClasses.root}>
         <Tabs
           value={value}
           onChange={handleChange}
@@ -244,7 +243,6 @@ const MessageTableTabs = (props) => {
           <Tab label="Archief" />
           <Tab label="Prullenbak" />
         </Tabs>
-      </Paper>
     </div>
   );
 }
