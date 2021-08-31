@@ -1,5 +1,5 @@
 import React from 'react'
-import PaperCard from "../../components/common/paperCard";
+import Box from "@material-ui/core/Box";
 import {useGet, Poll, Get} from "restful-react";
 
 
