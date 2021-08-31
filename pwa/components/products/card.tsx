@@ -1,24 +1,20 @@
 import React from 'react';
 import Grid from "@material-ui/core/Grid";
 import StandardCard from "../../components/common/card";
+import Paper from '@material-ui/core/Paper';
 
-export default function ProductCards({products = null}) {
+export default function ProductCard({product = null}) {
 
   return (
-    <Grid container spacing={2}>
-      {
-        products !== null &&
-        products.map((post) => (
-        <Grid item xs={4}>
+      <Grid item xs={4}>
+        <Paper elevation={0} >
           <StandardCard
-            smallUpperTitle={post.title}
-            title={post.name}
-            secondaryTitle="12-04-2020"
-            description={post.description}
-            link={"/products/"+post.id}
+            smallUpperTitle={product.title}
+            title={product.name}
+            description={product.description}
+            link={"/products/"+product.id}
           />
-        </Grid>
-      ))}
-    </Grid>
+        </Paper>
+      </Grid>
   );
 }

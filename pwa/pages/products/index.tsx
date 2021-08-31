@@ -14,21 +14,26 @@ import Hidden from "@material-ui/core/Hidden";
 import PageHeader from "../../components/common/pageheader";
 import Box from "@material-ui/core/Box";
 import ProductTable from "../../components/products/table";
-import ProductCards from "../../components/products/card";
+import ProductCard from "../../components/products/card";
 
 function Index() {
 
-  const title = 'Producten'
+  const title = 'Producten en diensten'
   const description = 'Omschrijving over producten'
-  const products = [
+  const categories = [
     {
       id: 1,
-      name: "Product 1",
+      name: "Diensten",
       description: "product omschrijving"
     },
     {
       id: 2,
-      name: "Product 2",
+      name: "Vergunningen",
+      description: "product omschrijving 2"
+    },
+    {
+      id: 2,
+      name: "Regelingen",
       description: "product omschrijving 2"
     }];
 
@@ -37,17 +42,23 @@ function Index() {
 
       <Grid container >
         <Hidden smDown>
-          <Grid item md={2}>
+          <Grid item md={3}>
             <ActionMenu />
           </Grid>
         </Hidden>
-        <Grid item sm={12} md={10}>
+        <Grid item sm={12} md={9}>
           <PageHeader title={title} />
           <Box paddingTop={2} paddingBottom={2}>
             <p>{description}</p>
           </Box>
 
-          <ProductCards products={products}/>
+          <Grid container spacing={2}>
+          {
+            categories !== null &&
+            categories.map((product) => (
+            <ProductCard product={product}/>
+            ))}
+          </Grid>
         </Grid>
       </Grid>
     </Layout>
