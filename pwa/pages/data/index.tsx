@@ -110,7 +110,7 @@ function Index() {
             <ActionMenu/>
           </Grid>
         </Hidden>
-        <Grid item sm={12} md={9}>
+        <Grid item xs={12} sm={6} md={5} lg={4}>
           <PageHeader title={title}/>
           <Box paddingTop={3} paddingBottom={2}>
             <PersonalInfo person={person}/>
