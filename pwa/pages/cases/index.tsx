@@ -19,12 +19,16 @@ import CardContent from "@material-ui/core/CardContent";
 import MessagesTable from "../../components/messages/table";
 import CollapsibleTable from "../../components/messages/collapsibleTable";
 import {makeStyles} from "@material-ui/core/styles";
+import QuestionsAccordion from "../../components/messages/questionsAccordion";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     minWidth: '100%',
     backgroundColor: theme.palette.background.paper,
   },
+  gridMarginTop: {
+    marginTop: '20px',
+  }
 }));
 
 function Index() {
@@ -51,13 +55,9 @@ function Index() {
               </Card>
             </Grid>
           </Grid>
-            <Grid container spacing={2}>
+            <Grid className={classes.gridMarginTop} container spacing={2}>
               <Grid item xs={12}>
-                <Card className={classes.root}>
-                  <CardContent>
-                    <CollapsibleTable/>
-                  </CardContent>
-                </Card>
+                <QuestionsAccordion/>
               </Grid>
             </Grid>
         </Grid>

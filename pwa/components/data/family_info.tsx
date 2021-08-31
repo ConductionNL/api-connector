@@ -51,31 +51,31 @@ export default function FamilyInfo({id = null, person = null}) {
       <Box paddingTop={1} paddingBottom={4}>
         <h4>Ouders</h4>
         {/*TODO: create accordian for each parent*/}
-        <Accordion expanded={expanded === 'ouder1'} onChange={handleChange('ouder1')} style={{marginBottom: "10px"}}>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel1bh-content"
-            id="panel1bh-header"
-          >
-            <Typography className={classes.heading}><strong>Naam ouder1</strong></Typography>
-          </AccordionSummary>
-          <AccordionDetails>
-            {/*TODO: fix layout of personInfo*/}
-            <PersonInfo id={id}/>
-          </AccordionDetails>
-        </Accordion>
-        <Accordion expanded={expanded === 'ouder2'} onChange={handleChange('ouder2')} style={{marginBottom: "10px"}}>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel1bh-content"
-            id="panel1bh-header"
-          >
-            <Typography className={classes.heading}><strong>Naam ouder2</strong></Typography>
-          </AccordionSummary>
-          <AccordionDetails>
-            <PersonInfo id={id}/>
-          </AccordionDetails>
-        </Accordion>
+        {/*<Accordion expanded={expanded === 'ouder1'} onChange={handleChange('ouder1')} style={{marginBottom: "10px"}}>*/}
+        {/*  <AccordionSummary*/}
+        {/*    expandIcon={<ExpandMoreIcon />}*/}
+        {/*    aria-controls="panel1bh-content"*/}
+        {/*    id="panel1bh-header"*/}
+        {/*  >*/}
+        {/*    <Typography className={classes.heading}><strong>Naam ouder1</strong></Typography>*/}
+        {/*  </AccordionSummary>*/}
+        {/*  <AccordionDetails>*/}
+        {/*    /!*TODO: fix layout of personInfo*!/*/}
+        {/*    <PersonInfo id={id}/>*/}
+        {/*  </AccordionDetails>*/}
+        {/*</Accordion>*/}
+        {/*<Accordion expanded={expanded === 'ouder2'} onChange={handleChange('ouder2')} style={{marginBottom: "10px"}}>*/}
+        {/*  <AccordionSummary*/}
+        {/*    expandIcon={<ExpandMoreIcon />}*/}
+        {/*    aria-controls="panel1bh-content"*/}
+        {/*    id="panel1bh-header"*/}
+        {/*  >*/}
+        {/*    <Typography className={classes.heading}><strong>Naam ouder2</strong></Typography>*/}
+        {/*  </AccordionSummary>*/}
+        {/*  <AccordionDetails>*/}
+        {/*    <PersonInfo id={id}/>*/}
+        {/*  </AccordionDetails>*/}
+        {/*</Accordion>*/}
       </Box>
     </Box>
   );
