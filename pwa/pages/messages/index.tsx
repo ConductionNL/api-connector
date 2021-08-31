@@ -6,12 +6,13 @@ import Grid from "@material-ui/core/Grid";
 import ActionMenu from "../../components/common/actionmenu";
 import Hidden from "@material-ui/core/Hidden";
 import PageHeader from "../../components/common/pageheader";
-import MessagesList from "../../components/tasks/messages";
 import Box from "@material-ui/core/Box";
+import MessagesCard from "../../components/messages/card";
+import MessagesTable from "../../components/messages/table";
 
 function Index() {
 
-  const title = 'My messages';
+  const title = 'Mijn berichten';
 
   return <>
     <Layout title={title} description="waar kan ik deze description zien"  >
@@ -23,10 +24,7 @@ function Index() {
         </Hidden>
         <Grid item sm={12} md={9}>
           <PageHeader title={title} />
-          <Box paddingTop={2} paddingBottom={2}>
-            <p>Message description</p>
-          </Box>
-          <MessagesList/>
+          <MessagesCard/>
         </Grid>
       </Grid>
     </Layout>
