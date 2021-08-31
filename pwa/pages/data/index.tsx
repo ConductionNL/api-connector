@@ -13,6 +13,7 @@ import {makeStyles} from "@material-ui/core/styles";
 import PersonalInfo from "../../components/data/personal_info";
 import ChildrenInfo from "../../components/data/children_info";
 import ParentsInfo from "../../components/data/parents_info";
+import PaperCard from "../../components/common/paperCard";
 
 
 function Index() {
@@ -110,16 +111,34 @@ function Index() {
             <ActionMenu/>
           </Grid>
         </Hidden>
-        <Grid item xs={12} sm={6} md={5} lg={4}>
+        <Grid item sm={12} md={9}>
           <PageHeader title={title}/>
           <Box paddingTop={3} paddingBottom={2}>
-            <PersonalInfo person={person}/>
             <Grid container spacing={2}>
-              <Grid item sm={6}>
-                <ChildrenInfo children={children}/>
+              <Grid item xs={12} sm={8} md={6}>
+                <PaperCard
+                  title="Persoonsgegevens"
+                  secondaryTitle="Bron: Basisregistratie Personen"
+                  description="In de Basisregistratie Personen (BRP) zijn persoonsgegevens geregistreerd, zoals gegevens over geboorte, verhuizing, huwelijk en vertrek naar het buitenland."
+                  link="/cases/1"
+                  linkText="Bekijk persoonsgegevens"
+                />
               </Grid>
-              <Grid item sm={6}>
-                <ParentsInfo parents={parents}/>
+              <Grid item xs={12} sm={8} md={6}>
+                <PaperCard
+                  title="Verwerkingen"
+                  secondaryTitle="todo"
+                  description="todo"
+                  link="/cases/1"
+                />
+              </Grid>
+              <Grid item xs={12} sm={8} md={6}>
+                <PaperCard
+                  title="Claims"
+                  secondaryTitle="todo"
+                  description="todo"
+                  link="/cases/1"
+                />
               </Grid>
             </Grid>
           </Box>
