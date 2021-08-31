@@ -27,18 +27,18 @@ export default function FamilyInfo({id = null, person = null}) {
       path: "gateways/brp/ingeschrevenpersonen/" + id,
     });
   }
-  console.log('person:')
-  console.log(person)
-  if (person != null) {
-    console.log('ouderUrl:')
-    console.log(person._links.ouders[0].href)
-  }
-  //foreach parent, move to return code?
-  var { data: parent } = useGet({
-    path: "gateways/brp/ingeschrevenpersonen/" + id + "/ouders/" + "1",
-  });
-  console.log('ouder:')
-  console.log(parent)
+  // console.log('person:')
+  // console.log(person)
+  // if (person != null) {
+  //   console.log('ouderUrl:')
+  //   console.log(person._links.ouders[0].href)
+  // }
+  // //foreach parent, move to return code?
+  // var { data: parent } = useGet({
+  //   path: "gateways/brp/ingeschrevenpersonen/" + id + "/ouders/" + "1",
+  // });
+  // console.log('ouder:')
+  // console.log(parent)
 
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
