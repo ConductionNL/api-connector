@@ -57,10 +57,10 @@ function Index() {
               </Card>
             </Grid>
           </Grid>
-            <Grid className={classes.gridMarginTop} container spacing={2}>
-              <Grid item xs={12}>
-                <QuestionsAccordion/>
-              </Grid>
+          <Grid className={classes.gridMarginTop} container spacing={2}>
+            <Grid item xs={12}>
+              <QuestionsAccordion/>
+            </Grid>
           </Grid>
           </Box>
         </Grid>

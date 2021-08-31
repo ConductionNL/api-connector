@@ -14,12 +14,16 @@ import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import {Paper} from "@material-ui/core";
 import {makeStyles} from "@material-ui/core/styles";
+import QuestionsAccordion from "../../components/messages/questionsAccordion";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     minWidth: '100%',
     backgroundColor: theme.palette.background.paper,
   },
+  gridMarginTop: {
+    marginTop: '20px',
+  }
 }));
 
 function Index() {
@@ -38,24 +42,20 @@ function Index() {
         <PageHeader title={title}/>
 
         <Box paddingTop={3} paddingBottom={2}>
-        <Grid container spacing={2}>
-          <Grid item xs={12}>
-            <Card className={classes.root}>
-              <CardContent>
-                <MessagesTable/>
-              </CardContent>
-            </Card>
+          <Grid container spacing={2}>
+            <Grid item xs={12}>
+              <Card className={classes.root}>
+                <CardContent>
+                  <MessagesTable/>
+                </CardContent>
+              </Card>
+            </Grid>
           </Grid>
-        </Grid>
-        <Grid container spacing={2}>
-          <Grid item xs={12}>
-            <Card className={classes.root}>
-              <CardContent>
-                <CollapsibleTable/>
-              </CardContent>
-            </Card>
+          <Grid className={classes.gridMarginTop} container spacing={2}>
+            <Grid item xs={12}>
+              <QuestionsAccordion/>
+            </Grid>
           </Grid>
-        </Grid>
         </Box>
       </Grid>
     </Grid>
