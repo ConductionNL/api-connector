@@ -17,6 +17,8 @@ import {makeStyles} from "@material-ui/core/styles";
 import { Alert, AlertTitle } from "@material-ui/lab";
 import {Link} from "@material-ui/core";
 import PaperCard from "../../components/common/paperCard";
+import AddressInfo from "../../components/data/address_info";
+import {useGet, Poll, Get} from "restful-react";
 
 const useStyles = makeStyles({
   marginTop: {
@@ -26,7 +28,7 @@ const useStyles = makeStyles({
 
 function Index() {
   const classes = useStyles();
-  const title = 'Regelingen';
+  const title = 'Wonen en Belasting';
 
   return <>
     <Layout title={title} description="waar kan ik deze description zien">
@@ -37,18 +39,28 @@ function Index() {
             <ActionMenu/>
           </Grid>
         </Hidden>
-
-        <Grid item xs={12} md={9} spacing={6}>
+        <Grid item sm={12} md={9}>
           <PageHeader title={title}/>
-
-          {/* TODO: If not logged in:*/}
-          <Alert severity="warning" style={{marginBottom: "10px"}}>
-            <AlertTitle>Inloggen</AlertTitle>
-            Om uw regelingen te personaliseren moet u eerst inloggen! — Klik <strong><Link href={"/user"}>hier</Link></strong> om in te loggen.
-          </Alert>
-
-          <ArrangementsCards/>
-
+          <Box paddingTop={3} paddingBottom={2}>
+            <Grid container spacing={2}>
+              <Grid item xs={12} sm={8} md={6}>
+                <PaperCard
+                  title="Wonen"
+                  description={<AddressInfo id={999995935}/>}
+                  link="/data/999995935"
+                  linkText="Bekijk"
+                />
+              </Grid>
+              <Grid item xs={12} sm={8} md={6}>
+                <PaperCard
+                  title="Belasting"
+                  description="todo"
+                  link="/taxes"
+                  linkText="Bekijk belastingen"
+                />
+              </Grid>
+            </Grid>
+          </Box>
         </Grid>
       </Grid>
     </Layout>

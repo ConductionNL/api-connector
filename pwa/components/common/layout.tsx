@@ -6,6 +6,7 @@ import React from "react";
 import Header from "./header";
 import Footer from "./footer";
 import {makeStyles} from "@material-ui/core/styles";
+import { RestfulProvider } from "restful-react";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -22,19 +23,21 @@ const Layout = ({children, title="Welcome to Demodam!", h1 =null, description="d
 
   return (
     <>
-      <Head>
-        <title>{title}</title>
-      </Head>
+      <RestfulProvider base="http://localhost/api">
+        <Head>
+          <title>{title}</title>
+        </Head>
 
-      <Header/>
+        <Header/>
 
-      <Container>
-        <Box paddingTop={2} paddingBottom={2}>
-        {children}
-        </Box>
-      </Container>
+        <Container>
+          <Box paddingTop={2} paddingBottom={2}>
+          {children}
+          </Box>
+        </Container>
 
-      <Footer />
+        <Footer />
+      </RestfulProvider>
     </>
   );
 
