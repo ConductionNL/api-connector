@@ -61,7 +61,7 @@ export default function Footer() {
       <Box
         px={{ xs: 3, sm: 10 }}
         py={{ xs: 5, sm: 10 }}
-        bgcolor="#757575"
+        bgcolor="#A3B2B6"
         color="white"
         className={classes.sectionDesktop}
       >
@@ -117,9 +117,6 @@ export default function Footer() {
               </Box>
             </Grid>
           </Grid>
-          <Box textAlign="center" pt={{ xs: 5, sm: 10 }} pb={{ xs: 5, sm: 0 }}>
-            Conduction &reg; {new Date().getFullYear()}
-          </Box>
         </Container>
       </Box>
     </footer>
