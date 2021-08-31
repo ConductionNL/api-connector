@@ -54,7 +54,7 @@ function Index() {
                 <PaperCard
                   title="Inkomen"
                   description="todo"
-                  link="/cases/1"
+                  link="/income/1"
                   linkText="Bekijk inkomen"
                 />
               </Grid>

@@ -47,7 +47,7 @@ function Index() {
                   title="Verwerkingen"
                   secondaryTitle="Bron: Verwerkingen Register"
                   description="De gemeente houdt nauwkeurig bij welke organisaties uw gegevens hebben gebruikt (verwerkt) en met wel doel dit was. Deze verwerkingen kunt u inzien via het verwerkingen register."
-                  link="/cases/1"
+                  link="/processes"
                   linkText="Bekijk verwerkingen"
                 />
               </Grid>
@@ -55,7 +55,7 @@ function Index() {
                 <PaperCard
                   title="Waardepapieren"
                   description="In sommige gevallen heeft u bewijspapieren nodig, bijvoorbeeld een uittreksel van uw woonhistorie of een inkomens verklaring. U kunt deze tegenwoordig ook digitaal aanvragen, inzien en delen met organisaties."
-                  link="/cases/1"
+                  link="/claims"
                   linkText="Bekijk waardepapieren"
                 />
               </Grid>

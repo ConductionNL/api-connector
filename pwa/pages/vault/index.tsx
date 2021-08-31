@@ -8,7 +8,7 @@ import Hidden from "@material-ui/core/Hidden";
 import PageHeader from "../../components/common/pageheader";
 import Box from "@material-ui/core/Box";
 import {Tab, Tabs, Typography} from "@material-ui/core";
-import ProofTable from "../../components/vault/proofs";
+import ProofTable from "../../components/vault/claims";
 import DocumentTable from "../../components/vault/documents";
 import {makeStyles, Theme} from "@material-ui/core/styles";
 import PaperCard from "../../components/common/paperCard";
@@ -62,7 +62,7 @@ function Index() {
                   title="Verwerkingen"
                   secondaryTitle="Bron: Verwerkingen Register"
                   description="De gemeente houdt nauwkeurig bij welke organisaties uw gegevens hebben gebruikt (verwerkt) en met wel doel dit was. Deze verwerkingen kunt u inzien via het verwerkingen register."
-                  link="/documents"
+                  link="/processes"
                   linkText="Bekijk verwerkingen"
                 />
               </Grid>
@@ -70,7 +70,7 @@ function Index() {
                 <PaperCard
                   title="Machtigingen"
                   description="todo"
-                  link="/documents"
+                  link="/authorizations"
                   linkText="Bekijk machtigingen"
                 />
               </Grid>
