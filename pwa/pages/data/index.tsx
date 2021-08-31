@@ -20,88 +20,6 @@ function Index() {
 
   const title = 'Mijn gegevens';
 
-  const person = {
-    bsn: "1907asd1293",
-    naam: {
-      aanschrijfwijze: "H.W. baron van den Aedel"
-    },
-    geboorte: {
-      plaats: "Nederland"
-    },
-    verblijfplaats: {
-      woonplaats: 'Amsterdam',
-      adresregel1: "Appelstraat 1",
-      adresregel2: "1234 AB Amsterdam",
-      adresregel3: "Nederland"
-    }
-  };
-
-  const children = [
-    {
-    bsn: "1907asd1293",
-    naam: {
-      aanschrijfwijze: "A.S. van den Aedel"
-    },
-    geboorte: {
-      plaats: "Nederland"
-    },
-    verblijfplaats: {
-      woonplaats: 'Amsterdam',
-      adresregel1: "Appelstraat 1",
-      adresregel2: "1234 AB Amsterdam",
-      adresregel3: "Nederland"
-    }
-    },
-    {
-    bsn: "215415asd12",
-    naam: {
-      aanschrijfwijze: "S.B. van den Aedel"
-    },
-    geboorte: {
-      plaats: "Nederland"
-    },
-    verblijfplaats: {
-      woonplaats: 'Amsterdam',
-      adresregel1: "Appelstraat 1",
-      adresregel2: "1234 AB Amsterdam",
-      adresregel3: "Nederland"
-    }
-    },
-  ];
-
-  const parents = [
-    {
-    bsn: "sdsga1241zdf",
-    naam: {
-      aanschrijfwijze: "E.D. van den Aedel"
-    },
-    geboorte: {
-      plaats: "Nederland"
-    },
-    verblijfplaats: {
-      woonplaats: 'Amsterdam',
-      adresregel1: "Appelstraat 1",
-      adresregel2: "1234 AB Amsterdam",
-      adresregel3: "Nederland"
-    }
-    },
-    {
-    bsn: "12412afgdsg",
-    naam: {
-      aanschrijfwijze: "B.B. Doe"
-    },
-    geboorte: {
-      plaats: "Nederland"
-    },
-    verblijfplaats: {
-      woonplaats: 'Amsterdam',
-      adresregel1: "Appelstraat 1",
-      adresregel2: "1234 AB Amsterdam",
-      adresregel3: "Nederland"
-    }
-    },
-  ];
-
   return <>
     <Layout title={title} description="waar kan ik deze description zien">
 
@@ -120,7 +38,7 @@ function Index() {
                   title="Persoonsgegevens"
                   secondaryTitle="Bron: Basisregistratie Personen"
                   description="In de Basisregistratie Personen (BRP) zijn persoonsgegevens geregistreerd, zoals gegevens over geboorte, verhuizing, huwelijk en vertrek naar het buitenland."
-                  link="/cases/1"
+                  link="/data/999995935"
                   linkText="Bekijk persoonsgegevens"
                 />
               </Grid>
