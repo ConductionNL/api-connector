@@ -13,35 +13,29 @@ import Hidden from "@material-ui/core/Hidden";
 import ActionMenu from "../../components/common/actionmenu";
 import PageHeader from "../../components/common/pageheader";
 import Box from "@material-ui/core/Box";
-import ArrangementsTestData from "../../components/data/arrangements";
 
-const posts = ArrangementsTestData()
 
-const Arrangement = () => {
+const Document = () => {
   const router = useRouter()
   const query = router.query
-  const item = posts.filter(function (item) {
-    return item.id == parseInt(query.id as string, 10);
-  });
-  if (typeof item[0] != "undefined") {
-    const title = item[0]['name']
+
+  const title = 'Mijn document';
 
     return <>
       <Layout title={title} description="waar kan ik deze description zien">
 
         <Grid container>
           <Hidden smDown>
-            <Grid item md={2}>
+            <Grid item md={3}>
               <ActionMenu/>
             </Grid>
           </Hidden>
 
-          <Grid item xs={12} md={10}>
+          <Grid item xs={12} md={9}>
             <PageHeader title={title}/>
 
             <Box paddingTop={2} paddingBottom={2}>
-              <p>{"Status: " + item[0]['status']}</p>
-              <p>{item[0]['description']}</p>
+              <p>Beschrijving...</p>
             </Box>
 
           </Grid>
@@ -49,7 +43,5 @@ const Arrangement = () => {
       </Layout>
     </>
   }
-  return <></>
-}
 
-export default Arrangement
+export default Document

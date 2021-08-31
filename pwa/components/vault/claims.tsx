@@ -19,14 +19,14 @@ const rows = [
 ];
 
 
-export default function DocumentTable() {
+export default function ClaimTable() {
 
   return (
     <TableContainer component={Paper}>
       <Table aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>Document</TableCell>
+            <TableCell>Claim</TableCell>
             <TableCell align="right">Reference</TableCell>
             {/*<TableCell align="right"></TableCell>*/}
           </TableRow>

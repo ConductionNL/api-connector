@@ -36,11 +36,11 @@ function Index() {
     <Layout title={title} description="waar kan ik deze description zien">
       <Grid container >
         <Hidden smDown>
-          <Grid item md={2}>
+          <Grid item md={3}>
             <ActionMenu />
           </Grid>
         </Hidden>
-        <Grid item sm={12} md={10}>
+        <Grid item sm={12} md={9}>
           <PageHeader title={title} />
           <Box paddingTop={2} paddingBottom={2}>
             <p>{description}</p>

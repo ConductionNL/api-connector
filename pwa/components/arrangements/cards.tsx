@@ -1,34 +1,21 @@
 import React from 'react';
 import Grid from "@material-ui/core/Grid";
 import StandardCard from "../../components/common/card";
+import ArrangementsTestData from "../data/arrangements";
 
-let posts = [
-  {
-    name: 'Een regeling',
-    description: 'Lorem ipsum'
-  },
-  {
-    name: 'Een regeling 2',
-    description: 'Lorem ipsum'
-  },
-  {
-    name: 'Een regeling 3',
-    description: 'Lorem ipsum'
-  }
-]
+const posts = ArrangementsTestData()
 
 export default function ArrangementsCards() {
 
   return (
     <Grid container spacing={2}>
       {posts.map((post) => (
-        <Grid item xs={4}>
+        <Grid item xs={12} sm={6} md={5} lg={4}>
           <StandardCard
-            smallUpperTitle={"Woord van de dag"}
             title={post.name}
-            secondaryTitle="12-04-2020"
+            secondaryTitle={"Status: " + post.status}
             description={post.description}
-            link="/arrangements/1"
+            link={"/arrangements/" + post.id}
           />
         </Grid>
       ))}

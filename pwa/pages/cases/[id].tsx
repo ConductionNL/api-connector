@@ -1,6 +1,12 @@
 import {useRouter} from 'next/router'
+import Button from "@material-ui/core/Button";
 import React from "react";
+import Link from 'next/link'
 
+import Header from "../../components/common/header";
+import Container from "@material-ui/core/Container";
+import Footer from "../../components/common/footer";
+import Typography from '@material-ui/core/Typography';
 import Layout from "../../components/common/layout";
 import Grid from "@material-ui/core/Grid";
 import Hidden from "@material-ui/core/Hidden";
@@ -18,12 +24,12 @@ const Product = () => {
 
       <Grid container>
         <Hidden smDown>
-          <Grid item md={2}>
+          <Grid item md={3}>
             <ActionMenu/>
           </Grid>
         </Hidden>
 
-        <Grid item xs={12} md={10}>
+        <Grid item xs={12} md={9}>
           <PageHeader title={title}/>
 
           <Box paddingTop={2} paddingBottom={2}>
