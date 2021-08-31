@@ -26,7 +26,7 @@ const useStyles = makeStyles({
 
 function Index() {
   const classes = useStyles();
-  const title = 'Regelingen';
+  const title = 'Werk en Inkomen';
 
   return <>
     <Layout title={title} description="waar kan ik deze description zien">
@@ -37,18 +37,37 @@ function Index() {
             <ActionMenu/>
           </Grid>
         </Hidden>
-
-        <Grid item xs={12} md={9} spacing={6}>
+        <Grid item sm={12} md={9}>
           <PageHeader title={title}/>
-
-          {/* TODO: If not logged in:*/}
-          <Alert severity="warning" style={{marginBottom: "10px"}}>
-            <AlertTitle>Inloggen</AlertTitle>
-            Om uw regelingen te personaliseren moet u eerst inloggen! — Klik <strong><Link href={"/user"}>hier</Link></strong> om in te loggen.
-          </Alert>
-
-          <ArrangementsCards/>
-
+          <Box paddingTop={3} paddingBottom={2}>
+            <Grid container spacing={2}>
+              <Grid item xs={12} sm={8} md={6}>
+                <PaperCard
+                  title="Werk"
+                  secondaryTitle="Bron: uwv"
+                  description="todo"
+                  link="https://www.uwv.nl/particulieren/index.aspx"
+                  linkText="Bekijk werk"
+                />
+              </Grid>
+              <Grid item xs={12} sm={8} md={6}>
+                <PaperCard
+                  title="Inkomen"
+                  description="todo"
+                  link="/income/1"
+                  linkText="Bekijk inkomen"
+                />
+              </Grid>
+              <Grid item xs={12} sm={8} md={6}>
+                <PaperCard
+                  title="Regelingen"
+                  description="Een regeling is een gemeentelijk product waar je recht op kan hebben of recht voor kunt aanvragen bij de overheid."
+                  link="/arrangements"
+                  linkText="Bekijk regelingen"
+                />
+              </Grid>
+            </Grid>
+          </Box>
         </Grid>
       </Grid>
     </Layout>
