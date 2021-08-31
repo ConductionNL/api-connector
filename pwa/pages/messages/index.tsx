@@ -36,6 +36,8 @@ function Index() {
       </Hidden>
       <Grid item sm={12} md={9}>
         <PageHeader title={title}/>
+
+        <Box paddingTop={3} paddingBottom={2}>
         <Grid container spacing={2}>
           <Grid item xs={12}>
             <Card className={classes.root}>
@@ -54,6 +56,7 @@ function Index() {
             </Card>
           </Grid>
         </Grid>
+        </Box>
       </Grid>
     </Grid>
   </Layout>
