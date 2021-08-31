@@ -24,7 +24,7 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
-    maxWidth: 360,
+    maxWidth: 275,
     backgroundColor: theme.palette.background.paper,
   },
 }));
