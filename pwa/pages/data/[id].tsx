@@ -56,13 +56,6 @@ const Data = () => {
   const router = useRouter()
   const {id} = router.query
 
-  const { data: test } = useGet({
-    path: "gateways/brp/ingeschrevenpersonen/" + id,
-  });
-
-  console.log("test1:");
-  console.log(test);
-
   const useStyles = makeStyles((theme: Theme) => ({
     root: {
       flexGrow: 1,

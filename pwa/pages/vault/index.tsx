@@ -11,67 +11,27 @@ import {Tab, Tabs, Typography} from "@material-ui/core";
 import ProofTable from "../../components/vault/proofs";
 import DocumentTable from "../../components/vault/documents";
 import {makeStyles, Theme} from "@material-ui/core/styles";
+import PaperCard from "../../components/common/paperCard";
+import AddressInfo from "../../components/data/address_info";
 
-interface TabPanelProps {
-  children?: React.ReactNode;
-  index: any;
-  value: any;
-}
+const useStyles = makeStyles({
+  marginTop: {
+    marginTop: 20,
+  },
+});
 
-function a11yProps(index: any) {
-  return {
-    id: `vertical-tab-${index}`,
-    'aria-controls': `vertical-tabpanel-${index}`,
-  };
-}
-
-function TabPanel(props: TabPanelProps) {
-  const {children, value, index, ...other} = props;
-
-  return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`vertical-tabpanel-${index}`}
-      aria-labelledby={`vertical-tab-${index}`}
-      {...other}
-    >
-      {value === index && (
-        <Box p={3}>
-          <Typography>{children}</Typography>
-        </Box>
-      )}
-    </div>
-  );
-}
+// Uw kluis is een plaats waar u persoonsinformatie kunt opslaan en optioneel kunt delen, dit kunnen
+// bewijzen zijn of claims (bijv. bewijs van verblijf) of documenten die nodig zijn voor een bepaalde
+// regeling.
 
 function Index() {
-
-
-  const useStyles = makeStyles((theme: Theme) => ({
-    root: {
-      flexGrow: 1,
-      backgroundColor: theme.palette.background.paper,
-      display: 'flex',
-      height: 224,
-    },
-    tabs: {
-      borderRight: `1px solid ${theme.palette.divider}`,
-    },
-  }));
-
-  const title = 'Mijn datakluis';
-
   const classes = useStyles();
-  const [value, setValue] = React.useState(0);
-
-  const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
-    setValue(newValue);
-  };
+  const title = 'Mijn Datakluis';
 
   return <>
     <Layout title={title} description="waar kan ik deze description zien">
-      <Grid container>
+
+      <Grid container spacing={3}>
         <Hidden smDown>
           <Grid item md={3}>
             <ActionMenu/>
@@ -79,40 +39,43 @@ function Index() {
         </Hidden>
         <Grid item sm={12} md={9}>
           <PageHeader title={title}/>
-          <Box paddingTop={2} paddingBottom={2}>
-            <p>Uw kluis is een plaats waar u persoonsinformatie kunt opslaan en optioneel kunt delen, dit kunnen
-              bewijzen zijn of claims (bijv. bewijs van verblijf) of documenten die nodig zijn voor een bepaalde
-              regeling.</p>
+          <Box paddingTop={3} paddingBottom={2}>
+            <Grid container spacing={2}>
+              <Grid item xs={12} sm={8} md={6}>
+                <PaperCard
+                  title="Waardepapieren"
+                  description="In sommige gevallen heeft u bewijspapieren nodig, bijvoorbeeld een uittreksel van uw woonhistorie of een inkomens verklaring. U kunt deze tegenwoordig ook digitaal aanvragen, inzien en delen met organisaties."
+                  link="/claims"
+                  linkText="Bekijk waardepapieren"
+                />
+              </Grid>
+              <Grid item xs={12} sm={8} md={6}>
+                <PaperCard
+                  title="Documenten"
+                  description="todo"
+                  link="/documents"
+                  linkText="Bekijk documenten"
+                />
+              </Grid>
+              <Grid item xs={12} sm={8} md={6}>
+                <PaperCard
+                  title="Verwerkingen"
+                  secondaryTitle="Bron: Verwerkingen Register"
+                  description="De gemeente houdt nauwkeurig bij welke organisaties uw gegevens hebben gebruikt (verwerkt) en met wel doel dit was. Deze verwerkingen kunt u inzien via het verwerkingen register."
+                  link="/documents"
+                  linkText="Bekijk verwerkingen"
+                />
+              </Grid>
+              <Grid item xs={12} sm={8} md={6}>
+                <PaperCard
+                  title="Machtigingen"
+                  description="todo"
+                  link="/documents"
+                  linkText="Bekijk machtigingen"
+                />
+              </Grid>
+            </Grid>
           </Box>
-          <Grid container>
-            <Grid item xs={12}>
-              <Tabs
-                orientation="horizontal"
-                variant="scrollable"
-                value={value}
-                onChange={handleChange}
-                aria-label="Vertical tabs example"
-                className={classes.tabs}
-              >
-                <Tab label="Bewijzen" {...a11yProps(0)} />
-                <Tab label="Documenten" {...a11yProps(1)} />
-              </Tabs>
-            </Grid>
-            <Grid item xs={9}>
-              <TabPanel value={value} index={0}>
-              </TabPanel>
-              <TabPanel value={value} index={1}>
-              </TabPanel>
-            </Grid>
-          </Grid>
-          {/*<Grid container spacing={2}>*/}
-          {/*  <Grid item sm={6}>*/}
-          {/*    <ChildrenInfo/>*/}
-          {/*  </Grid>*/}
-          {/*  <Grid item sm={6}>*/}
-          {/*    <ParentsInfo/>*/}
-          {/*  </Grid>*/}
-          {/*</Grid>*/}
         </Grid>
       </Grid>
     </Layout>

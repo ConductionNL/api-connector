@@ -1,16 +1,16 @@
 import React from 'react'
 import Box from "@material-ui/core/Box";
 import {useGet, Poll, Get} from "restful-react";
+import AddressInfo from "../../components/data/address_info";
 
 
-export default function PersonalInfo({id}) {
-
-  const { data: person } = useGet({
-    path: "gateways/brp/ingeschrevenpersonen/" + id,
-  });
-
-  console.log("test2:");
-  console.log(person);
+export default function PersonalInfo({id = null, person = null}) {
+  if (person == null) {
+    var { data: person } = useGet({
+      path: "gateways/brp/ingeschrevenpersonen/" + id,
+    });
+  }
+  // console.log(person)
 
   return (
     <Box paddingBottom={2}>
@@ -26,9 +26,7 @@ export default function PersonalInfo({id}) {
         }
         {
           person != null && person.verblijfplaats !== null &&
-          <p>
-            <b>Verblijfplaats: </b>{person.verblijfplaats.adresregel1 + ", " + person.verblijfplaats.adresregel2 + ", " + person.verblijfplaats.adresregel3}
-          </p>
+          <AddressInfo person={person}/>
         }
       </Box>
     </Box>
