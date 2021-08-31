@@ -13,11 +13,18 @@ import Hidden from "@material-ui/core/Hidden";
 import ActionMenu from "../../components/common/actionmenu";
 import PageHeader from "../../components/common/pageheader";
 import Box from "@material-ui/core/Box";
+import {useGet, Poll, Get} from "restful-react";
 
 const Product = () => {
   const title = "Trouwen | 95128942"
   const router = useRouter()
   const {id} = router.query
+
+  const { data: zaak } = useGet({
+    path: "gateways/zaken/zaken/" + id,
+  });
+
+  console.log(zaak);
 
   return <>
     <Layout title={title} description="waar kan ik deze description zien">

@@ -6,16 +6,10 @@ import {useGet, Poll, Get} from "restful-react";
 export default function PersonalInfo({person = null}) {
 
   const { data: test } = useGet({
-    path: "https://dog.ceo/api/breeds/image/random",
-  });
-
-  console.log('test call');
-  console.log(test);
-
-  const { data: test2 } = useGet({
     path: "gateways/brp/ingeschrevenpersonen/999995935",
   });
-  console.log(test2);
+
+  console.log(test);
 
   return (
     <PaperCard
