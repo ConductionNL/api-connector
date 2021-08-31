@@ -29,7 +29,7 @@ export default function StandardCard({title = null, secondaryTitle = null, descr
 
   return (
     <Paper elevation={1}>
-      <Card className={classes.root} variant="outlined" style={{minHeight: '200px', display: "flex", flexDirection: "column", padding: "20px"}}>
+      <Card className={classes.root} variant="outlined" style={{minHeight: '310px', display: "flex", flexDirection: "column", padding: "20px"}}>
         {
           title != null &&
           <CardHeader
