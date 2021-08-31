@@ -1,8 +1,15 @@
-import React from 'react';
-import Box from "@material-ui/core/Box";
-import {makeStyles} from "@material-ui/core/styles";
+import React from 'react'
+import PaperCard from "../../components/common/paperCard";
+import {useGet, Poll, Get} from "restful-react";
+
 
 export default function PersonalInfo({person = null}) {
+
+  const { data: test } = useGet({
+    path: "gateways/brp/ingeschrevenpersonen/999995935",
+  });
+
+  console.log(test);
 
   return (
     <Box paddingBottom={2}>
