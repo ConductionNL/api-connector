@@ -24,7 +24,7 @@ const Product = () => {
     path: "gateways/zaken/zaken/" + id,
   });
 
-  console.log(zaak);
+  // console.log(zaak);
 
   return <>
     <Layout title={title} description="waar kan ik deze description zien">
