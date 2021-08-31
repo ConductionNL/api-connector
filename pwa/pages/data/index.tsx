@@ -127,17 +127,17 @@ function Index() {
               <Grid item xs={12} sm={8} md={6}>
                 <PaperCard
                   title="Verwerkingen"
-                  secondaryTitle="todo"
                   description="todo"
                   link="/cases/1"
+                  linkText="Bekijk verwerkingen"
                 />
               </Grid>
               <Grid item xs={12} sm={8} md={6}>
                 <PaperCard
                   title="Claims"
-                  secondaryTitle="todo"
-                  description="todo"
+                  description="Een claim is een uitspraak die jij doet."
                   link="/cases/1"
+                  linkText="Bekijk claims"
                 />
               </Grid>
             </Grid>
