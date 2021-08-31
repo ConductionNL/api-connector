@@ -95,6 +95,9 @@ const useStyles = makeStyles((theme) => ({
   list: {
     width: 250,
   },
+  appbar: {
+    backgroundColor: '#00A5C7'
+  },
 }));
 
 export default function MainMenu() {
@@ -124,7 +127,7 @@ export default function MainMenu() {
 
   return (
     <div className={classes.grow}>
-      <AppBar position="static">
+      <AppBar position="static" className={classes.appbar}>
         <Container>
           <Toolbar>
 
