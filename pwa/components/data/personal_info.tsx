@@ -1,15 +1,6 @@
-import React from 'react';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
-import Box from "@material-ui/core/Box";
-import Grid from "@material-ui/core/Grid";
+import React from 'react'
+import PaperCard from "../../components/common/paperCard";
 import {useGet, Poll, Get} from "restful-react";
-
 
 
 export default function PersonalInfo({person = null}) {
@@ -27,24 +18,31 @@ export default function PersonalInfo({person = null}) {
   console.log(test2);
 
   return (
-    <Box paddingBottom={2}>
-      <h4>Uw persoonlijke informatie</h4>
-      <Box paddingTop={1}>
-        {
-          person.naam.aanschrijfwijze !== null &&
-          <p><b>Naam: </b>{person.naam.aanschrijfwijze}</p>
-        }
-        {
-          person.geboorte.plaats !== null &&
-          <p><b>Geboorteplaats: </b>{person.geboorte.plaats}</p>
-        }
-        {
-          person.verblijfplaats !== null &&
-          <p>
-            <b>Verblijfplaats: </b>{person.verblijfplaats.adresregel1 + ", " + person.verblijfplaats.adresregel2 + ", " + person.verblijfplaats.adresregel3}
-          </p>
-        }
-      </Box>
-    </Box>
+    <PaperCard
+      title="Persoonsgegevens"
+      secondaryTitle="Bron: Basisregistratie Personen"
+      description="In de Basisregistratie Personen (BRP) zijn persoonsgegevens geregistreerd, zoals gegevens over geboorte, verhuizing, huwelijk en vertrek naar het buitenland."
+      link="/cases/1"
+      linkText="Bekijk persoonsgegevens"
+    />
+    // <Box paddingBottom={2}>
+    //   <h4>Uw persoonlijke informatie</h4>
+    //   <Box paddingTop={1}>
+    //     {
+    //       person.naam.aanschrijfwijze !== null &&
+    //       <p><b>Naam: </b>{person.naam.aanschrijfwijze}</p>
+    //     }
+    //     {
+    //       person.geboorte.plaats !== null &&
+    //       <p><b>Geboorteplaats: </b>{person.geboorte.plaats}</p>
+    //     }
+    //     {
+    //       person.verblijfplaats !== null &&
+    //       <p>
+    //         <b>Verblijfplaats: </b>{person.verblijfplaats.adresregel1 + ", " + person.verblijfplaats.adresregel2 + ", " + person.verblijfplaats.adresregel3}
+    //       </p>
+    //     }
+    //   </Box>
+    // </Box>
   );
 }
