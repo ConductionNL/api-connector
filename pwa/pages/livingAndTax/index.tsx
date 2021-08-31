@@ -17,7 +17,7 @@ import {makeStyles} from "@material-ui/core/styles";
 import { Alert, AlertTitle } from "@material-ui/lab";
 import {Link} from "@material-ui/core";
 import PaperCard from "../../components/common/paperCard";
-import AddressInfo from "../../components/data/address_info";
+import AddressInfo from "../../components/data/address_info_nopaper";
 import {useGet, Poll, Get} from "restful-react";
 
 const useStyles = makeStyles({
@@ -45,7 +45,8 @@ function Index() {
             <Grid container spacing={2}>
               <Grid item xs={12} sm={8} md={6}>
                 <PaperCard
-                  title="Wonen"
+                  title="Kadastrale gegevens"
+                  secondaryTitle="Bron: Basisregistratie Kadaster & Gemeenten"
                   description={<AddressInfo id={999995935} showAll={false}/>}
                   link="/data/999995935"
                   linkText="Bekijk"
@@ -54,7 +55,8 @@ function Index() {
               <Grid item xs={12} sm={8} md={6}>
                 <PaperCard
                   title="Belasting"
-                  description="todo"
+                  secondaryTitle="Bron: Gemeentenlijke belasitingen"
+                  description="De gemeente heft een aantal belastingen zo als bijvoorbeeld onroerendezaakbelastingen  (OZB) aan de hand van de WOZ waarde van uw woning. Via dit portaal kun u uw belastingen inzien "
                   link="/taxes"
                   linkText="Bekijk belastingen"
                 />

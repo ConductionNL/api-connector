@@ -44,6 +44,7 @@ function Index() {
               <Grid item xs={12} sm={8} md={6}>
                 <PaperCard
                   title="Waardepapieren"
+                  secondaryTitle="Bron: Waardepapieren Register"
                   description="In sommige gevallen heeft u bewijspapieren nodig, bijvoorbeeld een uittreksel van uw woonhistorie of een inkomens verklaring. U kunt deze tegenwoordig ook digitaal aanvragen, inzien en delen met organisaties."
                   link="/claims"
                   linkText="Bekijk waardepapieren"
@@ -52,7 +53,8 @@ function Index() {
               <Grid item xs={12} sm={8} md={6}>
                 <PaperCard
                   title="Documenten"
-                  description="todo"
+                  secondaryTitle="Bron: Document Managment Systeem"
+                  description="Het kan zijn dat u vanuit de gemeenten documenten krijgt zo als aanslagen of herinneringen, daarnaast is het mogelijk dat u aan de gemeente documenten moet verstrekken zo als huurovereenkomsten. "
                   link="/documents"
                   linkText="Bekijk documenten"
                 />
@@ -69,7 +71,8 @@ function Index() {
               <Grid item xs={12} sm={8} md={6}>
                 <PaperCard
                   title="Machtigingen"
-                  description="todo"
+                  secondaryTitle="Bron: Instemmingen Register"
+                  description="U kunt zelf bepalen welke organisaties of personen toegang hebben tot uw gegevens of namens u bepaalde handelingen mogen uitvoeren. Deze machtigingen kunt u hier beheren en aanmaken.  "
                   link="/authorizations"
                   linkText="Bekijk machtigingen"
                 />

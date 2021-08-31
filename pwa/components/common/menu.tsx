@@ -140,6 +140,7 @@ export default function MainMenu() {
         <Container>
           <Toolbar>
 
+            {
             <div className={classes.sectionMobile}>
               <IconButton aria-label="show 17 new notifications" color="inherit"
                           onClick={toggleDrawer('displayUserDrawer', true)}>
@@ -157,6 +158,7 @@ export default function MainMenu() {
                 </div>
               </Drawer>
             </div>
+            }
 
             <div className={classes.grow}/>
 
