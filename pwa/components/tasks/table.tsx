@@ -30,7 +30,7 @@ function createData(task, due) {
 }
 
 const rows = [
-  createData('"Parkeer verguning verlengen',  '1 september 2021'),
+  createData('Parkeer verguning verlengen',  '1 september 2021'),
   createData('Demo geven', '1 september 2021'),
 ];
 
