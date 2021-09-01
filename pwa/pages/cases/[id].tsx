@@ -23,6 +23,7 @@ import CardContent from "@material-ui/core/CardContent";
 import CasesTable from "../../components/cases/table";
 import OverviewInfo from "../../components/cases/overview_info";
 import ContactPerson from "../../components/cases/contact_person";
+import TasksTable from "../../components/tasks/table";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -140,6 +141,11 @@ const Product = () => {
                 </Card>
               </TabPanel>
               <TabPanel value={value} index="two">
+                <Card className={classes.root}>
+                  <CardContent>
+                    <TasksTable/>
+                  </CardContent>
+                </Card>
               </TabPanel>
               <TabPanel value={value} index="three">
                 Documenten
