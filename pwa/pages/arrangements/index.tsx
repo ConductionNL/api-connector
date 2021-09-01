@@ -64,7 +64,7 @@ function Index() {
                   title="TONK regeling"
                   secondaryTitle={<Chip icon={<CheckIcon />} label="U gebruikt deze regeling" variant="outlined" />}
                   description="De Tijdelijke Ondersteuning Noodzakelijke Kosten (TONK) is een tijdelijke eenmalige financiële ondersteuning voor als u een aanzienlijke inkomensterugval heeft als gevolg van de coronamaatregelen. En als u hierdoor problemen heeft met het betalen van uw woonkosten. Het gaat dan om de huur of hypotheek en de kosten van elektriciteit, gas en water en eventuele servicekosten."
-                  link="/claims"
+                  link="https://www.zaanstad.nl/mozard/!suite86.scherm0325?mPag=2031&mNch=p3gq01vx8r"
                   linkText="Lees meer "
                 />
               </Grid>
@@ -73,7 +73,7 @@ function Index() {
                   title="Bijstandsuitkering"
                   secondaryTitle={<Chip  color="primary" icon={<CheckIcon />} label="U heeft recht op deze regeling" variant="outlined" />}
                   description="De uitkering volgens de Participatiewet (bijstand) is een geldbedrag per maand dat u krijgt van de gemeente, om in uw levensonderhoud te kunnen voorzien. Voor mensen met een inkomen onder 110% van het minimumloon en weinig of geen vermogen. "
-                  link="/documents"
+                  link="https://www.zaanstad.nl/mozard/!suite86.scherm0325?mVrg=660"
                   linkText="Lees meer of vraag aan"
                 />
               </Grid>
@@ -82,7 +82,7 @@ function Index() {
                   title="Individuele inkomenstoeslag (IIT)"
                   secondaryTitle={<Chip color="primary" icon={<CheckIcon />} label="U heeft recht op deze regeling" variant="outlined" />}
                   description="Een bedrag dat u ieder jaar krijgt bovenop uw minimuminkomen. Voor mensen die minimaal 5 jaar een minimum inkomen hebben (uitkering of werk). "
-                  link="/processes"
+                  link="https://www.zaanstad.nl/mozard/!suite86.scherm0325?mVrg=702"
                   linkText="Lees meer of vraag aan"
                 />
               </Grid>
@@ -91,7 +91,7 @@ function Index() {
                   title="Besluit bijstand zelfstandigen"
                   secondaryTitle={<Chip color="secondary" icon={<HelpOutlineIcon />} label="U heeft mogenlijk recht op deze regeling" variant="outlined" />}
                   description="Zelfstandigen kunnen in (tijdelijke) financiële problemen komen die het voortbestaan van hun bedrijf bedreigen. In bepaalde gevallen kunnen zij dan een beroep doen op het Besluit bijstandverlening zelfstandigen (Bbz). "
-                  link="/authorizations"
+                  link="https://www.rijksoverheid.nl/onderwerpen/bijstand-voor-zelfstandigen-bbz"
                   linkText="Lees meer of vraag aan"
                 />
               </Grid>
