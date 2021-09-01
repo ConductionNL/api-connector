@@ -24,11 +24,8 @@ export default function MessagesList() {
   return (
     <List className={classes.root}>
       <ListItem alignItems="flex-start">
-        <ListItemAvatar>
-          <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
-        </ListItemAvatar>
         <ListItemText
-          primary="Brunch this weekend?"
+          primary="Aanslag"
           secondary={
             <React.Fragment>
               <Typography
@@ -37,20 +34,17 @@ export default function MessagesList() {
                 className={classes.inline}
                 color="textPrimary"
               >
-                Ali Connors
+                aanslagnummer : 57862204
               </Typography>
-              {" — I'll be in your neighborhood doing errands this…"}
+              {" — De inspecteur van Belastingen van de gemeente Zaandam  heeft u de volgende aanslag(en) opgelegd. "}
             </React.Fragment>
           }
         />
       </ListItem>
       <Divider variant="inset" component="li" />
       <ListItem alignItems="flex-start">
-        <ListItemAvatar>
-          <Avatar alt="Travis Howard" src="/static/images/avatar/2.jpg" />
-        </ListItemAvatar>
         <ListItemText
-          primary="Summer BBQ"
+          primary="Parkeerbon "
           secondary={
             <React.Fragment>
               <Typography
@@ -59,20 +53,17 @@ export default function MessagesList() {
                 className={classes.inline}
                 color="textPrimary"
               >
-                to Scott, Alex, Jennifer
+                aanslagnummer : 57722277
               </Typography>
-              {" — Wish I could come, but I'm out of town this…"}
+              {" — U ontvangt deze naheffing omdat …"}
             </React.Fragment>
           }
         />
       </ListItem>
       <Divider variant="inset" component="li" />
       <ListItem alignItems="flex-start">
-        <ListItemAvatar>
-          <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
-        </ListItemAvatar>
         <ListItemText
-          primary="Oui Oui"
+          primary="Taxatieverslag : Stadhuisplein 100, Zaandam"
           secondary={
             <React.Fragment>
               <Typography
@@ -81,9 +72,9 @@ export default function MessagesList() {
                 className={classes.inline}
                 color="textPrimary"
               >
-                Sandra Adams
+                referntie 57722277
               </Typography>
-              {' — Do you have Paris recommendations? Have you ever…'}
+              {' — We hebben de WOZ waarde van uw woning vastgesteld…'}
             </React.Fragment>
           }
         />

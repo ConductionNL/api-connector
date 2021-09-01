@@ -28,10 +28,10 @@ export default function TaskList() {
     <div className={classes.root}>
       <List component="nav" aria-label="secondary mailbox folders">
         <ListItem button>
-          <ListItemText primary="Taak 1"  secondary="Jan 9, 2014"/>
+          <ListItemText primary="Parkeer verguning verlengen"  secondary="1 september, 2021"/>
         </ListItem>
         <ListItemLink href="#simple-list">
-          <ListItemText primary="Taak 2"  secondary="Jan 9, 2014"/>
+          <ListItemText primary="Demo geven"  secondary="1 september, 2021"/>
         </ListItemLink>
       </List>
     </div>
