@@ -19,7 +19,7 @@ const rows = [
 ];
 
 
-export default function ArrangementsTable() {
+export default function DocumentsTable() {
 
   return (
     <TableContainer component={Paper}>

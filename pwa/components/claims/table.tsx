@@ -22,7 +22,7 @@ const rows = [
 ];
 
 
-export default function ArrangementsTable() {
+export default function ClaimsTable() {
 
   return (
     <TableContainer component={Paper}>

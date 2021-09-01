@@ -24,6 +24,8 @@ import CasesTable from "../../components/cases/table";
 import OverviewInfo from "../../components/cases/overview_info";
 import ContactPerson from "../../components/cases/contact_person";
 import TasksTable from "../../components/tasks/table";
+import DocumentsTable from "../../components/documents/table";
+import ClaimsTable from "../../components/claims/table";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -91,7 +93,7 @@ const Product = () => {
         backgroundColor: '#F5F5F5'
       },
       card_content: {
-        marginBottom: '0',
+        marginBottom: '10px',
       }
     }),
   );
@@ -148,7 +150,10 @@ const Product = () => {
                 </Card>
               </TabPanel>
               <TabPanel value={value} index="three">
-                Documenten
+                <div style={{marginBottom: '10px'}}>
+                  <DocumentsTable/>
+                </div>
+                  <ClaimsTable/>
               </TabPanel>
               <TabPanel value={value} index="four">
                 Betrokkenen
