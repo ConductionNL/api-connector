@@ -23,6 +23,7 @@ import Paper from '@material-ui/core/Paper';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Box from '@material-ui/core/Box';
+import {Link} from "@material-ui/core";
 
 function createData(task, due) {
   return { task, due};
@@ -62,7 +63,8 @@ function stableSort(array, comparator) {
 
 const headCells = [
   { id: 'task', numeric: false, disablePadding: true, label: 'Taak' },
-  { id: 'due', numeric: false, disablePadding: true, label: 'Te doen voor' },
+  { id: 'due', numeric: false, disablePadding: false, label: 'Te doen voor' },
+  { id: 'view', numeric: false, disablePadding: false, label: '' },
 ];
 
 function TaskHeadTable(props) {
@@ -353,7 +355,6 @@ export default function TaskTable() {
                   return (
                     <TableRow
                       hover
-                      onClick={(event) => handleClick(event, row.name)}
                       role="checkbox"
                       aria-checked={isItemSelected}
                       tabIndex={-1}
@@ -364,13 +365,16 @@ export default function TaskTable() {
                         <Checkbox
                           checked={isItemSelected}
                           inputProps={{ 'aria-labelledby': labelId }}
+                          onClick={(event) => handleClick(event, row.name)}
                         />
                       </TableCell>
                       <TableCell component="th" id={labelId} scope="row" padding="none">
-                        {row.name}
+                        {row.task}
                       </TableCell>
-                      <TableCell align="right">{row.calories}</TableCell>
-                      <TableCell align="right">{row.fat}</TableCell>
+                      <TableCell>{row.due}</TableCell>
+                      <TableCell>
+                        <Link href={"/tasks/1"}>Bekijken</Link>
+                      </TableCell>
                     </TableRow>
                   );
                 })}
