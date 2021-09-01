@@ -57,9 +57,10 @@ function stableSort(array, comparator) {
 }
 
 const headCells = [
-  { id: 'identificatie', numeric: false, disablePadding: true, label: 'Identificatie' },
-  { id: 'verantwoordelijkeOrganisatie', numeric: true, disablePadding: false, label: 'Organisatie' },
-  { id: 'registratiedatum', numeric: true, disablePadding: false, label: 'Registratie datum' },
+  { id: 'identificatie', numeric: false, disablePadding: false, label: 'Identificatie' },
+  { id: 'status', numeric: false, disablePadding: false, label: 'Status' },
+  { id: 'registratiedatum', numeric: false, disablePadding: false, label: 'Registratie datum' },
+  { id: 'view', numeric: false, disablePadding: false, label: '' },
 ];
 
 function CasesHeadTable(props) {
@@ -359,7 +360,6 @@ export default function CasesTable() {
                   return (
                     <TableRow
                       hover
-                      onClick={(event) => handleClick(event, row.identificatie)}
                       role="checkbox"
                       aria-checked={isItemSelected}
                       tabIndex={-1}
@@ -369,14 +369,18 @@ export default function CasesTable() {
                       <TableCell padding="checkbox">
                         <Checkbox
                           checked={isItemSelected}
+                          onClick={(event) => handleClick(event, row.identificatie)}
                           inputProps={{ 'aria-labelledby': labelId }}
                         />
                       </TableCell>
                       <TableCell component="th" id={labelId} scope="row" padding="none">
                         {row.identificatie}
                       </TableCell>
-                      <TableCell align="right">{row.verantwoordelijkeOrganisatie}</TableCell>
-                      <TableCell align="right">{row.registratiedatum}</TableCell>
+                      <TableCell>in behandeling</TableCell>
+                      <TableCell>{row.registratiedatum}</TableCell>
+                      <TableCell>
+                        <Link href={"/cases/" + row.uuid}>Bekijken</Link>
+                      </TableCell>
                     </TableRow>
                   );
                 })}

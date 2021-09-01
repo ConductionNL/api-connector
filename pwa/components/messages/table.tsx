@@ -23,6 +23,7 @@ import Paper from '@material-ui/core/Paper';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Box from '@material-ui/core/Box';
+import { Link } from "@material-ui/core";
 
 function createData(name, afzender, ontvangen) {
   return { name, afzender, ontvangen };
@@ -62,8 +63,9 @@ function stableSort(array, comparator) {
 
 const headCells = [
   { id: 'name', numeric: false, disablePadding: false, label: 'Titel' },
-  { id: 'afzender', numeric: false, disablePadding: true, label: 'Afzender' },
+  { id: 'afzender', numeric: false, disablePadding: false, label: 'Afzender' },
   { id: 'ontvangen', numeric: false, disablePadding: false, label: 'Ontvangen' },
+  { id: 'view', numeric: false, disablePadding: false, label: '' },
 ];
 
 function MessagesHeadTable(props) {
@@ -355,7 +357,6 @@ export default function MessagesTable() {
                   return (
                     <TableRow
                       hover
-                      onClick={(event) => handleClick(event, row.name)}
                       role="checkbox"
                       aria-checked={isItemSelected}
                       tabIndex={-1}
@@ -366,13 +367,17 @@ export default function MessagesTable() {
                         <Checkbox
                           checked={isItemSelected}
                           inputProps={{ 'aria-labelledby': labelId }}
+                          onClick={(event) => handleClick(event, row.name)}
                         />
                       </TableCell>
                       <TableCell component="th" id={labelId} scope="row" padding="none">
                         {row.name}
                       </TableCell>
-                      <TableCell align="right">{row.calories}</TableCell>
-                      <TableCell align="right">{row.fat}</TableCell>
+                      <TableCell>{row.afzender}</TableCell>
+                      <TableCell>{row.ontvangen}</TableCell>
+                      <TableCell>
+                        <Link href={"/messages/1"}>lezen</Link>
+                      </TableCell>
                     </TableRow>
                   );
                 })}
