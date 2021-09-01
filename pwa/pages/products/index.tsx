@@ -60,41 +60,41 @@ function Index() {
             <Grid item xs={12} sm={8} md={6}>
               <PaperCard
                 title="Producten"
-                description="De Tijdelijke Ondersteuning Noodzakelijke Kosten (TONK) is een tijdelijke eenmalige financiële ondersteuning voor als u een aanzienlijke inkomensterugval heeft als gevolg van de coronamaatregelen. En als u hierdoor problemen heeft met het betalen van uw woonkosten. Het gaat dan om de huur of hypotheek en de kosten van elektriciteit, gas en water en eventuele servicekosten."
-                link="/claims"
-                linkText="Lees meer "
+                description="U kunt bij uw Gemeente meerdere productne afnmen, denk daarbij bijvoorbeeld aan een paspoot"
+                link="/products/products"
+                linkText="Lees meer"
               />
             </Grid>
             <Grid item xs={12} sm={8} md={6}>
               <PaperCard
                 title="Diensten"
-                description="De uitkering volgens de Participatiewet (bijstand) is een geldbedrag per maand dat u krijgt van de gemeente, om in uw levensonderhoud te kunnen voorzien. Voor mensen met een inkomen onder 110% van het minimumloon en weinig of geen vermogen. "
-                link="/documents"
+                description="De gemeente bestaad om u te helpen, lees hier wat wij voor u kunt doen "
+                link="/products/services"
                 linkText="Lees meer of vraag aan"
               />
             </Grid>
             <Grid item xs={12} sm={8} md={6}>
               <PaperCard
                 title="Verguningen"
-                description="Een bedrag dat u ieder jaar krijgt bovenop uw minimuminkomen. Voor mensen die minimaal 5 jaar een minimum inkomen hebben (uitkering of werk). "
-                link="/processes"
+                description="Voor sommige activiteiten heeft u een vergunning of ontheffing nodig, denk hierbij bijvoorbeeld aan een evenement of het schenken van alchohol"
+                link="/products/licenses"
                 linkText="Lees meer of vraag aan"
               />
             </Grid>
             <Grid item xs={12} sm={8} md={6}>
               <PaperCard
                 title="Regelingen"
-                description="Zelfstandigen kunnen in (tijdelijke) financiële problemen komen die het voortbestaan van hun bedrijf bedreigen. In bepaalde gevallen kunnen zij dan een beroep doen op het Besluit bijstandverlening zelfstandigen (Bbz). "
-                link="/authorizations"
+                description="De gemeente kent diverse regelingen om u als inwoner of ondernemer te ondersteunen  "
+                link="/arrangements"
                 linkText="Lees meer of vraag aan"
               />
             </Grid>
             <Grid item xs={12} sm={8} md={6}>
               <PaperCard
                 title="Melding"
-                description="Zelfstandigen kunnen in (tijdelijke) financiële problemen komen die het voortbestaan van hun bedrijf bedreigen. In bepaalde gevallen kunnen zij dan een beroep doen op het Besluit bijstandverlening zelfstandigen (Bbz). "
-                link="/authorizations"
-                linkText="Lees meer of vraag aan"
+                description="In de gemeente Zaanstad kunt u over verschillende onderwerpen een melding maken. "
+                link="https://www.zaanstad.nl/mozard/!suite86.scherm0325?mPag=244"
+                linkText="Lees meer of doe melding"
               />
             </Grid>
           </Grid>

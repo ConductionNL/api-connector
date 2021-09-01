@@ -17,7 +17,8 @@ import {makeStyles} from "@material-ui/core/styles";
 import { Alert, AlertTitle } from "@material-ui/lab";
 import {Link} from "@material-ui/core";
 import StandardCard from "../../components/common/card";
-import PaperCard from "../../components/common/paperCard";
+import Messages from "../../components/tasks/messages";
+import TaskList from "../../components/tasks/list";
 
 const useStyles = makeStyles({
   marginTop: {
@@ -27,7 +28,7 @@ const useStyles = makeStyles({
 
 function Index() {
   const classes = useStyles();
-  const title = 'Diensten';
+  const title = 'Producten';
 
   return <>
     <Layout title={title} description="waar kan ik deze description zien">
@@ -44,21 +45,10 @@ function Index() {
 
           <Box paddingTop={3} paddingBottom={2}>
             <Grid container spacing={2}>
-              <Grid item xs={12} sm={6} >
-                <PaperCard
-                  title="Advies bij schulden"
-                  description="Als ondernemer kunt u te maken krijgen met schulden. Zowel op zakelijk als op persoonlijk vlak. In Zaanstad zijn er mogelijkheden om via het BBZ hulp te krijgen bij uw schulden. Neem voor advies bij schulden contact op met gemeente Zaanstad."
+              <Grid item xs={12} sm={6} md={5} lg={4}>
+                <StandardCard
+                  title="Paspoort/id kaart aanvragen"
                   link="https://www.zaanstad.nl/mozard/!suite86.scherm0325?mVrg=221"
-                  linkText="Neem contact op met de gemeente"
-                />
-              </Grid>
-
-              <Grid item xs={12} sm={6} >
-                <PaperCard
-                  title="Hulp bij mijn financiën"
-                  description="Voor mensen die dreigen ten onder te gaan aan een schuldenlast.  En advies zoeken in het gezond houden van je financiële huishouding."
-                  link="https://schuldhulpmaatjezaanstad.nl/"
-                  linkText="Ga naar SchuldHulpMaatje Zaanstad"
                 />
               </Grid>
             </Grid>

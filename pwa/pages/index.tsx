@@ -37,7 +37,7 @@ const Welcome = () => (
           <PaperCard
             title="Producten"
             description="De Tijdelijke Ondersteuning Noodzakelijke Kosten (TONK) is een tijdelijke eenmalige financiële ondersteuning voor als u een aanzienlijke inkomensterugval heeft als gevolg van de coronamaatregelen. En als u hierdoor problemen heeft met het betalen van uw woonkosten. Het gaat dan om de huur of hypotheek en de kosten van elektriciteit, gas en water en eventuele servicekosten."
-            link="/claims"
+            link="/products/products"
             linkText="Lees meer "
           />
         </Grid>
@@ -45,7 +45,7 @@ const Welcome = () => (
           <PaperCard
             title="Diensten"
             description="De uitkering volgens de Participatiewet (bijstand) is een geldbedrag per maand dat u krijgt van de gemeente, om in uw levensonderhoud te kunnen voorzien. Voor mensen met een inkomen onder 110% van het minimumloon en weinig of geen vermogen. "
-            link="/documents"
+            link="/products/services"
             linkText="Lees meer of vraag aan"
           />
         </Grid>
@@ -53,7 +53,7 @@ const Welcome = () => (
           <PaperCard
             title="Verguningen"
             description="Een bedrag dat u ieder jaar krijgt bovenop uw minimuminkomen. Voor mensen die minimaal 5 jaar een minimum inkomen hebben (uitkering of werk). "
-            link="/processes"
+            link="/products/licenses"
             linkText="Lees meer of vraag aan"
           />
         </Grid>
@@ -61,7 +61,7 @@ const Welcome = () => (
           <PaperCard
             title="Regelingen"
             description="Zelfstandigen kunnen in (tijdelijke) financiële problemen komen die het voortbestaan van hun bedrijf bedreigen. In bepaalde gevallen kunnen zij dan een beroep doen op het Besluit bijstandverlening zelfstandigen (Bbz). "
-            link="/authorizations"
+            link="/arrangements"
             linkText="Lees meer of vraag aan"
           />
         </Grid>
@@ -69,7 +69,7 @@ const Welcome = () => (
           <PaperCard
             title="Melding"
             description="Zelfstandigen kunnen in (tijdelijke) financiële problemen komen die het voortbestaan van hun bedrijf bedreigen. In bepaalde gevallen kunnen zij dan een beroep doen op het Besluit bijstandverlening zelfstandigen (Bbz). "
-            link="/authorizations"
+            link="https://www.zaanstad.nl/mozard/!suite86.scherm0325?mPag=244"
             linkText="Lees meer of vraag aan"
           />
         </Grid>
