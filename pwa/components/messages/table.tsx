@@ -24,24 +24,14 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Box from '@material-ui/core/Box';
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
+function createData(name, afzender, ontvangen) {
+  return { name, afzender, ontvangen };
 }
 
 const rows = [
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Donut', 452, 25.0, 51, 4.9),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-  createData('Honeycomb', 408, 3.2, 87, 6.5),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Jelly Bean', 375, 0.0, 94, 0.0),
-  createData('KitKat', 518, 26.0, 65, 7.0),
-  createData('Lollipop', 392, 0.2, 98, 0.0),
-  createData('Marshmallow', 318, 0, 81, 2.0),
-  createData('Nougat', 360, 19.0, 9, 37.0),
-  createData('Oreo', 437, 18.0, 63, 4.0),
+  createData('Aanslag', 'Gemeente Zaandam', '1 september 2021'),
+  createData('Parkeerbon', 'Gemeente Zaandam', '1 september 2021'),
+  createData('Taxatieverslag', 'Gemeente Zaandam', '1 september 2021'),
 ];
 
 function descendingComparator(a, b, orderBy) {
@@ -71,9 +61,9 @@ function stableSort(array, comparator) {
 }
 
 const headCells = [
+  { id: 'name', numeric: false, disablePadding: false, label: 'Titel' },
   { id: 'afzender', numeric: false, disablePadding: true, label: 'Afzender' },
-  { id: 'onderwerp', numeric: true, disablePadding: false, label: 'Onderwerp' },
-  { id: 'ontvangen', numeric: true, disablePadding: false, label: 'Ontvangen' },
+  { id: 'ontvangen', numeric: false, disablePadding: false, label: 'Ontvangen' },
 ];
 
 function MessagesHeadTable(props) {

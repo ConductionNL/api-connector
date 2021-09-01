@@ -15,6 +15,10 @@ import PageHeader from "../../components/common/pageheader";
 import Box from "@material-ui/core/Box";
 import ProductTable from "../../components/products/table";
 import ProductCard from "../../components/products/card";
+import PaperCard from "../../components/common/paperCard";
+import Chip from "@material-ui/core/Chip";
+import CheckIcon from "@material-ui/icons/Check";
+import HelpOutlineIcon from "@material-ui/icons/HelpOutline";
 
 function Index() {
 
@@ -53,11 +57,46 @@ function Index() {
           </Box>
 
           <Grid container spacing={2}>
-          {
-            categories !== null &&
-            categories.map((product) => (
-            <ProductCard product={product}/>
-            ))}
+            <Grid item xs={12} sm={8} md={6}>
+              <PaperCard
+                title="Producten"
+                description="De Tijdelijke Ondersteuning Noodzakelijke Kosten (TONK) is een tijdelijke eenmalige financiële ondersteuning voor als u een aanzienlijke inkomensterugval heeft als gevolg van de coronamaatregelen. En als u hierdoor problemen heeft met het betalen van uw woonkosten. Het gaat dan om de huur of hypotheek en de kosten van elektriciteit, gas en water en eventuele servicekosten."
+                link="/claims"
+                linkText="Lees meer "
+              />
+            </Grid>
+            <Grid item xs={12} sm={8} md={6}>
+              <PaperCard
+                title="Diensten"
+                description="De uitkering volgens de Participatiewet (bijstand) is een geldbedrag per maand dat u krijgt van de gemeente, om in uw levensonderhoud te kunnen voorzien. Voor mensen met een inkomen onder 110% van het minimumloon en weinig of geen vermogen. "
+                link="/documents"
+                linkText="Lees meer of vraag aan"
+              />
+            </Grid>
+            <Grid item xs={12} sm={8} md={6}>
+              <PaperCard
+                title="Verguningen"
+                description="Een bedrag dat u ieder jaar krijgt bovenop uw minimuminkomen. Voor mensen die minimaal 5 jaar een minimum inkomen hebben (uitkering of werk). "
+                link="/processes"
+                linkText="Lees meer of vraag aan"
+              />
+            </Grid>
+            <Grid item xs={12} sm={8} md={6}>
+              <PaperCard
+                title="Regelingen"
+                description="Zelfstandigen kunnen in (tijdelijke) financiële problemen komen die het voortbestaan van hun bedrijf bedreigen. In bepaalde gevallen kunnen zij dan een beroep doen op het Besluit bijstandverlening zelfstandigen (Bbz). "
+                link="/authorizations"
+                linkText="Lees meer of vraag aan"
+              />
+            </Grid>
+            <Grid item xs={12} sm={8} md={6}>
+              <PaperCard
+                title="Melding"
+                description="Zelfstandigen kunnen in (tijdelijke) financiële problemen komen die het voortbestaan van hun bedrijf bedreigen. In bepaalde gevallen kunnen zij dan een beroep doen op het Besluit bijstandverlening zelfstandigen (Bbz). "
+                link="/authorizations"
+                linkText="Lees meer of vraag aan"
+              />
+            </Grid>
           </Grid>
         </Grid>
       </Grid>
