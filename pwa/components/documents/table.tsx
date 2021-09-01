@@ -15,8 +15,7 @@ function createData(name, reference) {
 }
 
 const rows = [
-  createData('Trouwen', '95128942'),
-  createData('Begraven', '12938149'),
+  createData('Waardebepaling auto', '95128942'),
 ];
 
 
@@ -40,7 +39,12 @@ export default function ArrangementsTable() {
               <TableCell align="right">
                 <Button variant="outlined" color="primary">
                   <Link href="/cases/1">
-                    Bekijken
+                    Downloaden
+                  </Link>
+                </Button>
+                <Button variant="outlined" color="primary">
+                  <Link href="/cases/1">
+                    Delen
                   </Link>
                 </Button>
               </TableCell>
