@@ -28,6 +28,7 @@ import {useRouter} from 'next/router';
 import ActionMenu from "../../components/common/actionmenu";
 import PageHeader from "./pageheader";
 import Grid from "@material-ui/core/Grid";
+import {eraseCookie, getCookie, setCookie} from "../../components/utility/CookieHandler";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -95,7 +96,20 @@ const useStyles = makeStyles((theme) => ({
   list: {
     width: 250,
   },
+  appbar: {
+    backgroundColor: '#00A5C7'
+  },
 }));
+
+const handleLogout = () => {
+  if (typeof window !== "undefined") {
+      eraseCookie('name');
+      eraseCookie('bsn');
+
+      // @ts-ignore
+      window.location = '/';
+    }
+}
 
 export default function MainMenu() {
 
@@ -117,17 +131,16 @@ export default function MainMenu() {
   };
 
   const loginUser = (status) => {
-
-
     setState({...state, ['loggedIn']: status});
   };
 
   return (
     <div className={classes.grow}>
-      <AppBar position="static">
+      <AppBar position="static" className={classes.appbar}>
         <Container>
           <Toolbar>
 
+            {
             <div className={classes.sectionMobile}>
               <IconButton aria-label="show 17 new notifications" color="inherit"
                           onClick={toggleDrawer('displayUserDrawer', true)}>
@@ -145,25 +158,36 @@ export default function MainMenu() {
                 </div>
               </Drawer>
             </div>
+            }
 
             <div className={classes.grow}/>
 
-            <Box paddingRight={2}>
+            <Box style={{marginRight: "15px"}}>
               <Typography variant="h6" color="inherit">
-                <Link href="/user" >
+                {
+                  getCookie('name') !== null &&
+                  <Link href="/user" >
                   <span style={{color: 'white'}}>
-                  R. van der Linde
+                    {
+                      getCookie('name')
+                    }
                   </span>
-                </Link>
+                  </Link>
+                }
+
               </Typography>
             </Box>
-            <Box paddingRight={2}>
+            <Box marginRight={2}>
               <Typography variant="h6" color="inherit">
-                <Link href="/" >
-                  <span style={{color: 'white'}}>
-                  Uitloggen
-                  </span>
-                </Link>
+                    {
+                      getCookie('bsn') !== null
+                        ?
+                          <span onClick={handleLogout} style={{color: 'white'}}>Uitloggen</span>
+                        :
+                          <Link href="http://localhost/login/digispoof" >
+                            <span style={{color: 'white'}}>Inloggen</span>
+                          </Link>
+                    }
               </Typography>
             </Box>
 

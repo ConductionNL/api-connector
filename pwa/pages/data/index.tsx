@@ -54,6 +54,7 @@ function Index() {
               <Grid item xs={12} sm={8} md={6}>
                 <PaperCard
                   title="Waardepapieren"
+                  secondaryTitle="Bron: Waardepapieren Register"
                   description="In sommige gevallen heeft u bewijspapieren nodig, bijvoorbeeld een uittreksel van uw woonhistorie of een inkomens verklaring. U kunt deze tegenwoordig ook digitaal aanvragen, inzien en delen met organisaties."
                   link="/claims"
                   linkText="Bekijk waardepapieren"

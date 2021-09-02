@@ -16,6 +16,7 @@ import ArrangementsCards from "../../components/arrangements/cards";
 import {makeStyles} from "@material-ui/core/styles";
 import { Alert, AlertTitle } from "@material-ui/lab";
 import {Link} from "@material-ui/core";
+import StandardCard from "../../components/common/card";
 
 const useStyles = makeStyles({
   marginTop: {
@@ -25,7 +26,7 @@ const useStyles = makeStyles({
 
 function Index() {
   const classes = useStyles();
-  const title = 'Werk en Inkomen';
+  const title = 'Vergunningen';
 
   return <>
     <Layout title={title} description="waar kan ik deze description zien">
@@ -40,17 +41,17 @@ function Index() {
         <Grid item xs={12} md={9} spacing={6}>
           <PageHeader title={title}/>
 
-          <Box paddingTop={2} paddingBottom={2}>
-            <p>Een regeling is een gemeentelijk product waar je recht op kan hebben of recht voor kunt aanvragen bij de overheid.</p>
+
+          <Box paddingTop={3} paddingBottom={2}>
+            <Grid container spacing={2}>
+              <Grid item xs={12} sm={6} md={5} lg={4}>
+                <StandardCard
+                  title="Evenementen vergunning aanvragen"
+                  link="https://www.zaanstad.nl/mozard/!suite86.scherm0325?mVrg=221"
+                />
+              </Grid>
+            </Grid>
           </Box>
-
-          {/*If not logged in:*/}
-          <Alert severity="warning" style={{marginBottom: "10px"}}>
-            <AlertTitle>Inloggen</AlertTitle>
-            Om uw regelingen te personaliseren moet u eerst inloggen! — Klik <strong><Link href={"/user"}>hier</Link></strong> om in te loggen.
-          </Alert>
-
-          <ArrangementsCards/>
 
         </Grid>
       </Grid>

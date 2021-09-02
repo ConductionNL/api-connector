@@ -43,17 +43,9 @@ function Index() {
             <Grid container spacing={2}>
               <Grid item xs={12} sm={8} md={6}>
                 <PaperCard
-                  title="Werk"
-                  secondaryTitle="Bron: uwv"
-                  description="todo"
-                  link="https://www.uwv.nl/particulieren/index.aspx"
-                  linkText="Bekijk werk"
-                />
-              </Grid>
-              <Grid item xs={12} sm={8} md={6}>
-                <PaperCard
-                  title="Inkomen"
-                  description="todo"
+                  title="Geregistreerde inkomen"
+                  secondaryTitle="Bron: Basisregistratie Inkomen"
+                  description="De Belastingdienst registreert uw inkomen. Overheidsorganisaties gebruiken dit inkomen om bijvoorbeeld de hoogte van uw toeslag, eigen bijdrage of toelage te berekenen."
                   link="/income/1"
                   linkText="Bekijk inkomen"
                 />
@@ -61,9 +53,37 @@ function Index() {
               <Grid item xs={12} sm={8} md={6}>
                 <PaperCard
                   title="Regelingen"
-                  description="Een regeling is een gemeentelijk product waar je recht op kan hebben of recht voor kunt aanvragen bij de overheid."
+                  secondaryTitle="Bron: landelijke regelingen service"
+                  description="Een regeling is een gemeentelijk product waar je recht op kan hebben of recht voor kunt aanvragen bij de overheid. Via deze lijst ziet u waar u recht op heeft"
                   link="/arrangements"
                   linkText="Bekijk regelingen"
+                />
+              </Grid>
+              <Grid item xs={12} sm={8} md={6}>
+                <PaperCard
+                  title="Mijn UWV"
+                  secondaryTitle="Bron: mijn uwv"
+                  description="Op MijnUWV regelt u uw persoonlijke zaken met UWV. Daarnaast vindt u hier gegevens over uw werk en inkomen."
+                  link="https://mijn.uwv.nl/mijnuwv"
+                  linkText="Ga naar Mijn UWV"
+                />
+              </Grid>
+              <Grid item xs={12} sm={8} md={6}>
+                <PaperCard
+                  title="Mijn Pensioenoverzicht"
+                  secondaryTitle="Bron: mijnpensioenoverzicht.nl"
+                  description="Op mijnpensioenoverzicht.nl ziet u, naast uw AOW, hoeveel pensioen u hebt en bij welke pensioenuitvoerder (pensioenfonds of -verzekeraar). Ook ziet u wat uw nabestaanden krijgen als u overlijdt."
+                  link="https://www.mijnpensioenoverzicht.nl/"
+                  linkText="Ga naar MijnPensioenoverzicht"
+                />
+              </Grid>
+              <Grid item xs={12} sm={8} md={6}>
+                <PaperCard
+                  title="Werk"
+                  secondaryTitle="Bron: Digitaal Klantdossier voor Werk en Inkomen"
+                  description="Het Digitaal Klantdossier voor Werk en Inkomen (DKD) geeft een overzicht van uw eigen gegevens die door gemeenten en UWV zijn vastgelegd. Het gaat hierbij om persoonsgegevens, arbeids- en uitkeringsgegevens en gegevens over opleiding en re-integratie."
+                  link="https://www.werk.nl/werkzoekenden/gegevens-inzien"
+                  linkText="Ga naar Digitaal Klantdossier"
                 />
               </Grid>
             </Grid>
