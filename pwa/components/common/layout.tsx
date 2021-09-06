@@ -25,7 +25,7 @@ const Layout = ({children, title="Welcome to Demodam!", h1 =null, description="d
     <>
       <RestfulProvider
         base="http://localhost/api"
-        requestOptions={(url, method, requestBody) => ({ headers: { Accept: 'application/json' } })}>
+        requestOptions={(url, method, requestBody) => ({ headers: { Accept: 'application/json' }, credentials: 'include', mode: 'cors' })}>
         <Head>
           <title>{title}</title>
         </Head>
