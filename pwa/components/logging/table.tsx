@@ -49,15 +49,16 @@ export default function LoggingTable() {
 
   return (
    <div style={{ height: 400, width: '100%' }}>
-
-     <DataGrid
-       rows={logging}
-       columns={columns}
-       pageSize={100}
-       rowsPerPageOptions={[100]}
-       checkboxSelection
-       disableSelectionOnClick
-     />
+     { logging && (
+       <DataGrid
+         rows={logging}
+         columns={columns}
+         pageSize={100}
+         rowsPerPageOptions={[100]}
+         checkboxSelection
+         disableSelectionOnClick
+       />
+     )}
 
     </div>
   );
