@@ -210,29 +210,6 @@ TabPanel.propTypes = {
   value: PropTypes.any.isRequired,
 };
 
-const CasesTableTabs = (props) => {
-  const tabClasses = useTabPanelStyles();
-  const [value, setValue] = React.useState(0);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
-
-  return (
-    <div className={tabClasses.root}>
-        <Tabs
-          value={value}
-          onChange={handleChange}
-          indicatorColor="primary"
-          textColor="primary"
-        >
-          <Tab label="Overzicht" />
-          <Tab label="Afgehandeld" />
-        </Tabs>
-    </div>
-  );
-}
-
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
@@ -331,7 +308,6 @@ export default function CasesTable() {
 
   return (
     <div className={classes.root}>
-      <CasesTableTabs/>
       <CasesTableToolbar numSelected={selected.length} />
       <TabPanel value={value} index={0}>
         <TableContainer>
@@ -391,17 +367,17 @@ export default function CasesTable() {
               )}
             </TableBody>
           </Table>
+          <TablePagination
+            rowsPerPageOptions={[5, 10, 25]}
+            component="div"
+            count={rows.length}
+            rowsPerPage={rowsPerPage}
+            page={page}
+            onPageChange={handleChangePage}
+            onRowsPerPageChange={handleChangeRowsPerPage}
+          />
         </TableContainer>
       </TabPanel>
-      <TablePagination
-        rowsPerPageOptions={[5, 10, 25]}
-        component="div"
-        count={rows.length}
-        rowsPerPage={rowsPerPage}
-        page={page}
-        onPageChange={handleChangePage}
-        onRowsPerPageChange={handleChangeRowsPerPage}
-      />
     </div>
   );
 }

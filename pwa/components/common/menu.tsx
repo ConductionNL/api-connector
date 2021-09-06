@@ -146,7 +146,7 @@ export default function MainMenu() {
                           onClick={toggleDrawer('displayUserDrawer', true)}>
                 <MenuIcon/>
               </IconButton>
-              <Drawer anchor={'right'} open={state['displayUserDrawer']}
+              <Drawer anchor={'left'} open={state['displayUserDrawer']}
                       onClose={toggleDrawer('displayUserDrawer', false)}>
                 <div
                   className={classes.list}
