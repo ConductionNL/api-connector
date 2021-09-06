@@ -18,8 +18,47 @@ import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import MessagesTable from "../../components/messages/table";
 import CollapsibleTable from "../../components/messages/collapsibleTable";
-import {makeStyles} from "@material-ui/core/styles";
+import {lighten, makeStyles} from "@material-ui/core/styles";
 import QuestionsAccordion from "../../components/messages/questionsAccordion";
+import Tabs from "@material-ui/core/Tabs";
+import Tab from "@material-ui/core/Tab";
+import TablePagination from "@material-ui/core/TablePagination";
+import Toolbar from "@material-ui/core/Toolbar";
+import clsx from "clsx";
+import Tooltip from "@material-ui/core/Tooltip";
+import IconButton from "@material-ui/core/IconButton";
+import DeleteIcon from "@material-ui/icons/Delete";
+import PropTypes from "prop-types";
+
+const useTabPanelStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+    backgroundColor: theme.palette.background.paper,
+  },
+}));
+
+const CasesTableTabs = (props) => {
+  const tabClasses = useTabPanelStyles();
+  const [value, setValue] = React.useState(0);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
+  return (
+    <div className={tabClasses.root}>
+      <Tabs
+        value={value}
+        onChange={handleChange}
+        indicatorColor="primary"
+        textColor="primary"
+      >
+        <Tab label="Overzicht" />
+        <Tab label="Afgehandeld" />
+      </Tabs>
+    </div>
+  );
+}
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -52,7 +91,10 @@ function Index() {
             <Grid item xs={12}>
               <Card className={classes.root}>
                 <CardContent>
-                  <CasesTable/>
+                  <div className={classes.root}>
+                    <CasesTableTabs/>
+                    <CasesTable/>
+                  </div>
                 </CardContent>
               </Card>
             </Grid>
