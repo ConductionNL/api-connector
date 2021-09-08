@@ -30,6 +30,7 @@ import PageHeader from "./pageheader";
 import Grid from "@material-ui/core/Grid";
 import {eraseCookie, getCookie, setCookie} from "../../components/utility/CookieHandler";
 import {useGet} from "restful-react";
+import {useAppContext} from "../context/state";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -102,23 +103,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const handleLogout = () => {
+const handleLogout = (context) => {
+
   if (typeof window !== "undefined") {
-      eraseCookie('name');
+      context.user = null;
 
       // @ts-ignore
       window.location.href = 'http://localhost/logout';
     }
-}
-
-const handleLogin = () => {
-  const { data: info } = useGet({
-    path: "http://localhost/me",
-  });
-
-  if (info !== null && info !== undefined) {
-    setCookie('name', info.name, '25');
-  }
 }
 
 export default function MainMenu() {
@@ -144,7 +136,7 @@ export default function MainMenu() {
     setState({...state, ['loggedIn']: status});
   };
 
-  handleLogin();
+  let context = useAppContext();
 
   return (
     <div className={classes.grow}>
@@ -177,11 +169,11 @@ export default function MainMenu() {
             <Box style={{marginRight: "15px"}}>
               <Typography variant="h6" color="inherit">
                 {
-                  getCookie('name') !== null &&
+                  context.user !== null &&
                   <Link href="/user" >
                   <span style={{color: 'white'}}>
                     {
-                      getCookie('name')
+                      context.user.name
                     }
                   </span>
                   </Link>
@@ -192,9 +184,9 @@ export default function MainMenu() {
             <Box marginRight={2}>
               <Typography variant="h6" color="inherit">
                     {
-                      getCookie('name') !== null
+                      context.user !== null
                         ?
-                          <span onClick={handleLogout} style={{color: 'white'}}>Uitloggen</span>
+                          <span onClick={() => {handleLogout(context)}} style={{color: 'white'}}>Uitloggen</span>
                         :
                           <Link href="http://localhost/login/adfs/conduction" >
                             <span style={{color: 'white'}}>Inloggen</span>

@@ -6,7 +6,10 @@ import React from "react";
 import Header from "./header";
 import Footer from "./footer";
 import {makeStyles} from "@material-ui/core/styles";
-import { RestfulProvider } from "restful-react";
+import {RestfulProvider, useGet} from "restful-react";
+import {useAppContext} from "../context/state";
+import {setCookie} from "../utility/CookieHandler";
+import UserManagement from "./userManagement";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -21,14 +24,18 @@ const Layout = ({children, title="Welcome to Demodam!", h1 =null, description="d
 
   const classes = useStyles();
 
+  let context = useAppContext();
+
   return (
     <>
       <RestfulProvider
-        base="http://localhost/api"
+        base={context.apiUrl}
         requestOptions={(url, method, requestBody) => ({ headers: { Accept: 'application/json' }, credentials: 'include', mode: 'cors' })}>
         <Head>
           <title>{title}</title>
         </Head>
+
+        <UserManagement />
 
         <Header/>
 
