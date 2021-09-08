@@ -9,20 +9,15 @@ import Paper from '@material-ui/core/Paper';
 import { DataGrid } from '@mui/x-data-grid';
 import {useGet} from "restful-react";
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
-}
-
-
 export default function LoggingTable() {
 
-  var { data: logging } = useGet({
+  var { data: logs } = useGet({
     path: "gateways/logging/verwerkings_acties"
   });
 
   /* lets catch hydra */
-  if (logging != null && logging["hydra:member"] !== undefined) {
-    logging = logging["hydra:member"];
+  if (logs != null && logs["hydra:member"] !== undefined) {
+    logs = logs["hydra:member"];
   }
 
   const columns = [
@@ -49,16 +44,29 @@ export default function LoggingTable() {
 
   return (
    <div style={{ height: 400, width: '100%' }}>
-     { logging && (
-       <DataGrid
-         rows={logging}
-         columns={columns}
-         pageSize={100}
-         rowsPerPageOptions={[100]}
-         checkboxSelection
-         disableSelectionOnClick
-       />
-     )}
+     { logs ? (
+         <DataGrid
+           rows={logs}
+           columns={columns}
+           pageSize={100}
+           rowsPerPageOptions={[100]}
+           checkboxSelection
+           disableSelectionOnClick
+         />
+       )
+       :
+       (
+         <DataGrid
+           rows={[]}
+           loading={true}
+           columns={columns}
+           pageSize={100}
+           rowsPerPageOptions={[100]}
+           checkboxSelection
+           disableSelectionOnClick
+         />
+       )
+     }
 
     </div>
   );
