@@ -26,19 +26,16 @@ export default function LoggingTable() {
       field: 'actieNaam',
       headerName: 'Actie',
       flex: 1,
-      editable: true,
     },
     {
       field: 'handelingsNaam',
       headerName: 'Handeling',
       flex: 1,
-      editable: true,
     },
     {
       field: 'verwerkingsnaam',
       headerName: 'Verwerking',
       flex: 1,
-      editable: true,
     }
   ];
 

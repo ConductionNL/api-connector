@@ -32,18 +32,18 @@ export default function ClaimsTable() {
       field: 'status',
       headerName: 'Status',
       flex: 1,
-      editable: true,
     },
     {
       field: 'registratiedatum',
       headerName: 'Registratiedatum',
       flex: 1,
-      editable: true,
     },
     {
       field: "link",
       headerName: " ",
       flex: 1,
+      sortable: false,
+      disableColumnMenu: true,
       renderCell: (cellValues) => {
         return <Link href={`/cases/${cellValues.row.id}`}>Bekijken</Link>;
       }

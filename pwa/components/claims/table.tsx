@@ -1,13 +1,8 @@
 import React from 'react';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
 import { DataGrid } from '@mui/x-data-grid';
 import {useGet} from "restful-react";
+import Button from "@material-ui/core/Button";
+import {documentDownload} from "../utility/DocumentDownload";
 
 export default function ClaimsTable() {
 
@@ -26,13 +21,49 @@ export default function ClaimsTable() {
       field: 'type',
       headerName: 'Type',
       flex: 1,
-      editable: true,
     },
     {
       field: 'organization',
       headerName: 'Organisatie',
       flex: 1,
-      editable: true,
+    },
+    {
+      field: "Pdf",
+      headerName: " ",
+      sortable: false,
+      disableColumnMenu: true,
+      renderCell: (cellValues) => {
+        return (
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={() => {
+              documentDownload(cellValues.row.document, cellValues.row.type, '.pdf')
+            }}
+          >
+            Pdf
+          </Button>
+        );
+      }
+    },
+    {
+      field: "QR",
+      headerName: " ",
+      sortable: false,
+      disableColumnMenu: true,
+      renderCell: (cellValues) => {
+        return (
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={() => {
+              documentDownload(cellValues.row.image, cellValues.row.type, '.png')
+            }}
+          >
+            QR
+          </Button>
+        );
+      }
     },
   ];
 
