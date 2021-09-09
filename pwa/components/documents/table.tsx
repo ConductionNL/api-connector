@@ -6,52 +6,60 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import Button from "@material-ui/core/Button";
-import {Link} from "@material-ui/core";
+import { DataGrid } from '@mui/x-data-grid';
+import {useGet} from "restful-react";
 
+export default function ClaimsTable() {
 
-function createData(name, reference) {
-  return {name, reference};
-}
+  var { data: documents } = useGet({
+    path: "gateways/documenten/enkelvoudiginformatieobjecten"
+  });
 
-const rows = [
-  createData('Waardebepaling auto', '95128942'),
-];
+  /* lets catch hydra */
+  if (documents != null && documents["results"] !== undefined) {
+    documents = documents["results"];
 
+    for (let i = 0; i < documents.length; i++) {
+      documents[i].id = documents[i].identificatie;
+    }
+  }
 
-export default function DocumentsTable() {
+  const columns = [
+    { field: 'id', headerName: 'Identificatie', flex: 1 },
+    {
+      field: 'bestandsnaam',
+      headerName: 'Naam',
+      flex: 1,
+      editable: true,
+    },
+  ];
 
   return (
-    <TableContainer component={Paper}>
-      <Table aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            <TableCell>Naam</TableCell>
-            <TableCell align="right">Referentie</TableCell>
-            <TableCell align="right"></TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row) => (
-            <TableRow key={row.name}>
-              <TableCell align="left">{row.name}</TableCell>
-              <TableCell align="right">{row.reference}</TableCell>
-              <TableCell align="right">
-                <Button variant="outlined" color="primary">
-                  <Link href="/cases/1">
-                    Downloaden
-                  </Link>
-                </Button>
-                <Button variant="outlined" color="primary">
-                  <Link href="/cases/1">
-                    Delen
-                  </Link>
-                </Button>
-              </TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+    <div style={{ height: 400, width: '100%' }}>
+      { documents ? (
+          <DataGrid
+            rows={documents}
+            columns={columns}
+            pageSize={100}
+            rowsPerPageOptions={[100]}
+            checkboxSelection
+            disableSelectionOnClick
+          />
+        )
+        :
+        (
+          <DataGrid
+            rows={[]}
+            loading={true}
+            columns={columns}
+            pageSize={100}
+            rowsPerPageOptions={[100]}
+            checkboxSelection
+            disableSelectionOnClick
+          />
+        )
+      }
+
+    </div>
   );
 }

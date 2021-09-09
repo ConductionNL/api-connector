@@ -22,6 +22,7 @@ export default function UserManagement() {
       context.user = info;
     }
 
+    console.log(info);
     console.log(context);
   }
 

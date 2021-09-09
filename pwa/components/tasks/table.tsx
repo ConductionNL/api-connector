@@ -27,16 +27,6 @@ import {Link} from "@material-ui/core";
 
 export default function TaskTable() {
 
-  var { data: logging } = useGet({
-    path: "gateways/logging/verwerkings_acties"
-  });
-
-  /* lets catch hydra */
-  if (logging != null && logging["hydra:member"] !== undefined) {
-    logging = logging["hydra:member"];
-  }
-
-  
   return (
     <TableContainer component={Paper}>
       <Table aria-label="simple table">
