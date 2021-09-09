@@ -21,23 +21,23 @@ export default function LoggingTable() {
   }
 
   const columns = [
-    { field: 'id', headerName: 'ID', width: 90 },
+    { field: 'id', headerName: 'ID', flex: 1, hide: true },
     {
       field: 'actieNaam',
       headerName: 'Actie',
-      width: 300,
+      flex: 1,
       editable: true,
     },
     {
       field: 'handelingsNaam',
       headerName: 'Handeling',
-      width: 150,
+      flex: 1,
       editable: true,
     },
     {
       field: 'verwerkingsnaam',
       headerName: 'Verwerking',
-      width: 300,
+      flex: 1,
       editable: true,
     }
   ];

@@ -21,17 +21,17 @@ export default function ClaimsTable() {
   }
 
   const columns = [
-    { field: 'id', headerName: 'ID', width: 90 },
+    { field: 'id', headerName: 'ID', flex: 1, hide: true },
     {
       field: 'type',
       headerName: 'Type',
-      width: 300,
+      flex: 1,
       editable: true,
     },
     {
       field: 'organization',
       headerName: 'Organisatie',
-      width: 150,
+      flex: 1,
       editable: true,
     },
   ];
