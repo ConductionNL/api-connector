@@ -2,9 +2,14 @@
 import type { AppProps /*, AppContext */ } from "next/app";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import {AppWrapper} from "../components/context/state";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  return (
+    <AppWrapper>
+      <Component {...pageProps} />
+    </AppWrapper>
+  );
 }
 
 // Only uncomment this method if you have blocking data requirements for
@@ -20,3 +25,5 @@ function MyApp({ Component, pageProps }: AppProps) {
 // }
 
 export default MyApp;
+
+
