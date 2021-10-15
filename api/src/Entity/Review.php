@@ -28,7 +28,7 @@ class Review
      * @ORM\Column(type="smallint")
      */
     #[Assert\Range(min: 0, max: 5)]
-    private int $rating = 0;
+    public int $rating = 0;
 
     /**
      * The body of the review.
@@ -36,7 +36,7 @@ class Review
      * @ORM\Column(type="text")
      */
     #[Assert\NotBlank]
-    private string $body = "";
+    public string $body = '';
 
     /**
      * The author of the review.
@@ -44,7 +44,7 @@ class Review
      * @ORM\Column
      */
     #[Assert\NotBlank]
-    private string $author = "";
+    public string $author = '';
 
     /**
      * The date of publication of this review.
@@ -52,7 +52,7 @@ class Review
      * @ORM\Column(type="datetime_immutable")
      */
     #[Assert\NotNull]
-    private ?\DateTimeInterface $publicationDate = null;
+    public ?\DateTimeInterface $publicationDate = null;
 
     /**
      * The book this review is about.
@@ -60,7 +60,7 @@ class Review
      * @ORM\ManyToOne(targetEntity=Book::class, inversedBy="reviews")
      */
     #[Assert\NotNull]
-    private $book;
+    public ?Book $book = null;
 
     public function getId(): ?int
     {

@@ -26,7 +26,7 @@ class Book
      * @ORM\Column(nullable=true)
      */
     #[Assert\Isbn]
-    private ?string $isbn = null;
+    public ?string $isbn = null;
 
     /**
      * @ORM\Column
@@ -38,7 +38,7 @@ class Book
      * @ORM\Column(type="text")
      */
     #[Assert\NotBlank]
-    private string $description = "";
+    public string $description = '';
 
     /**
      * The author of this book.
@@ -46,7 +46,7 @@ class Book
      * @ORM\Column
      */
     #[Assert\NotBlank]
-    private string $author = "";
+    public string $author = '';
 
     /**
      * @ORM\Column(type="datetime_immutable")
