@@ -1,67 +1,98 @@
 import React from 'react';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
+import { DataGrid } from '@mui/x-data-grid';
+import {useGet} from "restful-react";
 import Button from "@material-ui/core/Button";
-import {Link} from "@material-ui/core";
-
-function createData(name, organisation, valid) {
-  return {name, organisation, valid};
-}
-
-const rows = [
-  createData('Inkomensverlaring', 'Belastingdienst', '1 september 2021'),
-  createData('Uitreksel BRP', 'Gemeente Zaandam', '1 september 2021'),
-  createData('Ondernemersverlaring', 'Kamer van koophandel', '1 september 2021'),
-  createData('Kentekenbewijs', 'RDW', '1 september 2021'),
-  createData('Eigendoms Akte', 'Kadaster', '1 september 2021'),
-];
-
+import {documentDownload} from "../utility/DocumentDownload";
 
 export default function ClaimsTable() {
 
+  var { data: claims } = useGet({
+    path: "gateways/waardepapieren-register/certificates"
+  });
+
+  /* lets catch hydra */
+  if (claims != null && claims["hydra:member"] !== undefined) {
+    claims = claims["hydra:member"];
+  }
+
+  const columns = [
+    { field: 'id', headerName: 'ID', flex: 1, hide: true },
+    {
+      field: 'type',
+      headerName: 'Type',
+      flex: 1,
+    },
+    {
+      field: 'organization',
+      headerName: 'Organisatie',
+      flex: 1,
+    },
+    {
+      field: "Pdf",
+      headerName: " ",
+      sortable: false,
+      disableColumnMenu: true,
+      renderCell: (cellValues) => {
+        return (
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={() => {
+              documentDownload(cellValues.row.document, cellValues.row.type, '.pdf')
+            }}
+          >
+            Pdf
+          </Button>
+        );
+      }
+    },
+    {
+      field: "QR",
+      headerName: " ",
+      sortable: false,
+      disableColumnMenu: true,
+      renderCell: (cellValues) => {
+        return (
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={() => {
+              documentDownload(cellValues.row.image, cellValues.row.type, '.png')
+            }}
+          >
+            QR
+          </Button>
+        );
+      }
+    },
+  ];
+
   return (
-    <TableContainer component={Paper}>
-      <Table aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            <TableCell>Naam</TableCell>
-            <TableCell align="right">Uitgifte</TableCell>
-            <TableCell align="right">Geldig tot</TableCell>
-            <TableCell align="right"></TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row) => (
-            <TableRow key={row.name}>
-              <TableCell align="left">{row.name}</TableCell>
-              <TableCell align="right">{row.organisation}</TableCell>
-              <TableCell align="right">{row.valid}</TableCell>
-              <TableCell align="right">
-                <Button variant="outlined" color="primary">
-                  <Link href="/cases/1">
-                    Bekijken
-                  </Link>
-                </Button>
-                <Button variant="outlined" color="primary">
-                  <Link href="/cases/1">
-                    Downloaden
-                  </Link>
-                </Button>
-                <Button variant="outlined" color="primary">
-                  <Link href="/cases/1">
-                    Delen
-                  </Link>
-                </Button>
-              </TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+    <div style={{ height: 400, width: '100%' }}>
+      { claims ? (
+        <DataGrid
+          rows={claims}
+          columns={columns}
+          pageSize={100}
+          rowsPerPageOptions={[100]}
+          checkboxSelection
+          disableSelectionOnClick
+        />
+      )
+      :
+        (
+          <DataGrid
+            rows={[]}
+            loading={true}
+            columns={columns}
+            pageSize={100}
+            rowsPerPageOptions={[100]}
+            checkboxSelection
+            disableSelectionOnClick
+          />
+        )
+      }
+
+    </div>
   );
 }

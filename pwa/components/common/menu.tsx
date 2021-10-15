@@ -29,6 +29,8 @@ import ActionMenu from "../../components/common/actionmenu";
 import PageHeader from "./pageheader";
 import Grid from "@material-ui/core/Grid";
 import {eraseCookie, getCookie, setCookie} from "../../components/utility/CookieHandler";
+import {useGet} from "restful-react";
+import {useAppContext} from "../context/state";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -101,13 +103,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const handleLogout = () => {
+const handleLogout = (context) => {
+
   if (typeof window !== "undefined") {
-      eraseCookie('name');
-      eraseCookie('bsn');
+      context.user = null;
 
       // @ts-ignore
-      window.location = '/';
+      window.location.href = 'http://localhost/logout';
     }
 }
 
@@ -134,6 +136,8 @@ export default function MainMenu() {
     setState({...state, ['loggedIn']: status});
   };
 
+  let context = useAppContext();
+
   return (
     <div className={classes.grow}>
       <AppBar position="static" className={classes.appbar}>
@@ -146,7 +150,7 @@ export default function MainMenu() {
                           onClick={toggleDrawer('displayUserDrawer', true)}>
                 <MenuIcon/>
               </IconButton>
-              <Drawer anchor={'right'} open={state['displayUserDrawer']}
+              <Drawer anchor={'left'} open={state['displayUserDrawer']}
                       onClose={toggleDrawer('displayUserDrawer', false)}>
                 <div
                   className={classes.list}
@@ -165,11 +169,11 @@ export default function MainMenu() {
             <Box style={{marginRight: "15px"}}>
               <Typography variant="h6" color="inherit">
                 {
-                  getCookie('name') !== null &&
+                  context.user !== null &&
                   <Link href="/user" >
                   <span style={{color: 'white'}}>
                     {
-                      getCookie('name')
+                      context.user.name
                     }
                   </span>
                   </Link>
@@ -180,11 +184,11 @@ export default function MainMenu() {
             <Box marginRight={2}>
               <Typography variant="h6" color="inherit">
                     {
-                      getCookie('bsn') !== null
+                      context.user !== null
                         ?
-                          <span onClick={handleLogout} style={{color: 'white'}}>Uitloggen</span>
+                          <span onClick={() => {handleLogout(context)}} style={{color: 'white'}}>Uitloggen</span>
                         :
-                          <Link href="http://localhost/login/digispoof" >
+                          <Link href="http://localhost/login/adfs/conduction" >
                             <span style={{color: 'white'}}>Inloggen</span>
                           </Link>
                     }

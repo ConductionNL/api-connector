@@ -64,7 +64,7 @@ function Index() {
                   title="Verwerkingen"
                   secondaryTitle="Bron: Verwerkingen Register"
                   description="De gemeente houdt nauwkeurig bij welke organisaties uw gegevens hebben gebruikt (verwerkt) en met wel doel dit was. Deze verwerkingen kunt u inzien via het verwerkingen register."
-                  link="/processes"
+                  link="/logging"
                   linkText="Bekijk verwerkingen"
                 />
               </Grid>

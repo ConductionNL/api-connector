@@ -24,9 +24,8 @@ function Index() {
         <Grid item sm={12} md={9}>
           <PageHeader title={title} />
           <Box paddingTop={2} paddingBottom={2}>
-            <p>De nederlandse overheid kan uw gegevens voor meerdere doeleinden verwerken, bijvoorbeeld voor het berekenen belasting toeslagen of uitgeven van paspoorten. Met het verwerken bedoelen we het gebruiken, vervanderen of bekijken van uw persoonlijke gegeven. Als gemeente proberen we u zo veel mogenlijk inzicht te geven in wie uw gegevens waarvoor heeft gebruikt. Hier onder treft u een lijst me alle verwerkingen die wij hebbengeregistreerd </p>
+            <LoggingTable />
           </Box>
-          <LoggingTable />
         </Grid>
       </Grid>
     </Layout>
